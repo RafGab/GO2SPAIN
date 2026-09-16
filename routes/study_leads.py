@@ -4,6 +4,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 from database import get_connection
+from notify import send_notification
 
 router = APIRouter()
 
@@ -56,6 +57,20 @@ def create_study_lead(request: StudyLeadRequest):
 
     connection.commit()
     connection.close()
+
+    send_notification(
+        subject=f"Nueva solicitud GO2 SPAIN: {request.name}",
+        body=(
+            f"Nombre: {request.name}\n"
+            f"Email: {request.email}\n"
+            f"Teléfono: {request.phone or '-'}\n"
+            f"Nacionalidad: {request.nationality or '-'}\n"
+            f"¿Tiene carta de admisión?: {request.admission or '-'}\n"
+            f"Ciudad destino: {request.city or '-'}\n"
+            f"Inicio de curso: {request.start_date or '-'}\n"
+            f"Mensaje: {request.message or '-'}\n"
+        ),
+    )
 
     return {"status": "ok"}
 

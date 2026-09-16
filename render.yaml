@@ -8,6 +8,12 @@ services:
     envVars:
       - key: ADMIN_KEY
         sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: NOTIFY_EMAIL
+        sync: false
       - key: DATABASE_PATH
         value: /data/go2spain.db
     disk:

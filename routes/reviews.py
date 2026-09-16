@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 from database import get_connection
+from notify import send_notification
 from routes.study_leads import _check_admin_key
 
 router = APIRouter()
@@ -27,6 +28,16 @@ def create_review(request: ReviewRequest):
 
     connection.commit()
     connection.close()
+
+    send_notification(
+        subject=f"Nueva reseña GO2 SPAIN de {request.name}",
+        body=(
+            f"Nombre: {request.name}\n"
+            f"Valoración: {request.rating or '-'}\n"
+            f"Texto: {request.text}\n\n"
+            "Pendiente de revisar y publicar."
+        ),
+    )
 
     return {
         "status": "ok",
