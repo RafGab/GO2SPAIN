@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: go2spain-backend
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ADMIN_KEY
+        sync: false
+      - key: DATABASE_PATH
+        value: /data/go2spain.db
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
