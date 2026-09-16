@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO2 SPAIN — Panel</title>
+<style>
+  :root {
+    --red-800: #7f1626;
+    --red-700: #ab263e;
+    --gold-600: #a3792f;
+    --paper: #fffdfa;
+    --surface: #fff7f1;
+    --ink: #2b1a20;
+    --ink-soft: #7d6469;
+    --line: #eddedb;
+    --green: #1b8a4a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--surface);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 24px;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--ink-soft); font-size: 14px; margin-bottom: 24px; }
+
+  .key-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .key-bar input {
+    flex: 1;
+    min-width: 220px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  .key-bar button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--red-800);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold-600);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 8px;
+    margin-top: 40px;
+  }
+
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .card .info { flex: 1; min-width: 220px; }
+  .card strong { display: block; font-size: 15px; }
+  .card .meta { font-size: 12.5px; color: var(--ink-soft); margin-top: 3px; }
+  .card p { margin: 8px 0 0; font-size: 14px; line-height: 1.5; }
+  .stars { color: var(--gold-600); letter-spacing: 2px; }
+
+  .publish-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--green);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .publish-btn:disabled { opacity: 0.5; cursor: default; }
+
+  .empty { color: var(--ink-soft); font-size: 14px; margin-top: 12px; }
+  .error { color: var(--red-700); font-size: 14px; margin-top: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>GO2 SPAIN — Panel</h1>
+  <p class="sub">Leads del formulario y reseñas pendientes de aprobar.</p>
+
+  <div class="key-bar">
+    <input id="admin-key" type="password" placeholder="Clave de administración (ADMIN_KEY)">
+    <button onclick="loadAll()">Ver</button>
+  </div>
+
+  <h2>Reseñas pendientes</h2>
+  <div id="pending-reviews"></div>
+
+  <h2>Solicitudes del formulario</h2>
+  <div id="leads"></div>
+</div>
+
+<script>
+  var API_URL = 'https://go2spain-backend.onrender.com';
+
+  function getKey() {
+    var key = document.getElementById('admin-key').value.trim();
+    if (key) localStorage.setItem('go2spain_admin_key', key);
+    return key;
+  }
+
+  window.addEventListener('DOMContentLoaded', function () {
+    var saved = localStorage.getItem('go2spain_admin_key');
+    if (saved) {
+      document.getElementById('admin-key').value = saved;
+      loadAll();
+    }
+  });
+
+  function loadAll() {
+    loadPendingReviews();
+    loadLeads();
+  }
+
+  function loadPendingReviews() {
+    var key = getKey();
+    var container = document.getElementById('pending-reviews');
+    container.innerHTML = 'Cargando...';
+
+    fetch(API_URL + '/reviews/pending?key=' + encodeURIComponent(key))
+      .then(function (r) {
+        if (!r.ok) throw new Error('clave inválida o error del servidor');
+        return r.json();
+      })
+      .then(function (reviews) {
+        if (!reviews.length) {
+          container.innerHTML = '<p class="empty">No hay reseñas pendientes.</p>';
+          return;
+        }
+        container.innerHTML = reviews.map(function (r) {
+          var stars = r.rating ? '★★★★★'.slice(0, r.rating) + '☆☆☆☆☆'.slice(0, 5 - r.rating) : '';
+          return (
+            '<div class="card">' +
+            '<div class="info">' +
+            '<strong>' + escapeHtml(r.name) + '</strong>' +
+            '<span class="meta">' + r.created_at + (stars ? ' · <span class="stars">' + stars + '</span>' : '') + '</span>' +
+            '<p>' + escapeHtml(r.text) + '</p>' +
+            '</div>' +
+            '<button class="publish-btn" onclick="publish(' + r.id + ', this)">Publicar</button>' +
+            '</div>'
+          );
+        }).join('');
+      })
+      .catch(function (err) {
+        container.innerHTML = '<p class="error">' + err.message + '</p>';
+      });
+  }
+
+  function publish(id, btn) {
+    var key = getKey();
+    btn.disabled = true;
+    btn.textContent = 'Publicando...';
+
+    fetch(API_URL + '/reviews/' + id + '/publish?key=' + encodeURIComponent(key), { method: 'POST' })
+      .then(function (r) {
+        if (!r.ok) throw new Error('no se pudo publicar');
+        loadPendingReviews();
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Publicar';
+        alert('No se pudo publicar la reseña.');
+      });
+  }
+
+  function loadLeads() {
+    var key = getKey();
+    var container = document.getElementById('leads');
+    container.innerHTML = 'Cargando...';
+
+    fetch(API_URL + '/study-leads?key=' + encodeURIComponent(key))
+      .then(function (r) {
+        if (!r.ok) throw new Error('clave inválida o error del servidor');
+        return r.json();
+      })
+      .then(function (leads) {
+        if (!leads.length) {
+          container.innerHTML = '<p class="empty">No hay solicitudes todavía.</p>';
+          return;
+        }
+        container.innerHTML = leads.map(function (l) {
+          return (
+            '<div class="card">' +
+            '<div class="info">' +
+            '<strong>' + escapeHtml(l.name) + '</strong>' +
+            '<span class="meta">' + l.created_at + '</span>' +
+            '<p>' +
+            (l.email ? '📧 ' + escapeHtml(l.email) + '<br>' : '') +
+            (l.phone ? '📱 ' + escapeHtml(l.phone) + '<br>' : '') +
+            (l.nationality ? '🌎 ' + escapeHtml(l.nationality) + '<br>' : '') +
+            (l.city ? '🏙️ ' + escapeHtml(l.city) + '<br>' : '') +
+            (l.admission ? '🎓 Admisión: ' + escapeHtml(l.admission) + '<br>' : '') +
+            (l.start_date ? '📅 Inicio: ' + escapeHtml(l.start_date) + '<br>' : '') +
+            (l.message ? '💬 ' + escapeHtml(l.message) : '') +
+            '</p>' +
+            '</div>' +
+            '</div>'
+          );
+        }).join('');
+      })
+      .catch(function (err) {
+        container.innerHTML = '<p class="error">' + err.message + '</p>';
+      });
+  }
+
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+</script>
+</body>
+</html>
