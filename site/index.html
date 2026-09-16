@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO2 SPAIN — Asesoría de Extranjería</title>
+<meta name="description" content="Estancia por estudios en España, acompañamiento legal completo. Casos reales, resoluciones favorables.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red-800: #7f1626;
+    --red-700: #ab263e;
+    --red-100: #fbe8ea;
+    --gold-600: #a3792f;
+    --gold-500: #b98d3f;
+    --gold-300: #d9bd82;
+    --gold-100: #f6ecd8;
+    --paper: #fffdfa;
+    --surface: #fff7f1;
+    --ink: #2b1a20;
+    --ink-soft: #7d6469;
+    --line: #eddedb;
+    --shadow: 0 24px 48px -24px rgba(127, 22, 38, 0.18);
+    --shadow-sm: 0 10px 24px -16px rgba(127, 22, 38, 0.2);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding-inline: 24px;
+  }
+
+  h1, h2, h3, .display {
+    font-family: "Fraunces", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  em { font-style: italic; color: var(--red-700); }
+
+  p { margin: 0; }
+
+  a { color: inherit; }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--red-700);
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 22px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  /* ---------- NAV ---------- */
+
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 16px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 19px;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+
+  .logo-globe-slot {
+    position: relative;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    margin: 0 0.01em 0 -0.02em;
+    vertical-align: -0.34em;
+  }
+  .logo-globe-slot > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .logo-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    animation: logo-spin 5s linear infinite;
+  }
+  .logo-plane {
+    position: absolute;
+    left: 1.15em;
+    top: -0.32em;
+    width: 0.56em;
+    height: 0.56em;
+    animation: logo-spin-rev 5s linear infinite;
+  }
+  @keyframes logo-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes logo-spin-rev { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+  @media (prefers-reduced-motion: reduce) {
+    .logo-orbit, .logo-plane { animation: none; }
+  }
+
+  .flag-chip {
+    width: 21px;
+    height: 14px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover { color: var(--red-700); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 999px;
+    padding: 13px 26px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+    font-family: inherit;
+  }
+  .btn:focus-visible { outline: 2px solid var(--gold-500); outline-offset: 3px; }
+
+  .btn-primary {
+    background: var(--red-800);
+    color: var(--paper);
+    box-shadow: var(--shadow-sm);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow); background: var(--red-700); }
+
+  .btn-ghost {
+    background: transparent;
+    border-color: var(--line);
+    color: var(--ink);
+  }
+  .btn-ghost:hover { border-color: var(--red-700); color: var(--red-700); }
+
+  .nav-cta { display: none; }
+  @media (min-width: 720px) { .nav-cta { display: inline-flex; } }
+  .nav-links { display: none; }
+  @media (min-width: 860px) { .nav-links { display: flex; } }
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    padding-block: 64px 88px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (min-width: 900px) {
+    .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 32px; }
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 5.4vw, 58px);
+    line-height: 1.06;
+    margin-top: 18px;
+  }
+
+  .hero-sub {
+    margin-top: 22px;
+    max-width: 46ch;
+    font-size: 17.5px;
+    color: var(--ink-soft);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 34px;
+  }
+
+  .hero-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-top: 46px;
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
+  }
+
+  .hero-fact strong {
+    display: block;
+    font-family: "Fraunces", serif;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .hero-fact span {
+    display: block;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+
+  .hero-art { position: relative; }
+  .hero-art svg { width: 100%; height: auto; display: block; }
+
+  .draw-in {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    animation: draw 1.8s ease forwards 0.2s;
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .draw-in { stroke-dashoffset: 0; animation: none; }
+  }
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+
+  section { padding-block: 84px; }
+  .section-head { max-width: 60ch; }
+  .section-head h2 {
+    font-size: clamp(26px, 3.4vw, 38px);
+    margin-top: 14px;
+  }
+  .section-head p {
+    margin-top: 16px;
+    color: var(--ink-soft);
+    font-size: 16px;
+  }
+
+  .band { background: var(--surface); border-block: 1px solid var(--line); }
+
+  /* ---------- PROCESS ---------- */
+
+  .process {
+    margin-top: 56px;
+    display: grid;
+    gap: 0;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    padding-block: 30px;
+    border-top: 1px solid var(--line);
+    position: relative;
+  }
+  .step:last-child { border-bottom: 1px solid var(--line); }
+
+  .step-num {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold-500);
+    color: var(--red-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 19px;
+    background: var(--paper);
+  }
+
+  .step-body h3 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .step-body p {
+    margin-top: 8px;
+    color: var(--ink-soft);
+    max-width: 58ch;
+  }
+  .step-meta {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gold-600);
+  }
+
+  @media (min-width: 720px) {
+    .step { grid-template-columns: 72px 1fr; }
+  }
+
+  /* ---------- SERVICES ---------- */
+
+  .services-grid {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+  @media (min-width: 640px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .services-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .service {
+    background: var(--paper);
+    padding: 30px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .service svg { width: 26px; height: 26px; color: var(--red-700); }
+
+  .service h3 { font-size: 16.5px; font-weight: 600; font-family: "Fraunces", serif; }
+  .service p { font-size: 14.5px; color: var(--ink-soft); }
+
+  /* ---------- FAQ ---------- */
+
+  .faq-list { margin-top: 44px; max-width: 760px; }
+
+  .faq-item { border-top: 1px solid var(--line); }
+  .faq-item:last-child { border-bottom: 1px solid var(--line); }
+
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: "Fraunces", serif;
+    font-size: 17.5px;
+    font-weight: 500;
+    color: var(--ink);
+    padding-block: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+  }
+  .faq-q:focus-visible { outline: 2px solid var(--gold-500); outline-offset: 4px; }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .faq-icon::before, .faq-icon::after {
+    content: "";
+    position: absolute;
+    background: var(--gold-600);
+  }
+  .faq-icon::before { width: 10px; height: 1.4px; }
+  .faq-icon::after { width: 1.4px; height: 10px; transition: transform 0.2s ease; }
+  .faq-item[data-open="true"] .faq-icon::after { transform: rotate(90deg) scaleY(0); }
+
+  .faq-a {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.28s ease;
+  }
+  .faq-item[data-open="true"] .faq-a { max-height: 240px; }
+  .faq-a p {
+    padding-bottom: 24px;
+    color: var(--ink-soft);
+    max-width: 62ch;
+    font-size: 15px;
+  }
+
+  /* ---------- REVIEWS ---------- */
+
+  .reviews-grid {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  @media (min-width: 720px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .review-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .review-stars { color: var(--gold-500); font-size: 14px; letter-spacing: 2px; }
+  .review-text { font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; }
+  .review-name { font-family: "Fraunces", serif; font-size: 14px; }
+
+  .review-form-wrap { margin-top: 40px; max-width: 560px; }
+
+  /* ---------- CONTACT / FORM ---------- */
+
+  .contact-grid {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  @media (min-width: 940px) {
+    .contact-grid { grid-template-columns: 0.85fr 1.15fr; gap: 64px; }
+  }
+
+  .contact-side h3 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .contact-side p { color: var(--ink-soft); margin-top: 14px; max-width: 42ch; }
+
+  .contact-points { margin-top: 32px; display: flex; flex-direction: column; gap: 18px; }
+  .contact-point { display: flex; gap: 14px; align-items: flex-start; }
+  .contact-point svg { width: 19px; height: 19px; flex-shrink: 0; margin-top: 2px; color: var(--gold-600); }
+  .contact-point strong { display: block; font-size: 14.5px; }
+  .contact-point span { display: block; font-size: 13.5px; color: var(--ink-soft); margin-top: 2px; }
+
+  form {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: var(--shadow);
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .form-row.two { grid-template-columns: 1fr; }
+  @media (min-width: 560px) { .form-row.two { grid-template-columns: 1fr 1fr; } }
+
+  .field { display: flex; flex-direction: column; gap: 7px; margin-top: 20px; }
+  .form-row > .field, .form-row.two > .field { margin-top: 0; }
+
+  label {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  input, select, textarea {
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--red-700);
+    box-shadow: 0 0 0 3px var(--red-100);
+  }
+  textarea { resize: vertical; min-height: 92px; }
+
+  .field-hint { font-size: 12px; color: var(--ink-soft); }
+
+  .consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 22px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .consent input { width: 16px; height: 16px; margin-top: 2px; accent-color: var(--red-700); }
+
+  .form-submit {
+    margin-top: 26px;
+    width: 100%;
+    padding-block: 15px;
+  }
+
+  .form-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  .success {
+    display: none;
+    text-align: center;
+    padding-block: 30px;
+  }
+  .success svg { width: 46px; height: 46px; color: var(--gold-600); margin-bottom: 18px; }
+  .success h3 { font-size: 21px; }
+  .success p { margin-top: 10px; color: var(--ink-soft); max-width: 40ch; margin-inline: auto; }
+
+  form[data-sent="true"] .form-fields { display: none; }
+  form[data-sent="true"] .success { display: block; }
+
+  /* ---------- FOOTER ---------- */
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding-block: 40px;
+  }
+  .footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+  }
+  .footer-row .brand { font-size: 16px; }
+  footer .fine { font-size: 12.5px; color: var(--ink-soft); }
+  .footer-links { display: flex; gap: 22px; font-size: 13px; color: var(--ink-soft); }
+  .footer-links a { text-decoration: none; }
+  .footer-links a:hover { color: var(--red-700); }
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
+    z-index: 60;
+    transition: transform 0.15s ease;
+  }
+  .whatsapp-float:hover { transform: scale(1.07); }
+  .whatsapp-float svg { width: 30px; height: 30px; }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal[data-hidden="true"] { opacity: 0; transform: translateY(14px); }
+    .reveal { transition: opacity 0.6s ease, transform 0.6s ease; }
+  }
+</style>
+</head>
+<body>
+
+<a
+  class="whatsapp-float"
+  href="https://wa.me/34672953197?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20estancia%20por%20estudios%20en%20Espa%C3%B1a."
+  target="_blank"
+  rel="noopener"
+  aria-label="Escríbenos por WhatsApp"
+>
+  <svg viewBox="0 0 32 32" fill="white"><path d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.4.7 4.7 1.9 6.7L3 29l6.8-2.1c1.9 1 4 1.6 6.2 1.6 7 0 12.7-5.7 12.7-12.7C28.7 8.7 23 3 16 3zm0 23.1c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 1.2 1.2-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.3 9.8 10.1 5 16 5s10.7 4.8 10.7 10.7S21.9 26.1 16 26.1zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<div class="nav">
+  <div class="wrap nav-row">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.4" style="color:var(--red-700)"/>
+        <path d="M16 8 L16 24 M9 12.5 L23 12.5" stroke="var(--gold-600)" stroke-width="1.4"/>
+        <circle cx="16" cy="16" r="2.4" fill="var(--gold-500)"/>
+      </svg>
+      G<span class="logo-globe-slot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#4a7fb5" stroke="var(--paper)" stroke-width="1.1"/><ellipse cx="12" cy="12" rx="10" ry="4.2" fill="none" stroke="var(--paper)" stroke-width="0.9" opacity="0.85"/><line x1="12" y1="2" x2="12" y2="22" stroke="var(--paper)" stroke-width="0.9" opacity="0.85"/><ellipse cx="12" cy="12" rx="4.2" ry="10" fill="none" stroke="var(--paper)" stroke-width="0.9" opacity="0.6"/></svg><span class="logo-orbit"><svg class="logo-plane" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L17 20 L12 15.5 L7 20 Z" fill="var(--red-700)"/></svg></span></span>2 SPAIN
+      <svg class="flag-chip" viewBox="0 0 24 16" aria-label="Bandera de España">
+        <rect width="24" height="16" fill="#AA151B"/>
+        <rect y="4" width="24" height="8" fill="#F1BF00"/>
+      </svg>
+    </div>
+    <nav class="nav-links">
+      <a href="#proceso">Proceso</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="btn btn-primary nav-cta">Empieza tu camino legal</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Estudia · Trabaja · Echa raíces en España</span>
+      <h1><em>Nuevos horizontes</em>, sin arriesgar tu estatus legal.</h1>
+      <p class="hero-sub">Ven a España a estudiar, trabaja de forma compatible con tus estudios y, si tu situación lo permite, abre el camino hacia la residencia — todo acompañado por un despacho que lleva tu expediente de principio a fin.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn btn-primary">Empieza tu camino legal</a>
+        <a href="#proceso" class="btn btn-ghost">Ver cómo funciona</a>
+      </div>
+      <div class="hero-facts">
+        <div class="hero-fact">
+          <strong>Estudia y trabaja</strong>
+          <span>compatible con tu autorización</span>
+        </div>
+        <div class="hero-fact">
+          <strong>&lt; 24 h</strong>
+          <span>respuesta a tu primera consulta</span>
+        </div>
+        <div class="hero-fact">
+          <strong>Camino a la residencia</strong>
+          <span>si tu caso lo permite, te lo preparamos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 420" fill="none">
+        <circle cx="210" cy="210" r="168" stroke="var(--line)" stroke-width="1"/>
+        <circle class="draw-in" cx="210" cy="210" r="140" stroke="var(--red-700)" stroke-width="1.3" stroke-dasharray="4 7"/>
+        <path class="draw-in" d="M130 250 Q130 150 210 150 Q290 150 290 250" stroke="var(--red-800)" stroke-width="2.2" stroke-linecap="round"/>
+        <path class="draw-in" d="M130 250 L130 268 L290 268 L290 250" stroke="var(--red-800)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="draw-in" d="M167 190 L210 168 L253 190 L210 212 Z" fill="var(--paper)" stroke="var(--gold-600)" stroke-width="2"/>
+        <path class="draw-in" d="M253 190 L253 216" stroke="var(--gold-600)" stroke-width="2"/>
+        <circle cx="253" cy="219" r="2.6" fill="var(--gold-500)"/>
+        <g stroke="var(--gold-500)" stroke-width="1.4" stroke-linecap="round">
+          <path d="M210 62 L210 78"/>
+          <path d="M210 342 L210 358"/>
+          <path d="M62 210 L78 210"/>
+          <path d="M342 210 L358 210"/>
+        </g>
+        <text x="210" y="300" text-anchor="middle" font-family="Fraunces, serif" font-size="12" letter-spacing="3" fill="var(--ink-soft)">ESTUDIANTE · ESPAÑA</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="proceso" class="band">
+  <div class="wrap">
+    <div class="section-head reveal" data-hidden="true">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2>De la carta de admisión al primer día de curso</h2>
+      <p>El mismo itinerario que revisamos contigo en la primera llamada, para que sepas exactamente en qué punto estás y qué sigue.</p>
+    </div>
+
+    <div class="process">
+      <div class="step reveal" data-hidden="true">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Carta de admisión y expediente</h3>
+          <p>Revisamos tu carta de admisión de la universidad o centro español, y preparamos el resto de la documentación: seguro médico, justificante de medios económicos y antecedentes penales apostillados.</p>
+          <span class="step-meta">Antes de salir de tu país</span>
+        </div>
+      </div>
+      <div class="step reveal" data-hidden="true">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>Solicitud de la estancia por estudios</h3>
+          <p>Te acompañamos a pedir cita y preparamos el dossier completo para el consulado español en tu país, revisando cada documento antes de la entrega para minimizar requerimientos.</p>
+          <span class="step-meta">En el consulado de tu país</span>
+        </div>
+      </div>
+      <div class="step reveal" data-hidden="true">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Llegada y NIE</h3>
+          <p>Ya en España, gestionamos tu cita para el NIE o la TIE (si tu estancia supera los seis meses). También te orientamos sobre el empadronamiento en tu nueva dirección, aunque el trámite en el ayuntamiento lo presentas tú.</p>
+          <span class="step-meta">Primeras semanas en España</span>
+        </div>
+      </div>
+      <div class="step reveal" data-hidden="true">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3>Matrícula y primeros pasos</h3>
+          <p>Confirmamos tu matrícula, resolvemos dudas sobre seguro médico o cuenta bancaria, y quedamos disponibles para la renovación de tu estancia por estudios si tu programa dura más de un curso académico.</p>
+          <span class="step-meta">Ya instalado en tu universidad</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head reveal" data-hidden="true">
+      <span class="eyebrow">Qué incluye</span>
+      <h2>Un despacho, todos los trámites</h2>
+      <p>No repartimos tu caso entre gestorías distintas. Un mismo equipo lleva tu expediente de principio a fin.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service reveal" data-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="2.6"/><path d="M8 17.5c.6-2 2-3 4-3s3.4 1 4 3"/></svg>
+        <h3>Estancia por estudios</h3>
+        <p>Dossier completo y revisión previa antes de tu cita en el consulado.</p>
+      </div>
+      <div class="service reveal" data-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg>
+        <h3>Orientación en vivienda</h3>
+        <p>Te asesoramos sobre residencias, pisos y el empadronamiento — la gestión final la haces tú.</p>
+      </div>
+      <div class="service reveal" data-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.6-7-10.4C5 6.9 7.7 4.5 10.5 5.6 11.4 6 12 6.8 12 6.8s.6-.8 1.5-1.2C16.3 4.5 19 6.9 19 10.6 19 16.4 12 21 12 21Z"/></svg>
+        <h3>Seguro médico</h3>
+        <p>Comparamos pólizas que cumplen el requisito de cobertura del consulado.</p>
+      </div>
+      <div class="service reveal" data-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="8.5" cy="12.2" r="2"/><path d="M6.7 16c.4-1.1 1-1.7 1.8-1.7s1.4.6 1.8 1.7"/><path d="M14 10.5h4M14 13.5h4"/></svg>
+        <h3>NIE y TIE</h3>
+        <p>Cita, formularios y acompañamiento en tu trámite de identificación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="preguntas" class="band">
+  <div class="wrap">
+    <div class="section-head reveal" data-hidden="true">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Lo que más nos preguntan los estudiantes</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item" data-open="true">
+        <button class="faq-q" type="button">
+          ¿Cuánto tarda la estancia por estudios?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a"><p>El plazo varía según el consulado, la época del año y cada expediente — no es algo que podamos prometer de antemano. Por eso preparamos tu solicitud con el mayor margen posible antes del inicio del curso, y en la primera consulta te damos una previsión más ajustada a tu caso concreto.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          ¿Necesito la carta de admisión antes de solicitar la estancia?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a"><p>Sí, es el primer documento del expediente: acredita que una universidad o centro autorizado en España te ha admitido en un programa de al menos 90 días. Si todavía estás en proceso de admisión, podemos ir preparando el resto de la documentación en paralelo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          ¿Puedo trabajar con la estancia por estudios?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a"><p>La autorización de estancia por estudios permite trabajar de forma compatible con tus estudios, dentro de los límites de jornada que marca la normativa. Te explicamos qué implica en tu caso concreto durante la primera consulta.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          ¿Qué pasa si mi programa dura más de un curso académico?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a"><p>Gestionamos la renovación de tu autorización de estancia por estudios antes de que caduque, para que no tengas que interrumpir el curso ni salir del país.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resenas" class="band">
+  <div class="wrap">
+    <div class="section-head reveal" data-hidden="true">
+      <span class="eyebrow">Testimonios</span>
+      <h2>Lo que dicen quienes ya lo vivieron</h2>
+      <p>Reseñas de estudiantes a los que ya acompañamos en su estancia por estudios. Se publican tras revisarlas.</p>
+    </div>
+
+    <div id="reviews-list" class="reviews-grid"></div>
+    <p id="reviews-empty" style="display:none; margin-top:24px; color:var(--ink-soft); font-size:14.5px;">Todavía no hay reseñas publicadas — sé el primero en dejar la tuya.</p>
+
+    <div class="review-form-wrap reveal" data-hidden="true">
+      <form id="review-form" data-sent="false">
+        <div class="form-fields">
+          <h3 style="font-size:16px; margin-bottom:4px;">¿Ya gestionamos tu estancia por estudios? Cuéntanoslo</h3>
+          <div class="form-row two" style="margin-top:16px;">
+            <div class="field">
+              <label for="r-name">Tu nombre</label>
+              <input id="r-name" type="text" placeholder="Nombre" required>
+            </div>
+            <div class="field">
+              <label for="r-rating">Valoración</label>
+              <select id="r-rating">
+                <option value="5">★★★★★ Excelente</option>
+                <option value="4">★★★★☆ Muy bueno</option>
+                <option value="3">★★★☆☆ Bueno</option>
+                <option value="2">★★☆☆☆ Regular</option>
+                <option value="1">★☆☆☆☆ Malo</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="r-text">Tu experiencia</label>
+            <textarea id="r-text" placeholder="Cuéntanos cómo fue el proceso..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-ghost review-submit" style="margin-top:16px;">Publicar mi reseña</button>
+        </div>
+        <div class="success">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+          <h3>¡Gracias por tu reseña!</h3>
+          <p>La revisamos y la publicamos en breve.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-side reveal" data-hidden="true">
+        <span class="eyebrow">Hablemos de tu caso</span>
+        <h3 style="margin-top:14px;">Cuéntanos hacia dónde vas y te contactamos en menos de 24 horas</h3>
+        <p>Sin compromiso. Con la información de tu formulario preparamos una primera valoración de tu caso antes de la llamada.</p>
+
+        <div class="contact-points">
+          <div class="contact-point">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="0"><path fill="#25d366" d="M12 2C6.48 2 2 6.03 2 11c0 2.61 1.28 4.95 3.32 6.6-.13 1.13-.5 2.5-1.32 3.4 1.53 0 3.3-.6 4.5-1.4 1.1.4 2.3.6 3.5.6 5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
+            <div>
+              <strong><a href="https://wa.me/34672953197?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20estancia%20por%20estudios%20en%20Espa%C3%B1a." target="_blank" rel="noopener" style="text-decoration:none;">Escríbenos por WhatsApp</a></strong>
+              <span>La vía más rápida — sin formularios</span>
+            </div>
+          </div>
+          <div class="contact-point">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v14H4z"/><path d="M4 6l8 7 8-7"/></svg>
+            <div><strong>hola@go2spain.com</strong><span>Respuesta en menos de 24 horas</span></div>
+          </div>
+          <div class="contact-point">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg>
+            <div><strong>Videollamada de valoración inicial</strong><span>Agendamos según tu horario y zona horaria</span></div>
+          </div>
+        </div>
+      </div>
+
+      <form id="lead-form" data-sent="false" class="reveal" data-hidden="true">
+        <div class="form-fields">
+          <div class="form-row two">
+            <div class="field">
+              <label for="f-name">Nombre completo</label>
+              <input id="f-name" name="name" type="text" placeholder="Como aparece en tu pasaporte" required>
+            </div>
+            <div class="field">
+              <label for="f-nat">Nacionalidad</label>
+              <input id="f-nat" name="nationality" type="text" placeholder="Ej. colombiana" required>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required>
+            </div>
+            <div class="field">
+              <label for="f-phone">Teléfono (con prefijo)</label>
+              <input id="f-phone" name="phone" type="tel" placeholder="+57 300 000 0000" required>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div class="field">
+              <label for="f-admission">¿Tienes carta de admisión?</label>
+              <select id="f-admission" name="admission">
+                <option value="si">Sí, ya la tengo</option>
+                <option value="en_proceso">Estoy en proceso de admisión</option>
+                <option value="no">Todavía no he aplicado</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-city">Ciudad de destino</label>
+              <select id="f-city" name="city">
+                <option value="madrid">Madrid</option>
+                <option value="barcelona">Barcelona</option>
+                <option value="valencia">Valencia</option>
+                <option value="salamanca">Salamanca</option>
+                <option value="sevilla">Sevilla</option>
+                <option value="otra">Otra ciudad</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-start">¿Cuándo empieza tu curso?</label>
+            <input id="f-start" name="start_date" type="month">
+            <span class="field-hint">Así calculamos con cuánto margen presentar tu solicitud.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-message">Cuéntanos tu caso (opcional)</label>
+            <textarea id="f-message" name="message" placeholder="Universidad, programa, dudas concretas..."></textarea>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" required>
+            Acepto que GO2 SPAIN use estos datos para contactarme sobre mi solicitud.
+          </label>
+
+          <button type="submit" class="btn btn-primary form-submit">Enviar mi solicitud</button>
+          <p class="form-note">Tus datos llegan directo a nuestro equipo — nadie más los ve.</p>
+        </div>
+
+        <div class="success">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+          <h3>Solicitud recibida</h3>
+          <p>Gracias — en menos de 24 horas te escribimos con la primera valoración de tu caso.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.4" style="color:var(--red-700)"/>
+        <path d="M16 8 L16 24 M9 12.5 L23 12.5" stroke="var(--gold-600)" stroke-width="1.4"/>
+        <circle cx="16" cy="16" r="2.4" fill="var(--gold-500)"/>
+      </svg>
+      G<span class="logo-globe-slot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#4a7fb5" stroke="var(--paper)" stroke-width="1.1"/><ellipse cx="12" cy="12" rx="10" ry="4.2" fill="none" stroke="var(--paper)" stroke-width="0.9" opacity="0.85"/><line x1="12" y1="2" x2="12" y2="22" stroke="var(--paper)" stroke-width="0.9" opacity="0.85"/><ellipse cx="12" cy="12" rx="4.2" ry="10" fill="none" stroke="var(--paper)" stroke-width="0.9" opacity="0.6"/></svg><span class="logo-orbit"><svg class="logo-plane" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L17 20 L12 15.5 L7 20 Z" fill="var(--red-700)"/></svg></span></span>2 SPAIN
+      <svg class="flag-chip" viewBox="0 0 24 16" aria-label="Bandera de España">
+        <rect width="24" height="16" fill="#AA151B"/>
+        <rect y="4" width="24" height="8" fill="#F1BF00"/>
+      </svg>
+    </div>
+    <div class="footer-links">
+      <a href="#proceso">Proceso</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:20px;">
+    <p class="fine">GO2 SPAIN es una asesoría de extranjería especializada en estudiantes internacionales.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var q = item.querySelector('.faq-q');
+    q.addEventListener('click', function () {
+      var isOpen = item.getAttribute('data-open') === 'true';
+      document.querySelectorAll('.faq-item').forEach(function (i) { i.setAttribute('data-open', 'false'); });
+      item.setAttribute('data-open', isOpen ? 'false' : 'true');
+    });
+  });
+
+  var API_URL = 'https://go2spain-backend.onrender.com';
+
+  var form = document.getElementById('lead-form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var submitBtn = form.querySelector('.form-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    var payload = {
+      name: document.getElementById('f-name').value,
+      email: document.getElementById('f-email').value,
+      phone: document.getElementById('f-phone').value || null,
+      nationality: document.getElementById('f-nat').value || null,
+      admission: document.getElementById('f-admission').value || null,
+      city: document.getElementById('f-city').value || null,
+      start_date: document.getElementById('f-start').value || null,
+      message: document.getElementById('f-message').value || null
+    };
+
+    fetch(API_URL + '/study-leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (response) {
+        if (!response.ok) throw new Error('request failed');
+        form.setAttribute('data-sent', 'true');
+      })
+      .catch(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar mi solicitud';
+        alert('No se pudo enviar. Por favor, escríbenos directamente a hola@go2spain.com.');
+      });
+  });
+
+  var reviewForm = document.getElementById('review-form');
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!reviewForm.checkValidity()) { reviewForm.reportValidity(); return; }
+
+      var submitBtn = reviewForm.querySelector('.review-submit');
+      submitBtn.disabled = true;
+
+      var payload = {
+        name: document.getElementById('r-name').value,
+        rating: Number(document.getElementById('r-rating').value) || null,
+        text: document.getElementById('r-text').value
+      };
+
+      fetch(API_URL + '/reviews', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error('request failed');
+          reviewForm.setAttribute('data-sent', 'true');
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          alert('No se pudo enviar tu reseña. Inténtalo de nuevo en unos minutos.');
+        });
+    });
+  }
+
+  function loadReviews() {
+    var list = document.getElementById('reviews-list');
+    var empty = document.getElementById('reviews-empty');
+    if (!list) return;
+
+    fetch(API_URL + '/reviews')
+      .then(function (response) { return response.json(); })
+      .then(function (reviews) {
+        if (!reviews || reviews.length === 0) {
+          if (empty) empty.style.display = 'block';
+          return;
+        }
+        if (empty) empty.style.display = 'none';
+
+        list.innerHTML = reviews.map(function (review) {
+          var stars = review.rating
+            ? '★★★★★'.slice(0, review.rating) + '☆☆☆☆☆'.slice(0, 5 - review.rating)
+            : '';
+          var safeName = String(review.name || '').replace(/</g, '&lt;');
+          var safeText = String(review.text || '').replace(/</g, '&lt;');
+          return (
+            '<div class="review-card">' +
+            (stars ? '<div class="review-stars">' + stars + '</div>' : '') +
+            '<p class="review-text">' + safeText + '</p>' +
+            '<strong class="review-name">' + safeName + '</strong>' +
+            '</div>'
+          );
+        }).join('');
+      })
+      .catch(function () {
+        if (empty) empty.style.display = 'block';
+      });
+  }
+
+  loadReviews();
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.setAttribute('data-hidden', 'false');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.setAttribute('data-hidden', 'false'); });
+  }
+</script>
+
+</body>
+</html>
