@@ -59,7 +59,7 @@ def create_study_lead(request: StudyLeadRequest):
     connection.close()
 
     send_notification(
-        subject=f"Nueva solicitud GO2 SPAIN: {request.name}",
+        subject=f"Nueva solicitud ACERO PULIDO: {request.name}",
         body=(
             f"Nombre: {request.name}\n"
             f"Email: {request.email}\n"

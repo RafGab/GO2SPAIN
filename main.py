@@ -11,7 +11,7 @@ create_tables()  # Crea las tablas si todavía no existen
 
 app.add_middleware(
     CORSMiddleware,
-    # allow_origins=["*"] porque la página GO2 SPAIN se sirve desde
+    # allow_origins=["*"] porque la página ACERO PULIDO se sirve desde
     # claude.ai (dominio distinto a este backend); no se usan
     # cookies/credenciales, solo JSON.
     allow_origins=["*"],
@@ -23,7 +23,7 @@ app.add_middleware(
 
 @app.get("/")
 def inicio():
-    return {"mensaje": "GO2 SPAIN backend está funcionando 🚀"}
+    return {"mensaje": "ACERO PULIDO backend está funcionando 🚀"}
 
 
 app.include_router(study_leads_router)

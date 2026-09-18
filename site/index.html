@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GO2 SPAIN — Asesoría de Extranjería</title>
+<title>ACERO PULIDO — Asesoría de Extranjería</title>
 <meta name="description" content="Estancia por estudios en España, acompañamiento legal completo. Casos reales, resoluciones favorables.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +24,11 @@
     --line: #eddedb;
     --shadow: 0 24px 48px -24px rgba(127, 22, 38, 0.18);
     --shadow-sm: 0 10px 24px -16px rgba(127, 22, 38, 0.2);
+    --lav-800: #4a3966;
+    --lav-600: #7c5ea3;
+    --lav-200: #e6def2;
+    --lav-100: #f4eff9;
+    --lav-line: #e2d6ee;
   }
 
   * { box-sizing: border-box; }
@@ -110,45 +115,13 @@
     font-size: 19px;
   }
 
-  .brand-mark {
-    width: 30px;
-    height: 30px;
+  .brand-logo {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    object-fit: cover;
     flex-shrink: 0;
-  }
-
-  .logo-globe-slot {
-    position: relative;
-    display: inline-block;
-    width: 1.4em;
-    height: 1.4em;
-    margin: 0 0.01em 0 -0.02em;
-    vertical-align: -0.34em;
-  }
-  .logo-globe-slot > svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-  .logo-orbit {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    animation: logo-spin 5s linear infinite;
-  }
-  .logo-plane {
-    position: absolute;
-    left: 1.15em;
-    top: -0.32em;
-    width: 0.56em;
-    height: 0.56em;
-    animation: logo-spin-rev 5s linear infinite;
-  }
-  @keyframes logo-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-  @keyframes logo-spin-rev { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
-  @media (prefers-reduced-motion: reduce) {
-    .logo-orbit, .logo-plane { animation: none; }
+    box-shadow: 0 0 0 1px rgba(43, 26, 32, 0.08);
   }
 
   .flag-chip {
@@ -362,8 +335,8 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
+    background: var(--lav-line);
+    border: 1px solid var(--lav-line);
     border-radius: 18px;
     overflow: hidden;
   }
@@ -378,10 +351,52 @@
     gap: 14px;
   }
 
-  .service svg { width: 26px; height: 26px; color: var(--red-700); }
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--lav-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service svg { width: 24px; height: 24px; color: var(--lav-800); }
 
   .service h3 { font-size: 16.5px; font-weight: 600; font-family: "Fraunces", serif; }
   .service p { font-size: 14.5px; color: var(--ink-soft); }
+
+  #servicios { background: var(--lav-100); border-block: 1px solid var(--lav-line); }
+  #servicios .eyebrow { color: var(--lav-600); }
+
+  .services-note {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .services-note span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: var(--lav-800);
+    color: var(--lav-100);
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .services-note span::before,
+  .services-note span::after {
+    content: "";
+    width: 16px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.6;
+  }
 
   /* ---------- FAQ ---------- */
 
@@ -629,12 +644,8 @@
 <div class="nav">
   <div class="wrap nav-row">
     <div class="brand">
-      <svg class="brand-mark" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.4" style="color:var(--red-700)"/>
-        <path d="M16 8 L16 24 M9 12.5 L23 12.5" stroke="var(--gold-600)" stroke-width="1.4"/>
-        <circle cx="16" cy="16" r="2.4" fill="var(--gold-500)"/>
-      </svg>
-      G<span class="logo-globe-slot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#4a7fb5" stroke="var(--paper)" stroke-width="1.1"/><ellipse cx="12" cy="12" rx="10" ry="4.2" fill="none" stroke="var(--paper)" stroke-width="0.9" opacity="0.85"/><line x1="12" y1="2" x2="12" y2="22" stroke="var(--paper)" stroke-width="0.9" opacity="0.85"/><ellipse cx="12" cy="12" rx="4.2" ry="10" fill="none" stroke="var(--paper)" stroke-width="0.9" opacity="0.6"/></svg><span class="logo-orbit"><svg class="logo-plane" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L17 20 L12 15.5 L7 20 Z" fill="var(--red-700)"/></svg></span></span>2 SPAIN
+      <img class="brand-logo" src="assets/logo-mark.jpg" alt="Acero Pulido">
+      ACERO PULIDO
       <svg class="flag-chip" viewBox="0 0 24 16" aria-label="Bandera de España">
         <rect width="24" height="16" fill="#AA151B"/>
         <rect y="4" width="24" height="8" fill="#F1BF00"/>
@@ -753,26 +764,28 @@
 
     <div class="services-grid">
       <div class="service reveal" data-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="2.6"/><path d="M8 17.5c.6-2 2-3 4-3s3.4 1 4 3"/></svg>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="2.6"/><path d="M8 17.5c.6-2 2-3 4-3s3.4 1 4 3"/></svg></div>
         <h3>Estancia por estudios</h3>
         <p>Dossier completo y revisión previa antes de tu cita en el consulado.</p>
       </div>
       <div class="service reveal" data-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></div>
         <h3>Orientación en vivienda</h3>
         <p>Te asesoramos sobre residencias, pisos y el empadronamiento — la gestión final la haces tú.</p>
       </div>
       <div class="service reveal" data-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.6-7-10.4C5 6.9 7.7 4.5 10.5 5.6 11.4 6 12 6.8 12 6.8s.6-.8 1.5-1.2C16.3 4.5 19 6.9 19 10.6 19 16.4 12 21 12 21Z"/></svg>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.6-7-10.4C5 6.9 7.7 4.5 10.5 5.6 11.4 6 12 6.8 12 6.8s.6-.8 1.5-1.2C16.3 4.5 19 6.9 19 10.6 19 16.4 12 21 12 21Z"/></svg></div>
         <h3>Seguro médico</h3>
         <p>Comparamos pólizas que cumplen el requisito de cobertura del consulado.</p>
       </div>
       <div class="service reveal" data-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="8.5" cy="12.2" r="2"/><path d="M6.7 16c.4-1.1 1-1.7 1.8-1.7s1.4.6 1.8 1.7"/><path d="M14 10.5h4M14 13.5h4"/></svg>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="8.5" cy="12.2" r="2"/><path d="M6.7 16c.4-1.1 1-1.7 1.8-1.7s1.4.6 1.8 1.7"/><path d="M14 10.5h4M14 13.5h4"/></svg></div>
         <h3>NIE y TIE</h3>
         <p>Cita, formularios y acompañamiento en tu trámite de identificación.</p>
       </div>
     </div>
+
+    <div class="services-note"><span>Estamos aquí para acompañarte</span></div>
   </div>
 </section>
 
@@ -881,7 +894,7 @@
           </div>
           <div class="contact-point">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v14H4z"/><path d="M4 6l8 7 8-7"/></svg>
-            <div><strong>hola@go2spain.com</strong><span>Respuesta en menos de 24 horas</span></div>
+            <div><strong>hola@aceropulido.com</strong><span>Respuesta en menos de 24 horas</span></div>
           </div>
           <div class="contact-point">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg>
@@ -949,7 +962,7 @@
 
           <label class="consent">
             <input type="checkbox" required>
-            Acepto que GO2 SPAIN use estos datos para contactarme sobre mi solicitud.
+            Acepto que ACERO PULIDO use estos datos para contactarme sobre mi solicitud.
           </label>
 
           <button type="submit" class="btn btn-primary form-submit">Enviar mi solicitud</button>
@@ -969,12 +982,8 @@
 <footer>
   <div class="wrap footer-row">
     <div class="brand">
-      <svg class="brand-mark" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.4" style="color:var(--red-700)"/>
-        <path d="M16 8 L16 24 M9 12.5 L23 12.5" stroke="var(--gold-600)" stroke-width="1.4"/>
-        <circle cx="16" cy="16" r="2.4" fill="var(--gold-500)"/>
-      </svg>
-      G<span class="logo-globe-slot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#4a7fb5" stroke="var(--paper)" stroke-width="1.1"/><ellipse cx="12" cy="12" rx="10" ry="4.2" fill="none" stroke="var(--paper)" stroke-width="0.9" opacity="0.85"/><line x1="12" y1="2" x2="12" y2="22" stroke="var(--paper)" stroke-width="0.9" opacity="0.85"/><ellipse cx="12" cy="12" rx="4.2" ry="10" fill="none" stroke="var(--paper)" stroke-width="0.9" opacity="0.6"/></svg><span class="logo-orbit"><svg class="logo-plane" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L17 20 L12 15.5 L7 20 Z" fill="var(--red-700)"/></svg></span></span>2 SPAIN
+      <img class="brand-logo" src="assets/logo-mark.jpg" alt="Acero Pulido">
+      ACERO PULIDO
       <svg class="flag-chip" viewBox="0 0 24 16" aria-label="Bandera de España">
         <rect width="24" height="16" fill="#AA151B"/>
         <rect y="4" width="24" height="8" fill="#F1BF00"/>
@@ -989,7 +998,7 @@
     </div>
   </div>
   <div class="wrap" style="margin-top:20px;">
-    <p class="fine">GO2 SPAIN es una asesoría de extranjería especializada en estudiantes internacionales.</p>
+    <p class="fine">ACERO PULIDO es una asesoría de extranjería especializada en estudiantes internacionales.</p>
   </div>
 </footer>
 
@@ -1037,7 +1046,7 @@
       .catch(function () {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Enviar mi solicitud';
-        alert('No se pudo enviar. Por favor, escríbenos directamente a hola@go2spain.com.');
+        alert('No se pudo enviar. Por favor, escríbenos directamente a hola@aceropulido.com.');
       });
   });
 

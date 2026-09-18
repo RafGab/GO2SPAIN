@@ -30,7 +30,7 @@ def create_review(request: ReviewRequest):
     connection.close()
 
     send_notification(
-        subject=f"Nueva reseña GO2 SPAIN de {request.name}",
+        subject=f"Nueva reseña ACERO PULIDO de {request.name}",
         body=(
             f"Nombre: {request.name}\n"
             f"Valoración: {request.rating or '-'}\n"
