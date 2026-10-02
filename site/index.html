@@ -3,1015 +3,467 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ACERO PULIDO — Asesoría de Extranjería</title>
-<meta name="description" content="Estancia por estudios en España, acompañamiento legal completo. Casos reales, resoluciones favorables.">
+<title>Acero Pulido · Extranjería para estudiantes e investigadores en España</title>
+<meta name="description" content="Estancia por estudios, doctorado como residencia para investigación, paso de estudiante a residente y nacionalidad española. Consulta por videollamada y precios publicados.">
+<meta property="og:title" content="Acero Pulido · Estudia en España con los papeles en regla">
+<meta property="og:description" content="Estancia por estudios, doctorado, paso a residencia y nacionalidad. Consulta online con precio cerrado.">
+<meta property="og:image" content="assets/logo-full.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#3a1d2c">
+<link rel="icon" href="assets/logo-mark.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --red-800: #7f1626;
-    --red-700: #ab263e;
-    --red-100: #fbe8ea;
-    --gold-600: #a3792f;
-    --gold-500: #b98d3f;
-    --gold-300: #d9bd82;
+    --plum: #3a1d2c;
+    --plum-2: #552a40;
+    --mauve: #8a4a68;
+    --mauve-soft: #b07a93;
+    --rose: #e9c4d0;
+    --rose-100: #f7e9ee;
+    --cream: #faf5f3;
+    --gold: #b98d3f;
     --gold-100: #f6ecd8;
-    --paper: #f8eeed;
-    --surface: #e9dcdd;
     --ink: #2b1a20;
-    --ink-soft: #7d6469;
-    --line: #e2d1d2;
-    --shadow: 0 24px 48px -24px rgba(127, 22, 38, 0.18);
-    --shadow-sm: 0 10px 24px -16px rgba(127, 22, 38, 0.2);
-    --lav-800: #4a3966;
-    --lav-600: #7c5ea3;
-    --lav-200: #e6def2;
-    --lav-100: #f4eff9;
-    --lav-line: #e2d6ee;
+    --ink-soft: #6f5a61;
+    --line: #ead9de;
+    --white: #fff;
+    --wa: #1fa855;
+    --radius: 22px;
+    --shadow: 0 24px 48px -28px rgba(58, 29, 44, .35);
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Manrope", system-ui, sans-serif;
   }
-
-  * { box-sizing: border-box; }
-
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
-  }
-
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .wrap {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding-inline: 24px;
-  }
-
-  h1, h2, h3, .display {
-    font-family: "Fraunces", Georgia, "Times New Roman", serif;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    text-wrap: balance;
-    margin: 0;
-    color: var(--ink);
-  }
-
-  em { font-style: italic; color: var(--red-700); }
-
-  p { margin: 0; }
-
+  body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.6; font-size: 17px; }
+  img { max-width: 100%; display: block; }
   a { color: inherit; }
-
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12.5px;
-    font-weight: 700;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--red-700);
-  }
-
-  .eyebrow::before {
-    content: "";
-    width: 22px;
-    height: 1px;
-    background: currentColor;
-  }
-
-  /* ---------- NAV ---------- */
-
-  .nav {
-    position: sticky;
-    top: 0;
-    z-index: 40;
-    background: color-mix(in srgb, var(--paper) 88%, transparent);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
-  }
-
-  .nav-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-block: 16px;
-  }
-
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: "Fraunces", serif;
-    font-weight: 600;
-    font-size: 19px;
-  }
-
-  .brand-logo {
-    width: 34px;
-    height: 34px;
-    border-radius: 9px;
-    object-fit: cover;
-    flex-shrink: 0;
-    box-shadow: 0 0 0 1px rgba(43, 26, 32, 0.08);
-  }
-
-  .flag-chip {
-    width: 21px;
-    height: 14px;
-    border-radius: 2px;
-    flex-shrink: 0;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: var(--ink-soft);
-    transition: color 0.15s ease;
-  }
-  .nav-links a:hover { color: var(--red-700); }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    border-radius: 999px;
-    padding: 13px 26px;
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
-    font-family: inherit;
-  }
-  .btn:focus-visible { outline: 2px solid var(--gold-500); outline-offset: 3px; }
-
-  .btn-primary {
-    background: var(--red-800);
-    color: var(--paper);
-    box-shadow: var(--shadow-sm);
-  }
-  .btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow); background: var(--red-700); }
-
-  .btn-ghost {
-    background: transparent;
-    border-color: var(--line);
-    color: var(--ink);
-  }
-  .btn-ghost:hover { border-color: var(--red-700); color: var(--red-700); }
-
-  .nav-cta { display: none; }
-  @media (min-width: 720px) { .nav-cta { display: inline-flex; } }
-  .nav-links { display: none; }
-  @media (min-width: 860px) { .nav-links { display: flex; } }
-
-  /* ---------- HERO ---------- */
-
-  .hero {
-    padding-block: 64px 88px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 48px;
-    align-items: center;
-  }
-  @media (min-width: 900px) {
-    .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 32px; }
-  }
-
-  .hero h1 {
-    font-size: clamp(34px, 5.4vw, 58px);
-    line-height: 1.06;
-    margin-top: 18px;
-  }
-
-  .hero-sub {
-    margin-top: 22px;
-    max-width: 46ch;
-    font-size: 17.5px;
-    color: var(--ink-soft);
-  }
-
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 34px;
-  }
-
-  .hero-facts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 28px;
-    margin-top: 46px;
-    padding-top: 26px;
-    border-top: 1px solid var(--line);
-  }
-
-  .hero-fact strong {
-    display: block;
-    font-family: "Fraunces", serif;
-    font-size: 15px;
-    font-weight: 600;
-  }
-  .hero-fact span {
-    display: block;
-    font-size: 13px;
-    color: var(--ink-soft);
-    margin-top: 2px;
-  }
-
-  .hero-art { position: relative; }
-  .hero-art svg { width: 100%; height: auto; display: block; }
-
-  .draw-in {
-    stroke-dasharray: 900;
-    stroke-dashoffset: 900;
-    animation: draw 1.8s ease forwards 0.2s;
-  }
-  @keyframes draw { to { stroke-dashoffset: 0; } }
-  @media (prefers-reduced-motion: reduce) {
-    .draw-in { stroke-dashoffset: 0; animation: none; }
-  }
-
-  /* ---------- SECTION SCAFFOLD ---------- */
-
-  section { padding-block: 84px; }
-  .section-head { max-width: 60ch; }
-  .section-head h2 {
-    font-size: clamp(26px, 3.4vw, 38px);
-    margin-top: 14px;
-  }
-  .section-head p {
-    margin-top: 16px;
-    color: var(--ink-soft);
-    font-size: 16px;
-  }
-
-  .band { background: var(--surface); border-block: 1px solid var(--line); }
-
-  /* ---------- PROCESS ---------- */
-
-  .process {
-    margin-top: 56px;
-    display: grid;
-    gap: 0;
-  }
-
-  .step {
-    display: grid;
-    grid-template-columns: 56px 1fr;
-    gap: 24px;
-    padding-block: 30px;
-    border-top: 1px solid var(--line);
-    position: relative;
-  }
-  .step:last-child { border-bottom: 1px solid var(--line); }
-
-  .step-num {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    border: 1.5px solid var(--gold-500);
-    color: var(--red-700);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Fraunces", serif;
-    font-weight: 600;
-    font-size: 19px;
-    background: var(--paper);
-  }
-
-  .step-body h3 {
-    font-size: 20px;
-    font-weight: 600;
-  }
-  .step-body p {
-    margin-top: 8px;
-    color: var(--ink-soft);
-    max-width: 58ch;
-  }
-  .step-meta {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 12.5px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--gold-600);
-  }
-
-  @media (min-width: 720px) {
-    .step { grid-template-columns: 72px 1fr; }
-  }
-
-  /* ---------- SERVICES ---------- */
-
-  .services-grid {
-    margin-top: 48px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1px;
-    background: var(--lav-line);
-    border: 1px solid var(--lav-line);
-    border-radius: 18px;
-    overflow: hidden;
-  }
-  @media (min-width: 640px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 980px) { .services-grid { grid-template-columns: repeat(4, 1fr); } }
-
-  .service {
-    background: var(--paper);
-    padding: 30px 26px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .service-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--lav-200);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .service svg { width: 24px; height: 24px; color: var(--lav-800); }
-
-  .service h3 { font-size: 16.5px; font-weight: 600; font-family: "Fraunces", serif; }
-  .service p { font-size: 14.5px; color: var(--ink-soft); }
-
-  #servicios { background: var(--lav-100); border-block: 1px solid var(--lav-line); }
-  #servicios .eyebrow { color: var(--lav-600); }
-
-  .services-note {
-    margin-top: 32px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .services-note span {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 22px;
-    border-radius: 999px;
-    background: var(--lav-800);
-    color: var(--lav-100);
-    font-size: 12.5px;
-    font-weight: 700;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-  }
-
-  .services-note span::before,
-  .services-note span::after {
-    content: "";
-    width: 16px;
-    height: 1px;
-    background: currentColor;
-    opacity: 0.6;
-  }
-
-  /* ---------- FAQ ---------- */
-
-  .faq-list { margin-top: 44px; max-width: 760px; }
-
-  .faq-item { border-top: 1px solid var(--line); }
-  .faq-item:last-child { border-bottom: 1px solid var(--line); }
-
-  .faq-q {
-    width: 100%;
-    background: none;
-    border: none;
-    text-align: left;
-    font-family: "Fraunces", serif;
-    font-size: 17.5px;
-    font-weight: 500;
-    color: var(--ink);
-    padding-block: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    cursor: pointer;
-  }
-  .faq-q:focus-visible { outline: 2px solid var(--gold-500); outline-offset: 4px; }
-
-  .faq-icon {
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    border: 1.5px solid var(--gold-500);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  .faq-icon::before, .faq-icon::after {
-    content: "";
-    position: absolute;
-    background: var(--gold-600);
-  }
-  .faq-icon::before { width: 10px; height: 1.4px; }
-  .faq-icon::after { width: 1.4px; height: 10px; transition: transform 0.2s ease; }
-  .faq-item[data-open="true"] .faq-icon::after { transform: rotate(90deg) scaleY(0); }
-
-  .faq-a {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.28s ease;
-  }
-  .faq-item[data-open="true"] .faq-a { max-height: 240px; }
-  .faq-a p {
-    padding-bottom: 24px;
-    color: var(--ink-soft);
-    max-width: 62ch;
-    font-size: 15px;
-  }
-
-  /* ---------- REVIEWS ---------- */
-
-  .reviews-grid {
-    margin-top: 44px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-  @media (min-width: 720px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
-
-  .review-card {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .review-stars { color: var(--gold-500); font-size: 14px; letter-spacing: 2px; }
-  .review-text { font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; }
-  .review-name { font-family: "Fraunces", serif; font-size: 14px; }
-
-  .review-form-wrap { margin-top: 40px; max-width: 560px; }
-
-  /* ---------- CONTACT / FORM ---------- */
-
-  .contact-grid {
-    margin-top: 48px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  @media (min-width: 940px) {
-    .contact-grid { grid-template-columns: 0.85fr 1.15fr; gap: 64px; }
-  }
-
-  .contact-side h3 {
-    font-size: 22px;
-    font-weight: 600;
-  }
-  .contact-side p { color: var(--ink-soft); margin-top: 14px; max-width: 42ch; }
-
-  .contact-points { margin-top: 32px; display: flex; flex-direction: column; gap: 18px; }
-  .contact-point { display: flex; gap: 14px; align-items: flex-start; }
-  .contact-point svg { width: 19px; height: 19px; flex-shrink: 0; margin-top: 2px; color: var(--gold-600); }
-  .contact-point strong { display: block; font-size: 14.5px; }
-  .contact-point span { display: block; font-size: 13.5px; color: var(--ink-soft); margin-top: 2px; }
-
-  form {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    padding: 36px;
-    box-shadow: var(--shadow);
-  }
-
-  .form-row { display: grid; grid-template-columns: 1fr; gap: 20px; }
-  .form-row.two { grid-template-columns: 1fr; }
-  @media (min-width: 560px) { .form-row.two { grid-template-columns: 1fr 1fr; } }
-
-  .field { display: flex; flex-direction: column; gap: 7px; margin-top: 20px; }
-  .form-row > .field, .form-row.two > .field { margin-top: 0; }
-
-  label {
-    font-size: 12.5px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-
-  input, select, textarea {
-    font-family: inherit;
-    font-size: 15px;
-    color: var(--ink);
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 12px 14px;
-    outline: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  }
-  input:focus, select:focus, textarea:focus {
-    border-color: var(--red-700);
-    box-shadow: 0 0 0 3px var(--red-100);
-  }
-  textarea { resize: vertical; min-height: 92px; }
-
-  .field-hint { font-size: 12px; color: var(--ink-soft); }
-
-  .consent {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 22px;
-    font-size: 13px;
-    color: var(--ink-soft);
-  }
-  .consent input { width: 16px; height: 16px; margin-top: 2px; accent-color: var(--red-700); }
-
-  .form-submit {
-    margin-top: 26px;
-    width: 100%;
-    padding-block: 15px;
-  }
-
-  .form-note {
-    margin-top: 14px;
-    font-size: 12px;
-    color: var(--ink-soft);
-    text-align: center;
-  }
-
-  .success {
-    display: none;
-    text-align: center;
-    padding-block: 30px;
-  }
-  .success svg { width: 46px; height: 46px; color: var(--gold-600); margin-bottom: 18px; }
-  .success h3 { font-size: 21px; }
-  .success p { margin-top: 10px; color: var(--ink-soft); max-width: 40ch; margin-inline: auto; }
-
-  form[data-sent="true"] .form-fields { display: none; }
-  form[data-sent="true"] .success { display: block; }
-
-  /* ---------- FOOTER ---------- */
-
-  footer {
-    border-top: 1px solid var(--line);
-    padding-block: 40px;
-  }
-  .footer-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 18px;
-  }
-  .footer-row .brand { font-size: 16px; }
-  footer .fine { font-size: 12.5px; color: var(--ink-soft); }
-  .footer-links { display: flex; gap: 22px; font-size: 13px; color: var(--ink-soft); }
-  .footer-links a { text-decoration: none; }
-  .footer-links a:hover { color: var(--red-700); }
-
-  .whatsapp-float {
-    position: fixed;
-    bottom: 22px;
-    right: 22px;
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    background: #25d366;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
-    z-index: 60;
-    transition: transform 0.15s ease;
-  }
-  .whatsapp-float:hover { transform: scale(1.07); }
-  .whatsapp-float svg { width: 30px; height: 30px; }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .reveal[data-hidden="true"] { opacity: 0; transform: translateY(14px); }
-    .reveal { transition: opacity 0.6s ease, transform 0.6s ease; }
-  }
+  .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+  .serif { font-family: var(--serif); font-weight: 700; letter-spacing: -.01em; line-height: 1.12; }
+  .kicker { font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--mauve); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 26px; border-radius: 999px; font-weight: 800; font-size: 16px; text-decoration: none; border: 0; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-main { background: var(--plum); color: var(--white); box-shadow: 0 12px 24px -12px rgba(58, 29, 44, .6); }
+  .btn-wa { background: var(--wa); color: var(--white); }
+  .btn-ghost { background: transparent; color: var(--plum); border: 2px solid var(--plum); }
+  section { padding: 88px 0; }
+  .section-head { max-width: 680px; margin-bottom: 44px; }
+  .section-head h2 { font-size: clamp(30px, 4vw, 44px); margin: 10px 0 14px; }
+  .section-head p { color: var(--ink-soft); font-size: 18px; }
+
+  /* Cabecera */
+  header { position: sticky; top: 0; z-index: 50; background: rgba(250, 245, 243, .92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 20px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand img { width: 42px; height: 42px; border-radius: 12px; object-fit: cover; }
+  .brand b { font-family: var(--serif); font-size: 20px; letter-spacing: .08em; color: var(--plum); }
+  .brand small { display: block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; }
+  .nav-links { display: flex; gap: 26px; font-weight: 700; font-size: 15px; }
+  .nav-links a { text-decoration: none; color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--plum); }
+  .nav .btn { padding: 11px 20px; font-size: 15px; }
+  @media (max-width: 900px) { .nav-links { display: none; } }
+  @media (max-width: 560px) { .brand small { display: none; } .brand b { font-size: 17px; } .nav .btn { padding: 10px 16px; font-size: 14px; } }
+
+  /* Hero */
+  .hero { padding: 72px 0 56px; background: radial-gradient(1200px 500px at 85% -10%, var(--rose-100), transparent 60%); }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
+  .hero h1 { font-size: clamp(38px, 5.6vw, 64px); margin: 16px 0 20px; color: var(--plum); }
+  .hero h1 em { font-style: italic; color: var(--mauve); font-weight: 500; }
+  .hero p.lead { font-size: 19px; color: var(--ink-soft); max-width: 560px; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 34px; }
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 600px; }
+  .facts div { border-left: 3px solid var(--gold); padding-left: 12px; font-size: 14px; color: var(--ink-soft); }
+  .facts b { display: block; color: var(--plum); font-size: 16px; }
+  .hero-card { background: var(--plum); color: var(--cream); border-radius: 30px; padding: 34px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+  .hero-card::after { content: ""; position: absolute; width: 320px; height: 320px; border-radius: 50%; border: 44px solid rgba(233, 196, 208, .12); right: -120px; bottom: -140px; }
+  .hero-card .tag { display: inline-block; background: var(--gold); color: var(--plum); font-weight: 800; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; }
+  .hero-card h3 { font-family: var(--serif); font-size: 28px; line-height: 1.15; margin: 16px 0 12px; }
+  .hero-card p { color: var(--rose); font-size: 16px; }
+  .hero-card a { display: inline-block; margin-top: 18px; color: var(--gold-100); font-weight: 800; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .facts { grid-template-columns: 1fr; } }
+
+  /* Rutas */
+  .routes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .route { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; transition: transform .15s, box-shadow .15s; }
+  .route:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .route .ico { width: 52px; height: 52px; border-radius: 16px; background: var(--rose-100); display: grid; place-items: center; color: var(--mauve); }
+  .route h3 { font-family: var(--serif); font-size: 22px; color: var(--plum); line-height: 1.2; }
+  .route p { color: var(--ink-soft); font-size: 15px; flex: 1; }
+  .route .from { font-weight: 800; color: var(--mauve); font-size: 15px; }
+  .route .new { align-self: flex-start; background: var(--gold-100); color: #7a5a1e; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+  @media (max-width: 1000px) { .routes { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .routes { grid-template-columns: 1fr; } }
+
+  /* Pasos */
+  .steps-bg { background: var(--white); border-block: 1px solid var(--line); }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; counter-reset: s; }
+  .step { position: relative; padding-top: 58px; }
+  .step::before { counter-increment: s; content: counter(s, decimal-leading-zero); position: absolute; top: 0; left: 0; font-family: var(--serif); font-size: 40px; color: var(--rose); font-weight: 700; }
+  .step h3 { font-size: 19px; color: var(--plum); margin-bottom: 8px; }
+  .step p { color: var(--ink-soft); font-size: 15px; }
+  @media (max-width: 900px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+
+  /* Precios */
+  .pricing { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items: start; }
+  .price-main { background: var(--plum); color: var(--cream); border-radius: 28px; padding: 36px; box-shadow: var(--shadow); }
+  .price-main .amount { font-family: var(--serif); font-size: 64px; line-height: 1; margin: 14px 0 6px; color: var(--white); }
+  .price-main .amount small { font-size: 18px; font-family: var(--sans); color: var(--rose); font-weight: 600; }
+  .price-main ul { list-style: none; margin: 22px 0 28px; display: grid; gap: 10px; }
+  .price-main li { padding-left: 28px; position: relative; color: var(--rose); }
+  .price-main li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 800; }
+  .price-main .btn { background: var(--gold); color: var(--plum); width: 100%; }
+  .price-list { background: var(--white); border: 1px solid var(--line); border-radius: 28px; overflow: hidden; }
+  .price-row { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 22px 28px; border-bottom: 1px solid var(--line); }
+  .price-row:last-of-type { border-bottom: 0; }
+  .price-row h3 { font-size: 17px; color: var(--plum); }
+  .price-row p { font-size: 14px; color: var(--ink-soft); }
+  .price-row .p { font-family: var(--serif); font-size: 26px; color: var(--mauve); white-space: nowrap; align-self: center; }
+  .price-row .p small { font-family: var(--sans); font-size: 13px; color: var(--ink-soft); display: block; text-align: right; }
+  .price-note { padding: 18px 28px; background: var(--rose-100); font-size: 14px; color: var(--ink-soft); }
+  @media (max-width: 900px) { .pricing { grid-template-columns: 1fr; } }
+
+  /* Quién soy */
+  .about { display: grid; grid-template-columns: 320px 1fr; gap: 48px; align-items: center; }
+  .about-photo { aspect-ratio: 4 / 5; border-radius: 28px; overflow: hidden; background: var(--rose-100); box-shadow: var(--shadow); }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .about h2 { font-size: clamp(30px, 4vw, 42px); color: var(--plum); margin: 10px 0 18px; }
+  .about p { color: var(--ink-soft); margin-bottom: 14px; font-size: 17px; }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .pill-row span { background: var(--white); border: 1px solid var(--line); padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 700; color: var(--plum); }
+  @media (max-width: 800px) { .about { grid-template-columns: 1fr; } .about-photo { max-width: 320px; } }
+
+  /* Reseñas */
+  #resenas[hidden] { display: none; }
+  .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .review-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+  .review-stars { color: var(--gold); letter-spacing: 2px; margin-bottom: 10px; }
+  .review-text { color: var(--ink); margin-bottom: 14px; }
+  .review-name { color: var(--mauve); }
+  @media (max-width: 900px) { .reviews { grid-template-columns: 1fr; } }
+  details.leave { margin-top: 28px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 24px; }
+  details.leave summary { cursor: pointer; font-weight: 800; color: var(--plum); }
+
+  /* FAQ */
+  .faq { max-width: 820px; }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-q { width: 100%; text-align: left; background: none; border: 0; padding: 22px 40px 22px 0; font: 700 18px var(--sans); color: var(--plum); cursor: pointer; position: relative; }
+  .faq-q::after { content: "+"; position: absolute; right: 6px; top: 18px; font-size: 26px; color: var(--mauve); transition: transform .2s; }
+  .faq-item[data-open="true"] .faq-q::after { transform: rotate(45deg); }
+  .faq-a { display: none; padding: 0 0 22px; color: var(--ink-soft); }
+  .faq-item[data-open="true"] .faq-a { display: block; }
+  .faq-a small { display: block; margin-top: 8px; font-size: 13px; }
+
+  /* Contacto */
+  .contact-bg { background: var(--plum); color: var(--cream); }
+  .contact { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; }
+  .contact h2 { font-size: clamp(30px, 4vw, 44px); margin: 10px 0 16px; color: var(--white); }
+  .contact .kicker { color: var(--gold); }
+  .contact p { color: var(--rose); }
+  .contact-ways { display: grid; gap: 14px; margin-top: 28px; }
+  .contact-ways a { display: flex; gap: 14px; align-items: center; padding: 16px 18px; border-radius: 16px; background: rgba(255, 255, 255, .07); text-decoration: none; }
+  .contact > * { min-width: 0; }
+  .contact-ways b { display: block; color: var(--white); overflow-wrap: anywhere; }
+  .contact-ways small { color: var(--rose); }
+  form { background: var(--white); color: var(--ink); border-radius: 28px; padding: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  form .full { grid-column: 1 / -1; }
+  label { display: grid; gap: 6px; font-size: 14px; font-weight: 700; color: var(--plum); }
+  input, select, textarea { font: 500 16px var(--sans); padding: 13px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--cream); color: var(--ink); width: 100%; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--mauve-soft); border-color: transparent; }
+  .consent { display: flex; gap: 10px; align-items: flex-start; font-weight: 500; color: var(--ink-soft); font-size: 13px; }
+  .consent input { width: auto; margin-top: 3px; }
+  .form-submit { grid-column: 1 / -1; }
+  .form-ok { display: none; grid-column: 1 / -1; text-align: center; padding: 30px 10px; }
+  form[data-sent="true"] > *:not(.form-ok) { display: none; }
+  form[data-sent="true"] .form-ok { display: block; }
+  @media (max-width: 900px) { .contact { grid-template-columns: 1fr; } form { grid-template-columns: 1fr; padding: 24px; } }
+
+  footer { background: #2a1520; color: var(--rose); padding: 40px 0; font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
+  footer p { max-width: 640px; }
+
+  .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; box-shadow: 0 12px 24px -8px rgba(0, 0, 0, .4); }
+
+  .reveal { transition: opacity .6s ease, transform .6s ease; }
+  .reveal[data-hidden="true"] { opacity: 0; transform: translateY(22px); }
+  @media (prefers-reduced-motion: reduce) { .reveal { transition: none; } .reveal[data-hidden="true"] { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
 
-<a
-  class="whatsapp-float"
-  href="https://wa.me/34672953197?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20estancia%20por%20estudios%20en%20Espa%C3%B1a."
-  target="_blank"
-  rel="noopener"
-  aria-label="Escríbenos por WhatsApp"
->
-  <svg viewBox="0 0 32 32" fill="white"><path d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.4.7 4.7 1.9 6.7L3 29l6.8-2.1c1.9 1 4 1.6 6.2 1.6 7 0 12.7-5.7 12.7-12.7C28.7 8.7 23 3 16 3zm0 23.1c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 1.2 1.2-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.3 9.8 10.1 5 16 5s10.7 4.8 10.7 10.7S21.9 26.1 16 26.1zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
-</a>
-
-<div class="nav">
-  <div class="wrap nav-row">
-    <div class="brand">
-      <img class="brand-logo" src="assets/logo-mark.jpg" alt="Acero Pulido">
-      ACERO PULIDO
-      <svg class="flag-chip" viewBox="0 0 24 16" aria-label="Bandera de España">
-        <rect width="24" height="16" fill="#AA151B"/>
-        <rect y="4" width="24" height="8" fill="#F1BF00"/>
-      </svg>
-    </div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <img src="assets/logo-mark.jpg" alt="">
+      <span><b>ACERO PULIDO</b><small>Extranjería &amp; movilidad internacional</small></span>
+    </a>
     <nav class="nav-links">
-      <a href="#proceso">Proceso</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#resenas">Reseñas</a>
+      <a href="#tramites">Trámites</a>
+      <a href="#precios">Precios</a>
+      <a href="#quien-soy">Quién soy</a>
       <a href="#preguntas">Preguntas</a>
-      <a href="#contacto">Contacto</a>
     </nav>
-    <a href="#contacto" class="btn btn-primary nav-cta">Empieza tu camino legal</a>
-  </div>
-</div>
-
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">Estudia · Trabaja · Echa raíces en España</span>
-      <h1><em>Nuevos horizontes</em>, sin arriesgar tu estatus legal.</h1>
-      <p class="hero-sub">Ven a España a estudiar, trabaja de forma compatible con tus estudios y, si tu situación lo permite, abre el camino hacia la residencia — todo acompañado por un despacho que lleva tu expediente de principio a fin.</p>
-      <div class="hero-actions">
-        <a href="#contacto" class="btn btn-primary">Empieza tu camino legal</a>
-        <a href="#proceso" class="btn btn-ghost">Ver cómo funciona</a>
-      </div>
-      <div class="hero-facts">
-        <div class="hero-fact">
-          <strong>Estudia y trabaja</strong>
-          <span>compatible con tu autorización</span>
-        </div>
-        <div class="hero-fact">
-          <strong>&lt; 24 h</strong>
-          <span>respuesta a tu primera consulta</span>
-        </div>
-        <div class="hero-fact">
-          <strong>Camino a la residencia</strong>
-          <span>si tu caso lo permite, te lo preparamos</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 420 420" fill="none">
-        <circle cx="210" cy="210" r="168" stroke="var(--line)" stroke-width="1"/>
-        <circle class="draw-in" cx="210" cy="210" r="140" stroke="var(--red-700)" stroke-width="1.3" stroke-dasharray="4 7"/>
-        <g stroke="var(--gold-500)" stroke-width="1.4" stroke-linecap="round">
-          <path d="M210 62 L210 78"/>
-          <path d="M210 342 L210 358"/>
-          <path d="M62 210 L78 210"/>
-          <path d="M342 210 L358 210"/>
-        </g>
-        <defs>
-          <clipPath id="hero-logo-clip">
-            <circle cx="210" cy="210" r="126"/>
-          </clipPath>
-        </defs>
-        <image href="assets/logo-full.jpg" x="84" y="84" width="252" height="252" preserveAspectRatio="xMidYMid slice" clip-path="url(#hero-logo-clip)"/>
-        <circle cx="210" cy="210" r="126" fill="none" stroke="var(--paper)" stroke-width="4"/>
-      </svg>
-    </div>
+    <a class="btn btn-main" href="#contacto">Reservar consulta</a>
   </div>
 </header>
 
-<section id="proceso" class="band">
-  <div class="wrap">
-    <div class="section-head reveal" data-hidden="true">
-      <span class="eyebrow">Cómo funciona</span>
-      <h2>De la carta de admisión al primer día de curso</h2>
-      <p>El mismo itinerario que revisamos contigo en la primera llamada, para que sepas exactamente en qué punto estás y qué sigue.</p>
-    </div>
-
-    <div class="process">
-      <div class="step reveal" data-hidden="true">
-        <div class="step-num">01</div>
-        <div class="step-body">
-          <h3>Carta de admisión y expediente</h3>
-          <p>Revisamos tu carta de admisión de la universidad o centro español, y preparamos el resto de la documentación: seguro médico, justificante de medios económicos y antecedentes penales apostillados.</p>
-          <span class="step-meta">Antes de salir de tu país</span>
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">Para estudiantes e investigadores latinoamericanos</span>
+        <h1 class="serif">Estudia en España con los papeles en regla. <em>Y quédate cuando termines.</em></h1>
+        <p class="lead">Te acompaño desde la carta de admisión hasta la nacionalidad: estancia por estudios, doctorado, paso a residencia y nacionalidad española. Con precio cerrado y por videollamada, estés donde estés.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-main" href="#contacto">Reservar consulta · 45 €</a>
+          <a class="btn btn-wa" href="https://wa.me/34672953197?text=Hola%20Viviana%2C%20quiero%20informaci%C3%B3n%20sobre%20mi%20tr%C3%A1mite." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+        <div class="facts">
+          <div><b>&lt; 24 h</b>para responder tu primera consulta</div>
+          <div><b>Abogada en Colombia</b>y tu representante en España con poder notarial</div>
+          <div><b>100 % online</b>desde Colombia, Perú, México…</div>
         </div>
       </div>
-      <div class="step reveal" data-hidden="true">
-        <div class="step-num">02</div>
-        <div class="step-body">
-          <h3>Solicitud de la estancia por estudios</h3>
-          <p>Te acompañamos a pedir cita y preparamos el dossier completo para el consulado español en tu país, revisando cada documento antes de la entrega para minimizar requerimientos.</p>
-          <span class="step-meta">En el consulado de tu país</span>
+      <aside class="hero-card reveal" data-hidden="true">
+        <span class="tag">Novedad · agosto 2026</span>
+        <h3>El doctorado ya no se tramita como estancia por estudios</h3>
+        <p>Desde el 7 de agosto de 2026 los doctorandos extranjeros piden una residencia para investigación: resolución en 20 días, hasta 3 años y con tu familia.</p>
+        <a href="#preguntas" data-open-faq="doctorado">Qué significa para ti →</a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="tramites">
+    <div class="wrap">
+      <div class="section-head reveal" data-hidden="true">
+        <span class="kicker">¿En qué punto estás?</span>
+        <h2 class="serif">Elige tu situación y te digo el camino</h2>
+        <p>Cada etapa tiene sus plazos y sus trampas. Empieza por donde estás hoy.</p>
+      </div>
+      <div class="routes">
+        <a class="route reveal" data-hidden="true" href="#contacto" data-service="Estancia por estudios">
+          <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+          <h3>Quiero venir a estudiar</h3>
+          <p>Grado, máster, FP o idiomas. Dossier para el consulado y llegada a España.</p>
+          <span class="from">370 € IVA incluido</span>
+        </a>
+        <a class="route reveal" data-hidden="true" href="#contacto" data-service="Doctorado / residencia para investigación">
+          <span class="new">Nuevo 2026</span>
+          <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 0 0 1.3 2h11.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/></svg></span>
+          <h3>Voy a hacer un doctorado</h3>
+          <p>Residencia para investigación ante la UGE, también si ya estás en España.</p>
+          <span class="from">370 € IVA incluido</span>
+        </a>
+        <a class="route reveal" data-hidden="true" href="#contacto" data-service="Modificación a residencia">
+          <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>
+          <h3>Termino y quiero quedarme</h3>
+          <p>De estancia por estudios a trabajo, emprendimiento o búsqueda de empleo.</p>
+          <span class="from">370 € IVA incluido</span>
+        </a>
+        <a class="route reveal" data-hidden="true" href="#contacto" data-service="Nacionalidad española">
+          <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4M4 4h13l-2 4 2 4H4"/></svg></span>
+          <h3>Quiero la nacionalidad</h3>
+          <p>Dos años de residencia legal si eres iberoamericano. Calculamos cuándo puedes pedirla.</p>
+          <span class="from">290 € IVA incluido</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps-bg">
+    <div class="wrap">
+      <div class="section-head reveal" data-hidden="true">
+        <span class="kicker">Cómo trabajo</span>
+        <h2 class="serif">Cuatro pasos, una sola persona de principio a fin</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal" data-hidden="true"><h3>Consulta de valoración</h3><p>45 minutos por videollamada. Revisamos tu caso y te dejo por escrito qué te falta y para qué fecha.</p></div>
+        <div class="step reveal" data-hidden="true"><h3>Preparamos tu expediente</h3><p>Checklist personalizado y revisión de cada documento antes de presentarlo, para evitar requerimientos.</p></div>
+        <div class="step reveal" data-hidden="true"><h3>Presentación</h3><p>Si el trámite se hace en España, lo presento en tu nombre con poder notarial. Si es en el consulado, te preparo el dossier y la cita.</p></div>
+        <div class="step reveal" data-hidden="true"><h3>Seguimiento hasta la resolución</h3><p>Respondo a los requerimientos y te aviso de cada paso. Después, NIE o TIE y lo que venga.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="precios">
+    <div class="wrap">
+      <div class="section-head reveal" data-hidden="true">
+        <span class="kicker">Precios claros</span>
+        <h2 class="serif">Sabes lo que pagas antes de empezar</h2>
+        <p>Empieza con la consulta. Si después contratas el trámite, te la descuento.</p>
+      </div>
+      <div class="pricing">
+        <div class="price-main reveal" data-hidden="true">
+          <span class="kicker" style="color:var(--gold)">Consulta de valoración</span>
+          <div class="amount">45 €<small> · IVA incluido · se descuenta si contratas</small></div>
+          <ul>
+            <li>Videollamada de 45 minutos en tu horario</li>
+            <li>Análisis de tu situación y de los riesgos de tu caso</li>
+            <li>Plan por escrito: documentos, orden y fechas límite</li>
+            <li>Si tu caso no es viable, te lo digo con claridad</li>
+          </ul>
+          <a class="btn" href="#contacto" data-service="Consulta de valoración">Reservar mi consulta</a>
+        </div>
+        <div class="price-list reveal" data-hidden="true">
+          <div class="price-row"><div><h3>Estancia por estudios</h3><p>Checklist, revisión documental, dossier consular, guía de la cita y llegada (NIE/TIE).</p></div><div class="p">370 €<small>IVA incluido</small></div></div>
+          <div class="price-row"><div><h3>Doctorado: residencia para investigación</h3><p>Expediente ante la UGE, también como cambio desde estancia por estudios. Familiares aparte.</p></div><div class="p">370 €<small>IVA incluido</small></div></div>
+          <div class="price-row"><div><h3>De estudiante a residente</h3><p>Trabajo por cuenta ajena o propia, o búsqueda de empleo al terminar tus estudios.</p></div><div class="p">370 €<small>IVA incluido</small></div></div>
+          <div class="price-row"><div><h3>Nacionalidad española</h3><p>Cálculo de plazos, revisión de requisitos, expediente y seguimiento.</p></div><div class="p">290 €<small>IVA incluido</small></div></div>
+          <div class="price-note">Precios con IVA incluido. Tasas oficiales, traducciones juradas, apostillas y notaría aparte. Puedes pagar en dos plazos: 50 % al empezar y 50 % al presentar.</div>
         </div>
       </div>
-      <div class="step reveal" data-hidden="true">
-        <div class="step-num">03</div>
-        <div class="step-body">
-          <h3>Llegada y NIE</h3>
-          <p>Ya en España, gestionamos tu cita para el NIE o la TIE (si tu estancia supera los seis meses). También te orientamos sobre el empadronamiento en tu nueva dirección, aunque el trámite en el ayuntamiento lo presentas tú.</p>
-          <span class="step-meta">Primeras semanas en España</span>
+    </div>
+  </section>
+
+  <section id="quien-soy" class="steps-bg">
+    <div class="wrap about">
+      <div class="about-photo reveal" data-hidden="true">
+        <img src="assets/viviana.jpg" alt="Viviana Acero Pulido, asesora de extranjería" style="object-position:center top" loading="lazy">
+      </div>
+      <div class="reveal" data-hidden="true">
+        <span class="kicker">Quién soy</span>
+        <h2 class="serif">Soy Viviana Acero Pulido</h2>
+        <p>Acompaño a estudiantes, doctorandos y familias latinoamericanas en sus trámites de extranjería en España. Llevo personalmente cada expediente: hablas siempre conmigo, no con un equipo que cambia.</p>
+        <p>Soy abogada titulada en Colombia. En España trabajo sola como asesora de extranjería y te represento ante la Administración mediante poder notarial. Si tu caso necesita un recurso ante los tribunales españoles, te derivo a un abogado colegiado en España.</p>
+        <div class="pill-row">
+          <span>Abogada en Colombia</span><span>Estancia por estudios</span><span>Doctorado</span><span>Paso a residencia</span><span>Nacionalidad</span>
         </div>
       </div>
-      <div class="step reveal" data-hidden="true">
-        <div class="step-num">04</div>
-        <div class="step-body">
-          <h3>Matrícula y primeros pasos</h3>
-          <p>Confirmamos tu matrícula, resolvemos dudas sobre seguro médico o cuenta bancaria, y quedamos disponibles para la renovación de tu estancia por estudios si tu programa dura más de un curso académico.</p>
-          <span class="step-meta">Ya instalado en tu universidad</span>
+    </div>
+  </section>
+
+  <section id="resenas" hidden>
+    <div class="wrap">
+      <div class="section-head reveal" data-hidden="true">
+        <span class="kicker">Testimonios</span>
+        <h2 class="serif">Lo que dicen quienes ya lo hicieron</h2>
+        <p>Reseñas reales de personas a las que acompañé. Se publican tras revisarlas.</p>
+      </div>
+      <div class="reviews" id="reviews-list"></div>
+      <p id="reviews-empty" style="display:none"></p>
+    </div>
+  </section>
+
+  <section id="preguntas">
+    <div class="wrap">
+      <div class="section-head reveal" data-hidden="true">
+        <span class="kicker">Preguntas frecuentes</span>
+        <h2 class="serif">Lo que más me preguntan</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item" data-faq="doctorado"><button class="faq-q">Voy a hacer un doctorado. ¿Qué cambió en 2026?</button><div class="faq-a">Desde el 7 de agosto de 2026, el doctorado se tramita como autorización de residencia para investigación ante la Unidad de Grandes Empresas y Colectivos Estratégicos, y no como estancia por estudios. La puedes pedir tú o tu universidad, el plazo de resolución es de 20 días y puede concederse hasta 3 años. Si ya estás en España con estancia por estudios, puedes pedir el cambio sin salir del país.<small>Criterio de Gestión 2/2026 y Ley 14/2013, art. 72.</small></div></div>
+        <div class="faq-item"><button class="faq-q">¿Con cuánta antelación tengo que pedir la estancia por estudios?</button><div class="faq-a">Con al menos dos meses de antelación al inicio del curso. Si empiezas en enero o febrero, el momento de prepararlo es ahora.<small>Real Decreto 1155/2024, en vigor desde el 20 de mayo de 2025.</small></div></div>
+        <div class="faq-item"><button class="faq-q">¿Puedo trabajar mientras estudio?</button><div class="faq-a">Si cursas estudios superiores, puedes trabajar hasta 30 horas a la semana. En otros tipos de estudios hay que pedir la autorización de trabajo aparte.</div></div>
+        <div class="faq-item"><button class="faq-q">¿Sirve un máster online?</button><div class="faq-a">Un programa 100 % online no sirve. Los estudios deben ser al menos un 50 % presenciales.</div></div>
+        <div class="faq-item"><button class="faq-q">Termino mis estudios. ¿Puedo quedarme en España?</button><div class="faq-a">Sí, si cumples los requisitos: con una oferta de trabajo firme, con un plan de negocio viable o con la autorización para buscar empleo si terminaste un grado universitario o superior. Desde la Instrucción SEM 3/2025 no hace falta volver a tu país a pedir visado para este cambio. Los plazos dependen de la caducidad de tu estancia, así que conviene prepararlo antes.</div></div>
+        <div class="faq-item"><button class="faq-q">¿El tiempo como estudiante cuenta para la nacionalidad?</button><div class="faq-a">No. La estancia por estudios no es residencia legal, y la nacionalidad la exige. Si eres de un país iberoamericano necesitas dos años de residencia legal, continuada e inmediatamente anterior a la solicitud. El reloj empieza cuando pasas a una autorización de residencia.</div></div>
+        <div class="faq-item"><button class="faq-q">¿Necesito el DELE para la nacionalidad?</button><div class="faq-a">Si tu país tiene el español como idioma oficial, no. Sí tienes que aprobar el examen CCSE de conocimientos constitucionales y socioculturales.</div></div>
+        <div class="faq-item"><button class="faq-q">¿Eres abogada?</button><div class="faq-a">Soy abogada titulada en Colombia. En España no ejerzo como abogada: trabajo como asesora de extranjería y te represento ante la Administración mediante poder notarial, como permite la Ley 39/2015. Si tu caso necesita un recurso ante los tribunales españoles, te derivo a un abogado colegiado en España.</div></div>
+        <div class="faq-item"><button class="faq-q">¿Cómo se paga?</button><div class="faq-a">La consulta se paga al reservarla. Los trámites, en dos plazos: la mitad al empezar y la otra mitad al presentar. Te envío factura.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact-bg">
+    <div class="wrap contact">
+      <div>
+        <span class="kicker">Hablemos de tu caso</span>
+        <h2 class="serif">Cuéntame dónde estás y te digo el siguiente paso</h2>
+        <p>Te respondo en menos de 24 horas con una primera valoración y una propuesta de horario para la videollamada.</p>
+        <div class="contact-ways">
+          <a href="https://wa.me/34672953197?text=Hola%20Viviana%2C%20quiero%20informaci%C3%B3n%20sobre%20mi%20tr%C3%A1mite." target="_blank" rel="noopener"><svg width="28" height="28" viewBox="0 0 24 24"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg><span><b>WhatsApp · +34 672 953 197</b><small>La vía más rápida</small></span></a>
+          <a href="mailto:acero.vivianapulido@gmail.com"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e9c4d0" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><b>acero.vivianapulido@gmail.com</b><small>Respuesta en menos de 24 h</small></span></a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="servicios">
-  <div class="wrap">
-    <div class="section-head reveal" data-hidden="true">
-      <span class="eyebrow">Qué incluye</span>
-      <h2>Un despacho, todos los trámites</h2>
-      <p>No repartimos tu caso entre gestorías distintas. Un mismo equipo lleva tu expediente de principio a fin.</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="service reveal" data-hidden="true">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="2.6"/><path d="M8 17.5c.6-2 2-3 4-3s3.4 1 4 3"/></svg></div>
-        <h3>Estancia por estudios</h3>
-        <p>Dossier completo y revisión previa antes de tu cita en el consulado.</p>
-      </div>
-      <div class="service reveal" data-hidden="true">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></div>
-        <h3>Orientación en vivienda</h3>
-        <p>Te asesoramos sobre residencias, pisos y el empadronamiento — la gestión final la haces tú.</p>
-      </div>
-      <div class="service reveal" data-hidden="true">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.6-7-10.4C5 6.9 7.7 4.5 10.5 5.6 11.4 6 12 6.8 12 6.8s.6-.8 1.5-1.2C16.3 4.5 19 6.9 19 10.6 19 16.4 12 21 12 21Z"/></svg></div>
-        <h3>Seguro médico</h3>
-        <p>Comparamos pólizas que cumplen el requisito de cobertura del consulado.</p>
-      </div>
-      <div class="service reveal" data-hidden="true">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="8.5" cy="12.2" r="2"/><path d="M6.7 16c.4-1.1 1-1.7 1.8-1.7s1.4.6 1.8 1.7"/><path d="M14 10.5h4M14 13.5h4"/></svg></div>
-        <h3>NIE y TIE</h3>
-        <p>Cita, formularios y acompañamiento en tu trámite de identificación.</p>
-      </div>
-    </div>
-
-    <div class="services-note"><span>Estamos aquí para acompañarte</span></div>
-  </div>
-</section>
-
-<section id="preguntas" class="band">
-  <div class="wrap">
-    <div class="section-head reveal" data-hidden="true">
-      <span class="eyebrow">Preguntas frecuentes</span>
-      <h2>Lo que más nos preguntan los estudiantes</h2>
-    </div>
-
-    <div class="faq-list">
-      <div class="faq-item" data-open="true">
-        <button class="faq-q" type="button">
-          ¿Cuánto tarda la estancia por estudios?
-          <span class="faq-icon"></span>
-        </button>
-        <div class="faq-a"><p>El plazo varía según el consulado, la época del año y cada expediente — no es algo que podamos prometer de antemano. Por eso preparamos tu solicitud con el mayor margen posible antes del inicio del curso, y en la primera consulta te damos una previsión más ajustada a tu caso concreto.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">
-          ¿Necesito la carta de admisión antes de solicitar la estancia?
-          <span class="faq-icon"></span>
-        </button>
-        <div class="faq-a"><p>Sí, es el primer documento del expediente: acredita que una universidad o centro autorizado en España te ha admitido en un programa de al menos 90 días. Si todavía estás en proceso de admisión, podemos ir preparando el resto de la documentación en paralelo.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">
-          ¿Puedo trabajar con la estancia por estudios?
-          <span class="faq-icon"></span>
-        </button>
-        <div class="faq-a"><p>La autorización de estancia por estudios permite trabajar de forma compatible con tus estudios, dentro de los límites de jornada que marca la normativa. Te explicamos qué implica en tu caso concreto durante la primera consulta.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">
-          ¿Qué pasa si mi programa dura más de un curso académico?
-          <span class="faq-icon"></span>
-        </button>
-        <div class="faq-a"><p>Gestionamos la renovación de tu autorización de estancia por estudios antes de que caduque, para que no tengas que interrumpir el curso ni salir del país.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="resenas" class="band">
-  <div class="wrap">
-    <div class="section-head reveal" data-hidden="true">
-      <span class="eyebrow">Testimonios</span>
-      <h2>Lo que dicen quienes ya lo vivieron</h2>
-      <p>Reseñas de estudiantes a los que ya acompañamos en su estancia por estudios. Se publican tras revisarlas.</p>
-    </div>
-
-    <div id="reviews-list" class="reviews-grid"></div>
-    <p id="reviews-empty" style="display:none; margin-top:24px; color:var(--ink-soft); font-size:14.5px;">Todavía no hay reseñas publicadas — sé el primero en dejar la tuya.</p>
-
-    <div class="review-form-wrap reveal" data-hidden="true">
-      <form id="review-form" data-sent="false">
-        <div class="form-fields">
-          <h3 style="font-size:16px; margin-bottom:4px;">¿Ya gestionamos tu estancia por estudios? Cuéntanoslo</h3>
-          <div class="form-row two" style="margin-top:16px;">
-            <div class="field">
-              <label for="r-name">Tu nombre</label>
-              <input id="r-name" type="text" placeholder="Nombre" required>
-            </div>
-            <div class="field">
-              <label for="r-rating">Valoración</label>
-              <select id="r-rating">
-                <option value="5">★★★★★ Excelente</option>
-                <option value="4">★★★★☆ Muy bueno</option>
-                <option value="3">★★★☆☆ Bueno</option>
-                <option value="2">★★☆☆☆ Regular</option>
-                <option value="1">★☆☆☆☆ Malo</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label for="r-text">Tu experiencia</label>
-            <textarea id="r-text" placeholder="Cuéntanos cómo fue el proceso..." required></textarea>
-          </div>
-          <p class="form-note" style="margin-top:14px; text-align:left;">Al publicar tu reseña aceptas que aparezca en la web con tu nombre. Más en la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
-          <button type="submit" class="btn btn-ghost review-submit" style="margin-top:16px;">Publicar mi reseña</button>
-        </div>
-        <div class="success">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-          <h3>¡Gracias por tu reseña!</h3>
-          <p>La revisamos y la publicamos en breve.</p>
-        </div>
+      <form id="lead-form" novalidate>
+        <label class="full">¿Qué necesitas?
+          <select id="f-service" required>
+            <option value="">Elige una opción</option>
+            <option>Consulta de valoración</option>
+            <option>Estancia por estudios</option>
+            <option>Doctorado / residencia para investigación</option>
+            <option>Modificación a residencia</option>
+            <option>Nacionalidad española</option>
+            <option>Otro trámite</option>
+          </select>
+        </label>
+        <label>Nombre completo<input id="f-name" required autocomplete="name"></label>
+        <label>Nacionalidad<input id="f-nat" placeholder="Ej.: colombiana"></label>
+        <label>Email<input id="f-email" type="email" required autocomplete="email"></label>
+        <label>Teléfono (con prefijo)<input id="f-phone" type="tel" autocomplete="tel" placeholder="+57 …"></label>
+        <label>¿Tienes carta de admisión?
+          <select id="f-admission">
+            <option value="">No aplica / no lo sé</option>
+            <option>Sí, ya la tengo</option>
+            <option>Estoy en proceso de admisión</option>
+            <option>Todavía no he aplicado</option>
+          </select>
+        </label>
+        <label>Ciudad de destino o residencia
+          <select id="f-city">
+            <option value="">Elige</option>
+            <option>Madrid</option><option>Barcelona</option><option>Valencia</option><option>Salamanca</option><option>Sevilla</option><option>Otra ciudad</option>
+          </select>
+        </label>
+        <label class="full">¿Cuándo empieza tu curso o cuándo caduca tu autorización?<input id="f-start" type="month"></label>
+        <label class="full">Cuéntame tu caso (opcional)<textarea id="f-message" rows="3"></textarea></label>
+        <label class="consent full"><input type="checkbox" required><span>Acepto que Acero Pulido use estos datos para responder a mi solicitud. Más información en la <a href="privacidad.html">política de privacidad</a>.</span></label>
+        <button class="btn btn-main form-submit" type="submit">Enviar mi solicitud</button>
+        <div class="form-ok"><h3 class="serif" style="font-size:28px;color:var(--plum)">Solicitud recibida</h3><p style="color:var(--ink-soft)">Gracias. En menos de 24 horas te escribo con una primera valoración.</p></div>
       </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contacto">
-  <div class="wrap">
-    <div class="contact-grid">
-      <div class="contact-side reveal" data-hidden="true">
-        <span class="eyebrow">Hablemos de tu caso</span>
-        <h3 style="margin-top:14px;">Cuéntanos hacia dónde vas y te contactamos en menos de 24 horas</h3>
-        <p>Sin compromiso. Con la información de tu formulario preparamos una primera valoración de tu caso antes de la llamada.</p>
-
-        <div class="contact-points">
-          <div class="contact-point">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="0"><path fill="#25d366" d="M12 2C6.48 2 2 6.03 2 11c0 2.61 1.28 4.95 3.32 6.6-.13 1.13-.5 2.5-1.32 3.4 1.53 0 3.3-.6 4.5-1.4 1.1.4 2.3.6 3.5.6 5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
-            <div>
-              <strong><a href="https://wa.me/34672953197?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20estancia%20por%20estudios%20en%20Espa%C3%B1a." target="_blank" rel="noopener" style="text-decoration:none;">Escríbenos por WhatsApp</a></strong>
-              <span>La vía más rápida — sin formularios</span>
-            </div>
-          </div>
-          <div class="contact-point">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v14H4z"/><path d="M4 6l8 7 8-7"/></svg>
-            <div><strong>acero.vivianapulido@gmail.com</strong><span>Respuesta en menos de 24 horas</span></div>
-          </div>
-          <div class="contact-point">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg>
-            <div><strong>Videollamada de valoración inicial</strong><span>Agendamos según tu horario y zona horaria</span></div>
-          </div>
-        </div>
-      </div>
-
-      <form id="lead-form" data-sent="false" class="reveal" data-hidden="true">
-        <div class="form-fields">
-          <div class="form-row two">
-            <div class="field">
-              <label for="f-name">Nombre completo</label>
-              <input id="f-name" name="name" type="text" placeholder="Como aparece en tu pasaporte" required>
-            </div>
-            <div class="field">
-              <label for="f-nat">Nacionalidad</label>
-              <input id="f-nat" name="nationality" type="text" placeholder="Ej. colombiana" required>
-            </div>
-          </div>
-
-          <div class="form-row two">
-            <div class="field">
-              <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required>
-            </div>
-            <div class="field">
-              <label for="f-phone">Teléfono (con prefijo)</label>
-              <input id="f-phone" name="phone" type="tel" placeholder="+57 300 000 0000" required>
-            </div>
-          </div>
-
-          <div class="form-row two">
-            <div class="field">
-              <label for="f-admission">¿Tienes carta de admisión?</label>
-              <select id="f-admission" name="admission">
-                <option value="si">Sí, ya la tengo</option>
-                <option value="en_proceso">Estoy en proceso de admisión</option>
-                <option value="no">Todavía no he aplicado</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="f-city">Ciudad de destino</label>
-              <select id="f-city" name="city">
-                <option value="madrid">Madrid</option>
-                <option value="barcelona">Barcelona</option>
-                <option value="valencia">Valencia</option>
-                <option value="salamanca">Salamanca</option>
-                <option value="sevilla">Sevilla</option>
-                <option value="otra">Otra ciudad</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="f-start">¿Cuándo empieza tu curso?</label>
-            <input id="f-start" name="start_date" type="month">
-            <span class="field-hint">Así calculamos con cuánto margen presentar tu solicitud.</span>
-          </div>
-
-          <div class="field">
-            <label for="f-message">Cuéntanos tu caso (opcional)</label>
-            <textarea id="f-message" name="message" placeholder="Universidad, programa, dudas concretas..."></textarea>
-          </div>
-
-          <label class="consent">
-            <input type="checkbox" required>
-            <span>Acepto que ACERO PULIDO use estos datos para contactarme sobre mi solicitud. Más información en la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span>
+  <section style="padding:48px 0">
+    <div class="wrap">
+      <details class="leave">
+        <summary>¿Ya hiciste tu trámite conmigo? Deja tu reseña</summary>
+        <form id="review-form" style="padding:20px 0 0;grid-template-columns:1fr 1fr">
+          <label>Tu nombre<input id="r-name" required></label>
+          <label>Valoración
+            <select id="r-rating"><option value="5">★★★★★ Excelente</option><option value="4">★★★★☆ Muy bueno</option><option value="3">★★★☆☆ Bueno</option><option value="2">★★☆☆☆ Regular</option><option value="1">★☆☆☆☆ Malo</option></select>
           </label>
-
-          <button type="submit" class="btn btn-primary form-submit">Enviar mi solicitud</button>
-          <p class="form-note">Tus datos llegan directo a nuestro equipo — nadie más los ve.</p>
-        </div>
-
-        <div class="success">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-          <h3>Solicitud recibida</h3>
-          <p>Gracias — en menos de 24 horas te escribimos con la primera valoración de tu caso.</p>
-        </div>
-      </form>
+          <label class="full">Tu experiencia<textarea id="r-text" rows="3" required></textarea></label>
+          <label class="consent full"><input type="checkbox" required><span>Acepto que mi reseña aparezca en la web con mi nombre.</span></label>
+          <button class="btn btn-main review-submit full" type="submit">Publicar mi reseña</button>
+          <div class="form-ok"><p>¡Gracias! La reviso y la publico en breve.</p></div>
+        </form>
+      </details>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
-  <div class="wrap footer-row">
-    <div class="brand">
-      <img class="brand-logo" src="assets/logo-mark.jpg" alt="Acero Pulido">
-      ACERO PULIDO
-      <svg class="flag-chip" viewBox="0 0 24 16" aria-label="Bandera de España">
-        <rect width="24" height="16" fill="#AA151B"/>
-        <rect y="4" width="24" height="8" fill="#F1BF00"/>
-      </svg>
-    </div>
-    <div class="footer-links">
-      <a href="#proceso">Proceso</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#resenas">Reseñas</a>
-      <a href="#preguntas">Preguntas</a>
-      <a href="#contacto">Contacto</a>
-      <a href="privacidad.html">Privacidad</a>
-    </div>
-  </div>
-  <div class="wrap" style="margin-top:20px;">
-    <p class="fine">ACERO PULIDO es una asesoría de extranjería especializada en estudiantes internacionales.</p>
+  <div class="wrap">
+    <p><b style="color:#fff">ACERO PULIDO</b> · Asesoría de extranjería y movilidad internacional a cargo de Viviana Acero Pulido, abogada titulada en Colombia. En España actúa como asesora, no como abogada colegiada; la representación ante la Administración se realiza mediante poder notarial. La información de esta web es general y no sustituye el estudio de tu caso. Actualizada en octubre de 2026.</p>
+    <p><a href="privacidad.html">Privacidad</a></p>
   </div>
 </footer>
 
+<a class="wa-float" href="https://wa.me/34672953197?text=Hola%20Viviana%2C%20quiero%20informaci%C3%B3n%20sobre%20mi%20tr%C3%A1mite." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24"><path fill="#fff" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg></a>
+
 <script>
   document.querySelectorAll('.faq-item').forEach(function (item) {
-    var q = item.querySelector('.faq-q');
-    q.addEventListener('click', function () {
+    item.querySelector('.faq-q').addEventListener('click', function () {
       var isOpen = item.getAttribute('data-open') === 'true';
       document.querySelectorAll('.faq-item').forEach(function (i) { i.setAttribute('data-open', 'false'); });
       item.setAttribute('data-open', isOpen ? 'false' : 'true');
+    });
+  });
+  document.querySelectorAll('[data-open-faq]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var item = document.querySelector('[data-faq="' + a.getAttribute('data-open-faq') + '"]');
+      if (item) item.setAttribute('data-open', 'true');
+    });
+  });
+  // Los botones de cada trámite preseleccionan el servicio en el formulario
+  document.querySelectorAll('[data-service]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var sel = document.getElementById('f-service');
+      if (sel) sel.value = a.getAttribute('data-service');
     });
   });
 
@@ -1021,11 +473,11 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-
     var submitBtn = form.querySelector('.form-submit');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando...';
-
+    var service = document.getElementById('f-service').value;
+    var message = document.getElementById('f-message').value;
     var payload = {
       name: document.getElementById('f-name').value,
       email: document.getElementById('f-email').value,
@@ -1034,9 +486,8 @@
       admission: document.getElementById('f-admission').value || null,
       city: document.getElementById('f-city').value || null,
       start_date: document.getElementById('f-start').value || null,
-      message: document.getElementById('f-message').value || null
+      message: 'Trámite: ' + service + (message ? '\n' + message : '')
     };
-
     fetch(API_URL + '/study-leads', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -1049,86 +500,56 @@
       .catch(function () {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Enviar mi solicitud';
-        alert('No se pudo enviar. Por favor, escríbenos directamente a acero.vivianapulido@gmail.com.');
+        alert('No se pudo enviar. Escríbeme por WhatsApp al +34 672 953 197 o a acero.vivianapulido@gmail.com.');
       });
   });
 
   var reviewForm = document.getElementById('review-form');
-  if (reviewForm) {
-    reviewForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!reviewForm.checkValidity()) { reviewForm.reportValidity(); return; }
-
-      var submitBtn = reviewForm.querySelector('.review-submit');
-      submitBtn.disabled = true;
-
-      var payload = {
+  reviewForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!reviewForm.checkValidity()) { reviewForm.reportValidity(); return; }
+    var submitBtn = reviewForm.querySelector('.review-submit');
+    submitBtn.disabled = true;
+    fetch(API_URL + '/reviews', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
         name: document.getElementById('r-name').value,
         rating: Number(document.getElementById('r-rating').value) || null,
         text: document.getElementById('r-text').value
-      };
-
-      fetch(API_URL + '/reviews', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
       })
-        .then(function (response) {
-          if (!response.ok) throw new Error('request failed');
-          reviewForm.setAttribute('data-sent', 'true');
-        })
-        .catch(function () {
-          submitBtn.disabled = false;
-          alert('No se pudo enviar tu reseña. Inténtalo de nuevo en unos minutos.');
-        });
-    });
-  }
-
-  function loadReviews() {
-    var list = document.getElementById('reviews-list');
-    var empty = document.getElementById('reviews-empty');
-    if (!list) return;
-
-    fetch(API_URL + '/reviews')
-      .then(function (response) { return response.json(); })
-      .then(function (reviews) {
-        if (!reviews || reviews.length === 0) {
-          if (empty) empty.style.display = 'block';
-          return;
-        }
-        if (empty) empty.style.display = 'none';
-
-        list.innerHTML = reviews.map(function (review) {
-          var stars = review.rating
-            ? '★★★★★'.slice(0, review.rating) + '☆☆☆☆☆'.slice(0, 5 - review.rating)
-            : '';
-          var safeName = String(review.name || '').replace(/</g, '&lt;');
-          var safeText = String(review.text || '').replace(/</g, '&lt;');
-          return (
-            '<div class="review-card">' +
-            (stars ? '<div class="review-stars">' + stars + '</div>' : '') +
-            '<p class="review-text">' + safeText + '</p>' +
-            '<strong class="review-name">' + safeName + '</strong>' +
-            '</div>'
-          );
-        }).join('');
+    })
+      .then(function (response) {
+        if (!response.ok) throw new Error('request failed');
+        reviewForm.setAttribute('data-sent', 'true');
       })
       .catch(function () {
-        if (empty) empty.style.display = 'block';
+        submitBtn.disabled = false;
+        alert('No se pudo enviar tu reseña. Inténtalo de nuevo en unos minutos.');
       });
-  }
+  });
 
-  loadReviews();
+  // La sección de reseñas solo aparece cuando hay reseñas publicadas
+  fetch(API_URL + '/reviews')
+    .then(function (response) { return response.json(); })
+    .then(function (reviews) {
+      if (!reviews || reviews.length === 0) return;
+      var esc = function (s) { return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+      document.getElementById('reviews-list').innerHTML = reviews.map(function (r) {
+        var stars = r.rating ? '★★★★★'.slice(0, r.rating) + '☆☆☆☆☆'.slice(0, 5 - r.rating) : '';
+        return '<div class="review-card">' + (stars ? '<div class="review-stars">' + stars + '</div>' : '') +
+          '<p class="review-text">' + esc(r.text) + '</p><strong class="review-name">' + esc(r.name) + '</strong></div>';
+      }).join('');
+      document.getElementById('resenas').hidden = false;
+    })
+    .catch(function () {});
 
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.setAttribute('data-hidden', 'false');
-          io.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.setAttribute('data-hidden', 'false'); io.unobserve(entry.target); }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
   } else {
     document.querySelectorAll('.reveal').forEach(function (el) { el.setAttribute('data-hidden', 'false'); });
@@ -1145,6 +566,5 @@
   data-greeting="¡Hola! Soy Gari 👋 ¿Te ayudo a dar el primer paso con tu trámite?"
   data-greeting-delay="8"
 ></script>
-
 </body>
 </html>
