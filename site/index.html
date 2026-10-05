@@ -497,7 +497,7 @@
   dayInput.min = tomorrow.toISOString().slice(0, 10);
 
   // Pega aquí el enlace de Cal.com (consulta de 45 € con pago) y los botones "Agendar" lo abrirán.
-  var BOOKING_URL = '';
+  var BOOKING_URL = 'https://cal.com/viviana-andrea-acero-pulido-p7ku9b/acero-pulido-movilidad-y-asesoria-extranjera';
   if (BOOKING_URL) {
     document.querySelectorAll('a.btn-main[href="#contacto"], a[data-service="Consulta de valoración"]').forEach(function (a) {
       a.setAttribute('href', BOOKING_URL);
