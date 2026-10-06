@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Pagar · Acero Pulido</title>
+<meta name="theme-color" content="#3a1d2c">
+<link rel="icon" href="assets/logo-mark.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plum: #3a1d2c;
+    --mauve: #8a4a68;
+    --rose-100: #f7e9ee;
+    --cream: #faf5f3;
+    --ink: #2b1a20;
+    --ink-soft: #6f5a61;
+    --line: #ead9de;
+    --white: #fff;
+    --wa: #1fa855;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Manrope", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.55; font-size: 17px; }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 24px 16px 48px; }
+  header { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+  header img { width: 44px; height: 44px; border-radius: 10px; }
+  header a { color: var(--plum); text-decoration: none; font-family: var(--serif); font-weight: 700; letter-spacing: .08em; }
+  h1 { font-family: var(--serif); color: var(--plum); font-size: 30px; line-height: 1.15; margin-bottom: 8px; }
+  .lead { color: var(--ink-soft); margin-bottom: 24px; }
+  .card { background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 20px; margin-bottom: 16px; }
+  .card h2 { font-size: 18px; color: var(--plum); margin-bottom: 4px; }
+  .card p { color: var(--ink-soft); font-size: 15px; margin-bottom: 12px; }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+  .row:first-of-type { border-top: 0; }
+  .row span { font-size: 13px; color: var(--ink-soft); display: block; }
+  .row b { font-size: 16px; overflow-wrap: anywhere; }
+  button.copy { flex: none; border: 1px solid var(--mauve); background: var(--rose-100); color: var(--plum); font: 700 14px var(--sans); padding: 8px 12px; border-radius: 999px; cursor: pointer; }
+  button.copy.ok { background: var(--plum); color: var(--white); }
+  .qr { display: block; width: 200px; height: 200px; margin: 8px auto 0; }
+  .wa { display: block; text-align: center; background: var(--wa); color: var(--white); font-weight: 800; text-decoration: none; padding: 14px; border-radius: 999px; margin-top: 8px; }
+  small.note { display: block; color: var(--ink-soft); font-size: 13px; margin-top: 16px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img src="assets/logo-mark.jpg" alt=""><a href="index.html">ACERO PULIDO</a></header>
+
+  <h1>Datos de pago</h1>
+  <p class="lead">Paga el importe acordado por Bizum o transferencia y envíame el justificante por WhatsApp. Tu cita o trámite queda confirmado al recibir el pago.</p>
+
+  <section class="card">
+    <h2>Bizum (desde España)</h2>
+    <p>Gratis e instantáneo.</p>
+    <div class="row"><div><span>Número</span><b>672 953 197</b></div><button class="copy" data-copy="672953197">Copiar</button></div>
+    <div class="row"><div><span>A nombre de</span><b>Viviana Andrea Acero Pulido</b></div></div>
+  </section>
+
+  <section class="card">
+    <h2>Transferencia bancaria</h2>
+    <p>Desde España llega en el día. Si tu banco lo permite, escanea el código QR y se rellenan los datos solos.</p>
+    <div class="row"><div><span>Titular</span><b>Viviana Andrea Acero Pulido</b></div><button class="copy" data-copy="Viviana Andrea Acero Pulido">Copiar</button></div>
+    <div class="row"><div><span>IBAN</span><b>ES86 1563 2626 3532 6499 2640</b></div><button class="copy" data-copy="ES8615632626353264992640">Copiar</button></div>
+    <div class="row"><div><span>BIC / SWIFT</span><b>NTSBESM1XXX</b></div><button class="copy" data-copy="NTSBESM1XXX">Copiar</button></div>
+    <div class="row"><div><span>Concepto</span><b>Tu nombre y el trámite</b></div></div>
+    <img class="qr" src="assets/qr-transferencia.svg" alt="Código QR con los datos de la transferencia">
+  </section>
+
+  <section class="card">
+    <h2>Desde Colombia u otro país</h2>
+    <p>Haz una transferencia internacional al IBAN de arriba con el código BIC/SWIFT, o usa Wise, que suele ser más barato y llega antes. Elige pagar en euros.</p>
+  </section>
+
+  <a class="wa" href="https://wa.me/34672953197?text=Hola%20Viviana%2C%20te%20env%C3%ADo%20el%20justificante%20de%20pago." target="_blank" rel="noopener">Enviar justificante por WhatsApp</a>
+  <small class="note">Te envío factura por cada pago.</small>
+</div>
+<script>
+  document.querySelectorAll('button.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var done = function () { b.textContent = 'Copiado'; b.classList.add('ok'); setTimeout(function () { b.textContent = 'Copiar'; b.classList.remove('ok'); }, 1800); };
+      if (navigator.clipboard) { navigator.clipboard.writeText(b.getAttribute('data-copy')).then(done, done); } else { done(); }
+    });
+  });
+</script>
+</body>
+</html>
