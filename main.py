@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from routes.study_leads import router as study_leads_router
 from routes.reviews import router as reviews_router
+from routes.visits import router as visits_router
 from database import create_tables
 
 app = FastAPI()
@@ -28,3 +29,4 @@ def inicio():
 
 app.include_router(study_leads_router)
 app.include_router(reviews_router)
+app.include_router(visits_router)

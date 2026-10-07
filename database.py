@@ -40,5 +40,18 @@ def create_tables():
         )
     """)
 
+    # Contador de visitas anónimo: solo cuántas veces se carga cada página
+    # por día y de qué tipo de sitio llega la gente. No guarda IP ni nada
+    # que identifique a la persona.
+    connection.execute("""
+        CREATE TABLE IF NOT EXISTS visits (
+            day TEXT NOT NULL,
+            page TEXT NOT NULL,
+            source TEXT NOT NULL,
+            count INTEGER NOT NULL DEFAULT 0,
+            PRIMARY KEY (day, page, source)
+        )
+    """)
+
     connection.commit()
     connection.close()

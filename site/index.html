@@ -606,5 +606,29 @@
   data-greeting="¡Hola! Soy Gari 👋 ¿Te ayudo a dar el primer paso con tu trámite?"
   data-greeting-delay="8"
 ></script>
+<script>
+  // Contador de visitas anónimo: solo suma 1 a un contador (sin cookies, sin IP).
+  (function () {
+    try { if (localStorage.getItem('go2spain_admin_key')) return; } catch (e) {}
+    var q = new URLSearchParams(location.search);
+    var raw = (q.get('utm_source') || '').toLowerCase();
+    if (!raw) { try { raw = new URL(document.referrer).hostname.toLowerCase(); } catch (e) {} }
+    var source = 'directo';
+    if (raw) {
+      source = 'otros';
+      [['facebook', 'facebook'], ['fb.com', 'facebook'], ['instagram', 'instagram'], ['google', 'google'],
+       ['whatsapp', 'whatsapp'], ['wa.me', 'whatsapp'], ['tiktok', 'tiktok']].some(function (p) {
+        if (raw.indexOf(p[0]) !== -1) { source = p[1]; return true; }
+      });
+    }
+    var page = /privacidad/.test(location.pathname) ? 'privacidad' : 'inicio';
+    try {
+      fetch('https://go2spain-backend.onrender.com/visit', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
+        body: JSON.stringify({ page: page, source: source })
+      }).catch(function () {});
+    } catch (e) {}
+  })();
+</script>
 </body>
 </html>

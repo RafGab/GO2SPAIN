@@ -93,18 +93,33 @@
   .publish-btn:disabled { opacity: 0.5; cursor: default; }
 
   .empty { color: var(--ink-soft); font-size: 14px; margin-top: 12px; }
+  .kpis { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+  .kpi { flex: 1; min-width: 120px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .kpi b { display: block; font-size: 28px; font-variant-numeric: tabular-nums; }
+  .kpi span { font-size: 12.5px; color: var(--ink-soft); }
+  .bars { display: flex; align-items: flex-end; gap: 3px; height: 110px; margin-top: 16px; }
+  .bars i { flex: 1; min-width: 4px; background: var(--red-700); border-radius: 3px 3px 0 0; }
+  .bars i.zero { background: var(--line); }
+  .bars-x { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+  .src { display: grid; grid-template-columns: 90px 1fr 40px; gap: 10px; align-items: center; font-size: 14px; margin-top: 8px; }
+  .src .bar { height: 12px; background: var(--line); border-radius: 6px; overflow: hidden; }
+  .src .bar i { display: block; height: 100%; background: var(--gold-600); }
+  .src em { font-style: normal; text-align: right; font-variant-numeric: tabular-nums; }
   .error { color: var(--red-700); font-size: 14px; margin-top: 12px; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>ACERO PULIDO — Panel</h1>
-  <p class="sub">Leads del formulario y reseñas pendientes de aprobar.</p>
+  <p class="sub">Visitas, leads del formulario y reseñas pendientes de aprobar.</p>
 
   <div class="key-bar">
     <input id="admin-key" type="password" placeholder="Clave de administración (ADMIN_KEY)">
     <button onclick="loadAll()">Ver</button>
   </div>
+
+  <h2>Visitas a la web</h2>
+  <div id="visits"></div>
 
   <h2>Reseñas pendientes</h2>
   <div id="pending-reviews"></div>
@@ -131,8 +146,51 @@
   });
 
   function loadAll() {
+    loadVisits();
     loadPendingReviews();
     loadLeads();
+  }
+
+  function loadVisits() {
+    var key = getKey();
+    var container = document.getElementById('visits');
+    container.innerHTML = 'Cargando...';
+
+    fetch(API_URL + '/visits?days=30&key=' + encodeURIComponent(key))
+      .then(function (r) {
+        if (!r.ok) throw new Error('clave inválida o error del servidor');
+        return r.json();
+      })
+      .then(function (v) {
+        if (!v.total) {
+          container.innerHTML = '<p class="empty">Todavía no hay visitas registradas. El contador empieza a contar desde que se publicó.</p>';
+          return;
+        }
+        var max = Math.max.apply(null, v.daily.map(function (d) { return d.count; })) || 1;
+        var bars = v.daily.map(function (d) {
+          var h = d.count ? Math.max(4, Math.round(d.count / max * 100)) : 3;
+          return '<i class="' + (d.count ? '' : 'zero') + '" style="height:' + h + 'px" title="' + d.day + ': ' + d.count + '"></i>';
+        }).join('');
+        var top = v.sources[0].count || 1;
+        var names = { facebook: 'Facebook', instagram: 'Instagram', google: 'Google', whatsapp: 'WhatsApp', tiktok: 'TikTok', directo: 'Directo', otros: 'Otros' };
+        var srcs = v.sources.map(function (s) {
+          return '<div class="src"><span>' + (names[s.source] || s.source) + '</span><div class="bar"><i style="width:' +
+            Math.round(s.count / top * 100) + '%"></i></div><em>' + s.count + '</em></div>';
+        }).join('');
+        container.innerHTML =
+          '<div class="kpis">' +
+          '<div class="kpi"><b>' + v.today + '</b><span>Hoy</span></div>' +
+          '<div class="kpi"><b>' + v.last_7 + '</b><span>Últimos 7 días</span></div>' +
+          '<div class="kpi"><b>' + v.total + '</b><span>Últimos ' + v.days + ' días</span></div>' +
+          '</div>' +
+          '<div class="bars">' + bars + '</div>' +
+          '<div class="bars-x"><span>' + v.daily[0].day + '</span><span>' + v.daily[v.daily.length - 1].day + '</span></div>' +
+          '<p class="meta" style="margin-top:20px;font-size:13px;color:var(--ink-soft)">De dónde llegan</p>' + srcs +
+          '<p class="empty">Cuenta cada vez que se abre la página, no personas distintas. Tus propias visitas no se cuentan desde este móvil o navegador, una vez has entrado aquí con tu clave.</p>';
+      })
+      .catch(function (err) {
+        container.innerHTML = '<p class="error">' + err.message + '</p>';
+      });
   }
 
   function loadPendingReviews() {

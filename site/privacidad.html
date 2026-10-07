@@ -151,6 +151,11 @@
             <td>Nombre, valoración y texto.</td>
             <td>Publicar tu opinión en la web, con tu nombre, una vez que la revisamos.</td>
           </tr>
+          <tr>
+            <td>Visitas a la web</td>
+            <td>Solo un contador: cuántas veces se abre cada página y desde qué tipo de sitio llegas (Facebook, Google, directo…). No usamos cookies, no guardamos tu IP y no se puede saber quién eres.</td>
+            <td>Saber qué funciona para mejorar la web.</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -208,5 +213,29 @@
   <div class="wrap">ACERO PULIDO es una asesoría de extranjería especializada en estudiantes internacionales.</div>
 </footer>
 
+<script>
+  // Contador de visitas anónimo: solo suma 1 a un contador (sin cookies, sin IP).
+  (function () {
+    try { if (localStorage.getItem('go2spain_admin_key')) return; } catch (e) {}
+    var q = new URLSearchParams(location.search);
+    var raw = (q.get('utm_source') || '').toLowerCase();
+    if (!raw) { try { raw = new URL(document.referrer).hostname.toLowerCase(); } catch (e) {} }
+    var source = 'directo';
+    if (raw) {
+      source = 'otros';
+      [['facebook', 'facebook'], ['fb.com', 'facebook'], ['instagram', 'instagram'], ['google', 'google'],
+       ['whatsapp', 'whatsapp'], ['wa.me', 'whatsapp'], ['tiktok', 'tiktok']].some(function (p) {
+        if (raw.indexOf(p[0]) !== -1) { source = p[1]; return true; }
+      });
+    }
+    var page = /privacidad/.test(location.pathname) ? 'privacidad' : 'inicio';
+    try {
+      fetch('https://go2spain-backend.onrender.com/visit', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
+        body: JSON.stringify({ page: page, source: source })
+      }).catch(function () {});
+    } catch (e) {}
+  })();
+</script>
 </body>
 </html>
