@@ -92,6 +92,20 @@
   }
   .publish-btn:disabled { opacity: 0.5; cursor: default; }
 
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .discard-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+    color: var(--red-700);
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .discard-btn:hover { border-color: var(--red-700); }
+  .discard-btn:disabled { opacity: 0.5; cursor: default; }
+
   .empty { color: var(--ink-soft); font-size: 14px; margin-top: 12px; }
   .kpis { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
   .kpi { flex: 1; min-width: 120px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
@@ -217,7 +231,10 @@
             '<span class="meta">' + r.created_at + (stars ? ' · <span class="stars">' + stars + '</span>' : '') + '</span>' +
             '<p>' + escapeHtml(r.text) + '</p>' +
             '</div>' +
+            '<div class="actions">' +
             '<button class="publish-btn" onclick="publish(' + r.id + ', this)">Publicar</button>' +
+            '<button class="discard-btn" onclick="discardReview(' + r.id + ', this)">Descartar</button>' +
+            '</div>' +
             '</div>'
           );
         }).join('');
@@ -227,9 +244,14 @@
       });
   }
 
+  function setBusy(btn, busy) {
+    var buttons = btn.parentNode.querySelectorAll('button');
+    for (var i = 0; i < buttons.length; i++) buttons[i].disabled = busy;
+  }
+
   function publish(id, btn) {
     var key = getKey();
-    btn.disabled = true;
+    setBusy(btn, true);
     btn.textContent = 'Publicando...';
 
     fetch(API_URL + '/reviews/' + id + '/publish?key=' + encodeURIComponent(key), { method: 'POST' })
@@ -238,9 +260,28 @@
         loadPendingReviews();
       })
       .catch(function () {
-        btn.disabled = false;
+        setBusy(btn, false);
         btn.textContent = 'Publicar';
         alert('No se pudo publicar la reseña.');
+      });
+  }
+
+  function discardReview(id, btn) {
+    if (!confirm('¿Descartar esta reseña? No se publicará y desaparecerá de la lista.')) return;
+
+    var key = getKey();
+    setBusy(btn, true);
+    btn.textContent = 'Descartando...';
+
+    fetch(API_URL + '/reviews/' + id + '/discard?key=' + encodeURIComponent(key), { method: 'POST' })
+      .then(function (r) {
+        if (!r.ok) throw new Error('no se pudo descartar');
+        loadPendingReviews();
+      })
+      .catch(function () {
+        setBusy(btn, false);
+        btn.textContent = 'Descartar';
+        alert('No se pudo descartar la reseña.');
       });
   }
 

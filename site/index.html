@@ -189,6 +189,33 @@
 
   .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; box-shadow: 0 12px 24px -8px rgba(0, 0, 0, .4); }
 
+  /* Casos de éxito */
+  #casos { background: var(--rose-100); border-block: 1px solid var(--line); }
+  .cases-track { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 2px 18px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .cases-track::-webkit-scrollbar { display: none; }
+  .case { flex: 0 0 min(80%, 340px); scroll-snap-align: start; }
+  .case-open { display: block; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--white); box-shadow: var(--shadow); cursor: zoom-in; font: inherit; color: inherit; }
+  .case-open img { width: 100%; height: auto; }
+  .case figcaption { margin-top: 14px; display: flex; flex-direction: column; gap: 2px; font-size: 14px; color: var(--ink-soft); }
+  .case figcaption strong { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--plum); }
+  .case-tag { align-self: flex-start; margin-bottom: 6px; padding: 4px 10px; border-radius: 999px; background: var(--gold-100); color: #7a5a1e; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+  .cases-controls { margin-top: 6px; display: flex; justify-content: flex-end; gap: 10px; }
+  .cases-controls[hidden] { display: none; }
+  .cases-arrow { width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--white); color: var(--plum); cursor: pointer; transition: border-color .15s; }
+  .cases-arrow svg { width: 20px; height: 20px; }
+  .cases-arrow:hover:not(:disabled) { border-color: var(--mauve); }
+  .cases-arrow:disabled { opacity: .35; cursor: default; }
+  .cases-note { margin-top: 22px; max-width: 64ch; font-size: 14px; color: var(--ink-soft); }
+  .cases-track:focus-visible, .case-open:focus-visible, .cases-arrow:focus-visible, .case-dialog-close:focus-visible { outline: 2px solid var(--mauve); outline-offset: 3px; }
+  .case-dialog { width: min(92vw, 760px); max-height: 94vh; padding: 0; border: 0; border-radius: 22px; background: var(--cream); color: var(--ink); box-shadow: var(--shadow); overflow: auto; }
+  .case-dialog::backdrop { background: rgba(42, 21, 32, .76); }
+  .case-dialog-bar { position: sticky; top: 0; display: flex; justify-content: flex-end; padding: 8px; background: rgba(250, 245, 243, .92); }
+  .case-dialog-close { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; background: var(--white); color: var(--plum); font-size: 22px; line-height: 1; cursor: pointer; }
+  .case-dialog-body { padding: 0 16px 20px; }
+  .case-dialog-body img { width: 100%; height: auto; border-radius: 10px; }
+  .case-dialog-cap { margin-top: 12px; font-size: 14px; color: var(--ink-soft); }
+  .case-dialog-full { display: inline-block; margin-top: 8px; font-size: 14px; font-weight: 700; color: var(--mauve); }
+
   .reveal { transition: opacity .6s ease, transform .6s ease; }
   .reveal[data-hidden="true"] { opacity: 0; transform: translateY(22px); }
   @media (prefers-reduced-motion: reduce) { .reveal { transition: none; } .reveal[data-hidden="true"] { opacity: 1; transform: none; } }
@@ -206,6 +233,7 @@
       <a href="#tramites">Trámites</a>
       <a href="#precios">Precios</a>
       <a href="#quien-soy">Quién soy</a>
+      <a href="#casos">Casos de éxito</a>
       <a href="#preguntas">Preguntas</a>
     </nav>
     <a class="btn btn-main" href="#contacto">Agendar consulta</a>
@@ -338,6 +366,78 @@
     </div>
   </section>
 
+  <section id="casos">
+    <div class="wrap">
+      <div class="section-head reveal" data-hidden="true">
+        <span class="kicker">Casos de éxito</span>
+        <h2 class="serif">Resoluciones favorables de expedientes que he llevado</h2>
+        <p>Son documentos reales de la Administración. Oculto los nombres, los números de identificación, las direcciones y los códigos de verificación de mis clientes.</p>
+      </div>
+
+      <div class="cases reveal" data-hidden="true">
+        <div class="cases-track" id="cases-track" role="group" aria-roledescription="carrusel" aria-label="Resoluciones favorables" tabindex="0">
+          <figure class="case">
+            <button type="button" class="case-open" data-full="assets/casos/caso-1.jpg" data-caption="Estancia por estudios · Delegación del Gobierno en Madrid">
+              <img src="assets/casos/caso-1.jpg" width="1033" height="1312" loading="lazy" decoding="async" alt="Resolución favorable de autorización de estancia por estudios, con los datos personales ocultos">
+            </button>
+            <figcaption>
+              <span class="case-tag">Concedida</span>
+              <strong>Estancia por estudios</strong>
+              <span>Delegación del Gobierno en Madrid</span>
+            </figcaption>
+          </figure>
+          <figure class="case">
+            <button type="button" class="case-open" data-full="assets/casos/caso-2.jpg" data-caption="Residencia temporal y trabajo, desde estancia por estudios · Subdelegación del Gobierno en León">
+              <img src="assets/casos/caso-2.jpg" width="1033" height="1312" loading="lazy" decoding="async" alt="Resolución favorable de autorización de residencia temporal y trabajo por cuenta ajena, con los datos personales ocultos">
+            </button>
+            <figcaption>
+              <span class="case-tag">Concedida</span>
+              <strong>Residencia temporal y trabajo</strong>
+              <span>Desde estancia por estudios · Subdelegación del Gobierno en León</span>
+            </figcaption>
+          </figure>
+          <figure class="case">
+            <button type="button" class="case-open" data-full="assets/casos/caso-3.jpg" data-caption="Estancia por estudios · Delegación del Gobierno en Aragón">
+              <img src="assets/casos/caso-3.jpg" width="1033" height="1312" loading="lazy" decoding="async" alt="Resolución favorable de autorización de estancia por estudios en Aragón, con los datos personales ocultos">
+            </button>
+            <figcaption>
+              <span class="case-tag">Concedida</span>
+              <strong>Estancia por estudios</strong>
+              <span>Delegación del Gobierno en Aragón</span>
+            </figcaption>
+          </figure>
+          <figure class="case">
+            <button type="button" class="case-open" data-full="assets/casos/caso-4.jpg" data-caption="Estancia por estudios · Delegación del Gobierno en Madrid">
+              <img src="assets/casos/caso-4.jpg" width="1033" height="1312" loading="lazy" decoding="async" alt="Resolución favorable de autorización de estancia por estudios tramitada por representante, con los datos personales ocultos">
+            </button>
+            <figcaption>
+              <span class="case-tag">Concedida</span>
+              <strong>Estancia por estudios</strong>
+              <span>Delegación del Gobierno en Madrid</span>
+            </figcaption>
+          </figure>
+          <figure class="case">
+            <button type="button" class="case-open" data-full="assets/casos/caso-5.jpg" data-caption="Estancia por estudios · Delegación del Gobierno en Madrid">
+              <img src="assets/casos/caso-5.jpg" width="1033" height="1312" loading="lazy" decoding="async" alt="Resolución favorable de autorización de estancia por estudios, con los datos personales ocultos">
+            </button>
+            <figcaption>
+              <span class="case-tag">Concedida</span>
+              <strong>Estancia por estudios</strong>
+              <span>Delegación del Gobierno en Madrid</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="cases-controls" hidden>
+          <button type="button" class="cases-arrow" id="cases-prev" aria-label="Resoluciones anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button>
+          <button type="button" class="cases-arrow" id="cases-next" aria-label="Resoluciones siguientes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+
+      <p class="cases-note">Toca una resolución para verla ampliada. Cada expediente es distinto: la resolución favorable de un caso no garantiza el resultado de otro.</p>
+    </div>
+  </section>
+
   <section id="resenas" hidden>
     <div class="wrap">
       <div class="section-head reveal" data-hidden="true">
@@ -465,7 +565,7 @@
 <footer>
   <div class="wrap">
     <p><b style="color:#fff">ACERO PULIDO</b> · Asesoría de extranjería y movilidad internacional a cargo de Viviana Acero Pulido, abogada titulada en Colombia (Universidad Militar Nueva Granada). En España actúa como asesora, no como abogada colegiada; la representación ante la Administración se realiza mediante poder notarial. La información de esta web es general y no sustituye el estudio de tu caso. Actualizada en octubre de 2026.</p>
-    <p><a href="privacidad.html">Privacidad</a></p>
+    <p><a href="privacidad.html">Privacidad</a> · <a href="privacidad.html#cookies">Cookies</a></p>
   </div>
 </footer>
 
@@ -595,6 +695,78 @@
     document.querySelectorAll('.reveal').forEach(function (el) { el.setAttribute('data-hidden', 'false'); });
   }
 </script>
+
+<dialog id="case-dialog" class="case-dialog" aria-label="Resolución ampliada">
+  <div class="case-dialog-bar"><button type="button" class="case-dialog-close" aria-label="Cerrar">&times;</button></div>
+  <div class="case-dialog-body">
+    <img alt="">
+    <p class="case-dialog-cap"></p>
+    <a class="case-dialog-full" target="_blank" rel="noopener">Abrir la imagen completa</a>
+  </div>
+</dialog>
+
+<script>
+  (function () {
+    var track = document.getElementById('cases-track');
+    var dialog = document.getElementById('case-dialog');
+    if (!track || !dialog) return;
+
+    var controls = document.querySelector('.cases-controls');
+    var prev = document.getElementById('cases-prev');
+    var next = document.getElementById('cases-next');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function step() {
+      var first = track.querySelector('.case');
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 20;
+      return first ? first.getBoundingClientRect().width + gap : 300;
+    }
+
+    // El ajuste a cada tarjeta y el redondeo de píxeles dejan el desplazamiento
+    // unos píxeles (a veces con decimales) antes o después del borde real.
+    var EDGE = 6;
+
+    function updateArrows() {
+      var max = track.scrollWidth - track.clientWidth;
+      controls.hidden = max <= EDGE;
+      prev.disabled = track.scrollLeft <= EDGE;
+      next.disabled = track.scrollLeft >= max - EDGE;
+    }
+
+    prev.addEventListener('click', function () {
+      track.scrollBy({ left: -step(), behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+    next.addEventListener('click', function () {
+      track.scrollBy({ left: step(), behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
+
+    var dialogImage = dialog.querySelector('img');
+    var dialogCaption = dialog.querySelector('.case-dialog-cap');
+    var dialogFull = dialog.querySelector('.case-dialog-full');
+
+    Array.prototype.forEach.call(track.querySelectorAll('.case-open'), function (button) {
+      button.addEventListener('click', function () {
+        if (!dialog.showModal) {
+          window.open(button.getAttribute('data-full'), '_blank', 'noopener');
+          return;
+        }
+        dialogImage.src = button.getAttribute('data-full');
+        dialogImage.alt = button.querySelector('img').alt;
+        dialogCaption.textContent = button.getAttribute('data-caption');
+        dialogFull.href = button.getAttribute('data-full');
+        dialog.showModal();
+      });
+    });
+
+    dialog.querySelector('.case-dialog-close').addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (event) { if (event.target === dialog) dialog.close(); });
+  })();
+</script>
+
+<script src="cookies.js" defer></script>
 
 <script
   src="https://ai-lead-machine-backend.onrender.com/widget-demo.js"

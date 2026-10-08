@@ -91,3 +91,28 @@ def publish_review(review_id: int, key: str | None = None):
         raise HTTPException(status_code=404, detail="Reseña no encontrada.")
 
     return {"status": "ok"}
+
+
+# "published" distingue tres estados: 0 pendiente, 1 publicada, 2 descartada.
+# Descartar no borra la fila (por si fue un error, se puede recuperar), pero
+# la saca de los pendientes y nunca aparece en la web pública.
+@router.post("/reviews/{review_id}/discard")
+def discard_review(review_id: int, key: str | None = None):
+    _check_admin_key(key)
+
+    connection = get_connection()
+
+    cursor = connection.execute(
+        "UPDATE reviews SET published = 2 WHERE id = ? AND published = 0",
+        (review_id,),
+    )
+
+    connection.commit()
+    connection.close()
+
+    if cursor.rowcount == 0:
+        raise HTTPException(
+            status_code=404, detail="Reseña no encontrada o ya procesada."
+        )
+
+    return {"status": "ok"}

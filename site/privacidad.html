@@ -101,6 +101,8 @@
   th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
   th { background: var(--surface); font-size: 13px; letter-spacing: 0.02em; }
   tr:last-child td { border-bottom: none; }
+  code { font-size: 12.5px; background: var(--surface); padding: 1px 6px; border-radius: 5px; overflow-wrap: anywhere; }
+  section[id] { scroll-margin-top: 16px; }
 
   footer { border-top: 1px solid var(--line); padding-block: 24px; font-size: 13px; color: var(--ink-soft); }
 </style>
@@ -119,7 +121,7 @@
 
 <main class="wrap">
   <h1>Política de privacidad</h1>
-  <p class="updated">Última actualización: 24 de septiembre de 2026</p>
+  <p class="updated">Última actualización: 8 de octubre de 2026</p>
   <p class="lead">Aquí te explicamos, en lenguaje claro, qué datos tuyos tratamos cuando usas esta web o hablas con nuestro asistente, para qué los usamos y qué derechos tienes sobre ellos.</p>
 
   <section>
@@ -198,6 +200,33 @@
     <p>Escríbenos a <a href="mailto:acero.vivianapulido@gmail.com">acero.vivianapulido@gmail.com</a> indicando qué quieres hacer. Si crees que no hemos tratado bien tus datos, también puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>).</p>
   </section>
 
+  <section id="cookies">
+    <h2>Cookies y almacenamiento en tu navegador</h2>
+    <p><strong>Por nuestra parte, no instalamos cookies de publicidad, de análisis ni de seguimiento.</strong> Solo guardamos en tu navegador dos datos técnicos, imprescindibles para que la web funcione, y que no te identifican:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Qué se guarda</th><th>Para qué</th><th>Cuánto dura</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>alm-greeting-extranjeria</code> (almacenamiento de sesión)</td>
+            <td>Recordar que ya te mostramos el saludo del asistente Gari, para no repetirlo.</td>
+            <td>Hasta que cierres la pestaña.</td>
+          </tr>
+          <tr>
+            <td><code>acero-pulido-aviso-cookies</code> (almacenamiento local)</td>
+            <td>Recordar que ya viste el aviso de cookies, para no mostrártelo en cada visita.</td>
+            <td>Hasta que borres los datos del navegador.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Como son estrictamente necesarios, no requieren tu consentimiento. Puedes borrarlos cuando quieras desde la configuración de tu navegador.</p>
+    <p>El contador de visitas anónimo que se explica más arriba tampoco usa cookies. Esta web carga además las tipografías desde Google Fonts, por lo que tu navegador se comunica con servidores de Google (que reciben tu dirección IP). No usamos ninguna otra herramienta de terceros para medir visitas ni para publicidad.</p>
+    <p>Si algún día añadimos analítica o publicidad, te lo pediremos antes de activarlas y actualizaremos esta página.</p>
+  </section>
+
   <section>
     <h2>Menores de edad</h2>
     <p>Si tienes menos de 14 años, tu madre, padre o tutor legal debe darnos el consentimiento en tu nombre.</p>
@@ -237,5 +266,6 @@
     } catch (e) {}
   })();
 </script>
+<script src="cookies.js" defer></script>
 </body>
 </html>
