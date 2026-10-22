@@ -64,49 +64,56 @@
   .btn-wa { background: var(--wa); color: var(--white); }
 
   /* Header */
-  header { position: sticky; top: 0; z-index: 50; background: rgba(34, 12, 45, .94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 167, 196, .18); }
+  header { position: sticky; top: 0; z-index: 50; background: rgba(250, 248, 245, .94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  header .brand { color: var(--dark); }
+  header .brand small { color: var(--purple); }
+  header .brand img { box-shadow: 0 6px 16px -6px rgba(55, 20, 71, .5); }
   .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; height: 76px; }
   .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--white); min-width: 0; }
   .brand img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px rgba(226, 167, 196, .55); }
   .brand b { display: block; font: 700 21px/1 var(--serif); letter-spacing: .14em; }
   .brand small { display: block; font-size: 9.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--rose); margin-top: 4px; white-space: nowrap; }
   .nav-links { display: flex; gap: 30px; font-size: 14px; }
-  .nav-links a { color: rgba(250, 248, 245, .78); text-decoration: none; transition: color .2s; }
-  .nav-links a:hover { color: var(--rose); }
+  .nav-links a { color: var(--ink); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--rosegold); }
   .nav-cta { display: flex; gap: 10px; align-items: center; }
   .nav-cta .btn { white-space: nowrap; padding: 11px 20px; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
-  .nav-wa { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(226, 167, 196, .4); }
+  .nav-wa { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); background: var(--white); }
   @media (max-width: 960px) { .nav-links { display: none; } }
   @media (max-width: 520px) { .brand small { display: none; } .nav-cta .btn { padding: 10px 14px; letter-spacing: .06em; } .brand b { font-size: 18px; letter-spacing: .1em; } }
 
   /* Hero */
-  .hero { position: relative; overflow: hidden; background: radial-gradient(90% 80% at 85% 0%, rgba(74, 29, 94, .95), transparent 60%), radial-gradient(60% 60% at 0% 100%, rgba(183, 110, 121, .22), transparent 60%), var(--dark); color: var(--white); padding: 96px 0 110px; }
-  .hero::after { content: ""; position: absolute; width: 640px; height: 640px; right: -220px; top: -160px; border-radius: 50%; border: 1px solid rgba(226, 167, 196, .16); box-shadow: 0 0 0 70px rgba(226, 167, 196, .03), 0 0 0 140px rgba(226, 167, 196, .02); pointer-events: none; }
-  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; align-items: center; }
-  .badge { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; background: rgba(226, 167, 196, .1); border: 1px solid rgba(226, 167, 196, .3); color: var(--rose); font-size: 12.5px; font-weight: 600; letter-spacing: .04em; }
-  .badge i { width: 7px; height: 7px; border-radius: 50%; background: var(--rose); animation: pulse 2s infinite; }
+  .topbar { background: var(--dark); color: rgba(250, 248, 245, .86); font-size: 11.5px; letter-spacing: .2em; text-transform: uppercase; text-align: center; padding: 10px 16px; }
+  .topbar i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--rose); margin-right: 10px; vertical-align: middle; animation: pulse 2s infinite; }
+  .hero { position: relative; overflow: hidden; background: radial-gradient(70% 60% at 80% 10%, rgba(244, 196, 214, .45), transparent 65%), radial-gradient(60% 50% at 0% 90%, rgba(226, 167, 196, .25), transparent 60%), linear-gradient(180deg, var(--cream), var(--soft)); padding: 80px 0 96px; }
+  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.25fr 1fr; gap: 64px; align-items: center; }
+  .badge { display: inline-flex; align-items: center; gap: 10px; padding: 9px 18px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); color: var(--purple); font-size: 13px; font-weight: 600; box-shadow: 0 10px 24px -18px rgba(55, 20, 71, .5); }
+  .badge svg { color: var(--rosegold); }
   @keyframes pulse { 50% { opacity: .35; } }
-  .hero h1 { font: 600 clamp(42px, 6vw, 74px)/1.02 var(--serif); margin: 26px 0 22px; letter-spacing: -.015em; }
-  .hero h1 em { font-style: italic; background: linear-gradient(100deg, var(--rose), var(--pink) 60%, #fff); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .hero .lead { color: rgba(250, 248, 245, .74); font-size: 18px; font-weight: 300; max-width: 560px; }
+  .hero h1 { font: 600 clamp(42px, 6vw, 76px)/1.02 var(--serif); margin: 26px 0 22px; letter-spacing: -.015em; color: var(--dark); }
+  .hero h1 em { display: block; font-style: italic; font-weight: 500; background: linear-gradient(100deg, var(--purple), #C77AA0 55%, var(--rose)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero .lead { color: var(--ink-soft); font-size: 18px; max-width: 560px; }
   .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
-  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 52px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, .1); }
-  .metrics b { display: block; font: 600 34px/1 var(--serif); color: var(--rose); }
-  .metrics span { display: block; font-size: 12.5px; color: rgba(250, 248, 245, .62); margin-top: 8px; line-height: 1.45; }
-  .hero-card { position: relative; padding: 2px; border-radius: 30px; background: linear-gradient(160deg, rgba(226, 167, 196, .5), rgba(226, 167, 196, .05) 60%); }
-  .hero-card > div { background: rgba(55, 20, 71, .92); border-radius: 28px; padding: 34px 32px; }
-  .hero-card .photo { display: flex; gap: 16px; align-items: center; padding-bottom: 22px; margin-bottom: 22px; border-bottom: 1px solid rgba(226, 167, 196, .18); }
-  .hero-card .photo img { width: 74px; height: 74px; border-radius: 50%; object-fit: cover; object-position: center top; box-shadow: 0 0 0 3px rgba(226, 167, 196, .35); }
-  .hero-card .photo b { display: block; font: 600 25px/1.1 var(--serif); }
-  .hero-card .photo small { display: block; font-size: 12.5px; color: var(--rose); margin-top: 4px; line-height: 1.4; }
-  .hero-card h3 { font: 600 24px/1.2 var(--serif); margin-bottom: 14px; }
+  .btn-grad { background: linear-gradient(100deg, var(--dark), var(--purple) 55%, #C77AA0); color: var(--white); text-transform: uppercase; letter-spacing: .1em; box-shadow: 0 18px 34px -18px rgba(55, 20, 71, .7); }
+  .btn-light { background: var(--white); border: 1px solid var(--line); color: var(--dark); text-transform: uppercase; letter-spacing: .1em; }
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .metrics div { padding: 0 14px; border-left: 1px solid var(--line); }
+  .metrics div:first-child { border-left: 0; padding-left: 0; }
+  .metrics b { display: block; font: 600 36px/1 var(--serif); color: var(--dark); }
+  .metrics span { display: block; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--purple); margin-top: 8px; line-height: 1.45; }
+  .hero-photo { position: relative; padding: 10px; border-radius: 36px; background: var(--white); box-shadow: 0 40px 70px -40px rgba(34, 12, 45, .55); }
+  .hero-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center top; border-radius: 28px; }
+  .hero-photo .card { position: absolute; left: 30px; right: 30px; bottom: 30px; display: flex; gap: 16px; align-items: center; padding: 18px 20px; border-radius: 22px; background: rgba(34, 12, 45, .9); border: 1px solid rgba(226, 167, 196, .3); color: var(--white); backdrop-filter: blur(8px); }
+  .hero-photo .card span:first-child { flex: 0 0 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: rgba(226, 167, 196, .16); color: var(--rose); }
+  .hero-photo .card b { display: block; font-size: 16px; }
+  .hero-photo .card small { display: block; font-size: 13px; color: rgba(250, 248, 245, .72); line-height: 1.4; }
+  .hero-news { margin-top: 26px; font-size: 14px; color: var(--ink-soft); }
+  .hero-news a { color: var(--purple); font-weight: 700; }
   .ticks { list-style: none; display: grid; gap: 12px; font-size: 14.5px; color: rgba(250, 248, 245, .8); }
   .ticks li { display: flex; gap: 12px; }
   .ticks li::before { content: "✓"; flex: 0 0 22px; height: 22px; border-radius: 50%; background: rgba(226, 167, 196, .16); color: var(--rose); font-size: 12px; font-weight: 800; display: grid; place-items: center; margin-top: 1px; }
-  .hero-card .news { margin-top: 22px; padding: 14px 16px; border-radius: 16px; background: rgba(226, 167, 196, .1); font-size: 13.5px; color: var(--pink); }
-  .hero-card .news a { color: var(--white); font-weight: 700; }
-  @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } .hero { padding: 64px 0 80px; } }
-  @media (max-width: 620px) { .metrics { grid-template-columns: 1fr 1fr; } .hero-ctas .btn { width: 100%; } }
+  @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } .hero { padding: 56px 0 72px; } .hero-text { text-align: center; } .hero .lead { margin: 0 auto; } .hero-ctas { justify-content: center; } .hero-photo { max-width: 460px; margin: 0 auto; width: 100%; } }
+  @media (max-width: 620px) { .metrics { grid-template-columns: 1fr 1fr; row-gap: 22px; } .metrics div:nth-child(3) { border-left: 0; padding-left: 0; } .hero-ctas .btn { width: 100%; } .topbar { font-size: 10.5px; letter-spacing: .14em; } .hero-photo .card { left: 18px; right: 18px; bottom: 18px; } }
 
   /* Evaluador */
   #evaluador { background: var(--soft); border-bottom: 1px solid var(--line); }
@@ -282,6 +289,7 @@
 </head>
 <body>
 
+<div class="topbar"><i></i>Asesoría de extranjería y movilidad internacional en España</div>
 <header>
   <div class="wrap nav">
     <a class="brand" href="#">
@@ -296,8 +304,8 @@
       <a href="#preguntas">Preguntas</a>
     </nav>
     <div class="nav-cta">
-      <a class="nav-wa" href="https://wa.me/34672953197?text=Hola%20Viviana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#E2A7C4" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg></a>
-      <a class="btn btn-rose book" href="#contacto">Cita VIP</a>
+      <a class="nav-wa" href="https://wa.me/34672953197?text=Hola%20Viviana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#1fa855" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg></a>
+      <a class="btn btn-grad book" href="#contacto">Cita VIP</a>
     </div>
   </div>
 </header>
@@ -305,43 +313,33 @@
 <main>
   <section class="hero">
     <div class="wrap hero-grid">
-      <div>
-        <span class="badge"><i></i>Asesoría de extranjería exclusiva y personal</span>
-        <h1>Tu nueva vida en España, con la tranquilidad de tener a <em>Acero Pulido</em> a tu lado.</h1>
-        <p class="lead">Estudios, doctorado, residencia, nómadas digitales, familia y nacionalidad. Me ocupo de los trámites más delicados con rigor jurídico, rapidez y el trato cercano que te mereces.</p>
+      <div class="hero-text">
+        <span class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 8 4 10h12l4-10-6 4-4-7-4 7-6-4Z"/></svg>Rigor y seguridad jurídica en tu trámite</span>
+        <h1>Tu residencia en España, <em>tratada como una obra de arte</em></h1>
+        <p class="lead">Asesoría de extranjería personal para estudiantes, investigadores, nómadas digitales, profesionales y familias. Convierto la complejidad de la normativa en un camino claro, ordenado y acompañado de principio a fin.</p>
         <div class="hero-ctas">
-          <a class="btn btn-rose" href="#evaluador">Descubre tu camino</a>
-          <a class="btn btn-ghost book" href="#contacto">Consulta de valoración · 45 €</a>
+          <a class="btn btn-grad book" href="#contacto">Agendar consulta VIP <span aria-hidden="true">→</span></a>
+          <a class="btn btn-light" href="#evaluador">Descubre tu visado</a>
         </div>
         <div class="metrics">
-          <div><b>&lt; 24 h</b><span>para responder tu primera consulta</span></div>
-          <div><b>1:1</b><span>la misma persona de principio a fin</span></div>
-          <div><b>100 %</b><span>online, estés donde estés</span></div>
-          <div><b>45 €</b><span>la consulta, que se descuenta si contratas</span></div>
+          <div><b>&lt; 24 h</b><span>Primera respuesta</span></div>
+          <div><b>1:1</b><span>Trato directo conmigo</span></div>
+          <div><b>100 %</b><span>Online y confidencial</span></div>
+          <div><b>45 €</b><span>Consulta, se descuenta</span></div>
         </div>
+        <p class="hero-news">Novedad 2026: el doctorado ya es residencia para investigación, con resolución en 20 días. <a href="#preguntas" data-open-faq="doctorado">Qué significa →</a></p>
       </div>
-      <aside class="hero-card reveal" data-hidden="true">
-        <div>
-          <div class="photo">
-            <img src="assets/viviana.jpg" alt="Viviana Acero Pulido">
-            <span><b>Viviana Acero Pulido</b><small>Abogada en Colombia, egresada de la Universidad Militar Nueva Granada</small></span>
-          </div>
-          <h3>¿Por qué conmigo?</h3>
-          <ul class="ticks">
-            <li>Hablas siempre conmigo, no con un equipo que cambia.</li>
-            <li>Reviso cada documento antes de presentarlo, para evitar requerimientos.</li>
-            <li>Te represento ante la Administración con poder notarial y sigo tu expediente hasta la resolución.</li>
-          </ul>
-          <p class="news">Novedad 2026: el doctorado ya es residencia para investigación, con resolución en 20 días. <a href="#preguntas" data-open-faq="doctorado">Qué significa →</a></p>
-        </div>
-      </aside>
+      <figure class="hero-photo reveal" data-hidden="true">
+        <img src="assets/viviana.jpg" alt="Viviana Acero Pulido, asesora de extranjería">
+        <figcaption class="card"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 8 5-3 5 3-1.5-8"/></svg></span><span><b>Viviana Acero Pulido</b><small>Abogada en Colombia, egresada de la Universidad Militar Nueva Granada</small></span></figcaption>
+      </figure>
     </div>
   </section>
 
   <section id="evaluador">
     <div class="wrap">
       <div class="section-head center reveal" data-hidden="true">
-        <span class="kicker">Test de visado</span>
+        <span class="kicker">Herramienta inteligente · Test de visado</span>
         <h2 class="serif">¿Qué camino es <em>el tuyo</em>?</h2>
         <p>Dos preguntas y te digo qué autorización encaja contigo. Es orientativo: en la consulta lo confirmamos con tu caso real.</p>
       </div>
