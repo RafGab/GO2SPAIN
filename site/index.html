@@ -3,336 +3,395 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acero Pulido · Extranjería para estudiantes e investigadores en España</title>
-<meta name="description" content="Estancia por estudios, doctorado como residencia para investigación, paso de estudiante a residente y nacionalidad española. Consulta por videollamada y precios publicados.">
-<meta property="og:title" content="Acero Pulido · Estudia en España con los papeles en regla">
-<meta property="og:description" content="Estancia por estudios, doctorado, paso a residencia y nacionalidad. Consulta online con precio cerrado.">
+<title>Acero Pulido · Extranjería y movilidad internacional en España</title>
+<meta name="description" content="Estancia por estudios, doctorado, paso a residencia, nacionalidad, nómada digital, residencia no lucrativa, familiares y arraigos. Asesoría personal por videollamada con Viviana Acero Pulido.">
+<meta property="og:title" content="Acero Pulido · Tu vida en España, con los papeles en regla">
+<meta property="og:description" content="Asesoría de extranjería personal y cercana. Consulta online de valoración por 45 €, que se descuenta si contratas.">
 <meta property="og:image" content="assets/logo-full.jpg">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#3a1d2c">
+<meta name="theme-color" content="#220C2D">
 <link rel="icon" href="assets/logo-mark.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --plum: #3a1d2c;
-    --plum-2: #552a40;
-    --mauve: #8a4a68;
-    --mauve-soft: #b07a93;
-    --rose: #e9c4d0;
-    --rose-100: #f7e9ee;
-    --cream: #faf5f3;
-    --gold: #b98d3f;
-    --gold-100: #f6ecd8;
-    --ink: #2b1a20;
-    --ink-soft: #6f5a61;
-    --line: #ead9de;
+    --dark: #220C2D;
+    --purple: #371447;
+    --purple-2: #4a1d5e;
+    --rose: #E2A7C4;
+    --pink: #F4C4D6;
+    --rosegold: #B76E79;
+    --rosegold-2: #D8A48F;
+    --cream: #FAF8F5;
+    --soft: #FFF8FA;
     --white: #fff;
+    --ink: #2A1633;
+    --ink-soft: #6E5A73;
+    --line: #EEDDE6;
     --wa: #1fa855;
-    --radius: 22px;
-    --shadow: 0 24px 48px -28px rgba(58, 29, 44, .35);
-    --serif: "Fraunces", Georgia, serif;
-    --sans: "Manrope", system-ui, sans-serif;
+    --radius: 24px;
+    --shadow: 0 30px 60px -36px rgba(34, 12, 45, .45);
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Plus Jakarta Sans", system-ui, sans-serif;
+    --gold-grad: linear-gradient(120deg, #B76E79, #E2A7C4 45%, #D8A48F);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.6; font-size: 17px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.65; font-size: 16.5px; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--rose); color: var(--dark); }
   img { max-width: 100%; display: block; }
   a { color: inherit; }
-  .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
-  .serif { font-family: var(--serif); font-weight: 700; letter-spacing: -.01em; line-height: 1.12; }
-  .kicker { font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--mauve); }
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 26px; border-radius: 999px; font-weight: 800; font-size: 16px; text-decoration: none; border: 0; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
-  .btn:hover { transform: translateY(-2px); }
-  .btn-main { background: var(--plum); color: var(--white); box-shadow: 0 12px 24px -12px rgba(58, 29, 44, .6); }
-  .btn-wa { background: var(--wa); color: var(--white); }
-  .btn-ghost { background: transparent; color: var(--plum); border: 2px solid var(--plum); }
-  section { padding: 88px 0; }
-  .section-head { max-width: 680px; margin-bottom: 44px; }
-  .section-head h2 { font-size: clamp(30px, 4vw, 44px); margin: 10px 0 14px; }
-  .section-head p { color: var(--ink-soft); font-size: 18px; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .serif { font-family: var(--serif); font-weight: 600; letter-spacing: -.01em; }
+  .kicker { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--rosegold); }
+  .kicker::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+  h2.serif { font-size: clamp(34px, 4.6vw, 54px); line-height: 1.05; color: var(--dark); margin-top: 14px; }
+  h2.serif em { font-style: italic; color: var(--rosegold); }
+  .section-head { max-width: 700px; margin-bottom: 48px; }
+  .section-head p { color: var(--ink-soft); margin-top: 14px; font-size: 17px; }
+  .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .section-head.center .kicker::after { content: ""; width: 28px; height: 1px; background: currentColor; }
+  section { padding: 104px 0; }
 
-  /* Cabecera */
-  header { position: sticky; top: 0; z-index: 50; background: rgba(250, 245, 243, .92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-  .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 20px; }
-  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .brand img { width: 42px; height: 42px; border-radius: 12px; object-fit: cover; }
-  .brand b { font-family: var(--serif); font-size: 20px; letter-spacing: .08em; color: var(--plum); }
-  .brand small { display: block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; }
-  .nav-links { display: flex; gap: 26px; font-weight: 700; font-size: 15px; }
-  .nav-links a { text-decoration: none; color: var(--ink-soft); }
-  .nav-links a:hover { color: var(--plum); }
-  .nav .btn { padding: 11px 20px; font-size: 15px; }
-  @media (max-width: 900px) { .nav-links { display: none; } }
-  @media (max-width: 560px) { .brand small { display: none; } .brand b { font-size: 17px; } .nav .btn { padding: 10px 16px; font-size: 14px; } }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 28px; border-radius: 999px; font: 700 14px/1.2 var(--sans); letter-spacing: .06em; text-decoration: none; border: 0; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-rose { background: linear-gradient(110deg, var(--rose), var(--pink)); color: var(--dark); box-shadow: 0 16px 30px -16px rgba(226, 167, 196, .8); }
+  .btn-ghost { border: 1px solid rgba(226, 167, 196, .45); color: var(--white); background: transparent; }
+  .btn-ghost:hover { background: rgba(226, 167, 196, .1); }
+  .btn-dark { background: var(--dark); color: var(--white); }
+  .btn-line { border: 1px solid var(--line); background: var(--white); color: var(--purple); }
+  .btn-wa { background: var(--wa); color: var(--white); }
+
+  /* Header */
+  header { position: sticky; top: 0; z-index: 50; background: rgba(250, 248, 245, .94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  header .brand { color: var(--dark); }
+  header .brand small { color: var(--purple); }
+  header .brand img { box-shadow: 0 6px 16px -6px rgba(55, 20, 71, .5); }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; height: 76px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--white); min-width: 0; }
+  .brand img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px rgba(226, 167, 196, .55); }
+  .brand b { display: block; font: 700 21px/1 var(--serif); letter-spacing: .14em; }
+  .brand small { display: block; font-size: 9.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--rose); margin-top: 4px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 30px; font-size: 14px; }
+  .nav-links a { color: var(--ink); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--rosegold); }
+  .nav-cta { display: flex; gap: 10px; align-items: center; }
+  .nav-cta .btn { white-space: nowrap; padding: 11px 20px; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
+  .nav-wa { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); background: var(--white); }
+  @media (max-width: 960px) { .nav-links { display: none; } }
+  @media (max-width: 520px) { .brand small { display: none; } .nav-cta .btn { padding: 10px 14px; letter-spacing: .06em; } .brand b { font-size: 18px; letter-spacing: .1em; } }
 
   /* Hero */
-  .hero { padding: 72px 0 56px; background: radial-gradient(1200px 500px at 85% -10%, var(--rose-100), transparent 60%); }
-  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
-  .hero h1 { font-size: clamp(38px, 5.6vw, 64px); margin: 16px 0 20px; color: var(--plum); }
-  .hero h1 em { font-style: italic; color: var(--mauve); font-weight: 500; }
-  .hero p.lead { font-size: 19px; color: var(--ink-soft); max-width: 560px; }
-  .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 34px; }
-  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 600px; }
-  .facts div { border-left: 3px solid var(--gold); padding-left: 12px; font-size: 14px; color: var(--ink-soft); }
-  .facts b { display: block; color: var(--plum); font-size: 16px; }
-  .hero-card { background: var(--plum); color: var(--cream); border-radius: 30px; padding: 34px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
-  .hero-card::after { content: ""; position: absolute; width: 320px; height: 320px; border-radius: 50%; border: 44px solid rgba(233, 196, 208, .12); right: -120px; bottom: -140px; }
-  .hero-card .tag { display: inline-block; background: var(--gold); color: var(--plum); font-weight: 800; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; }
-  .hero-card h3 { font-family: var(--serif); font-size: 28px; line-height: 1.15; margin: 16px 0 12px; }
-  .hero-card p { color: var(--rose); font-size: 16px; }
-  .hero-card a { display: inline-block; margin-top: 18px; color: var(--gold-100); font-weight: 800; }
-  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .facts { grid-template-columns: 1fr; } }
+  .topbar { background: var(--dark); color: rgba(250, 248, 245, .86); font-size: 11.5px; letter-spacing: .2em; text-transform: uppercase; text-align: center; padding: 10px 16px; }
+  .topbar i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--rose); margin-right: 10px; vertical-align: middle; animation: pulse 2s infinite; }
+  .hero { position: relative; overflow: hidden; background: radial-gradient(70% 60% at 80% 10%, rgba(244, 196, 214, .45), transparent 65%), radial-gradient(60% 50% at 0% 90%, rgba(226, 167, 196, .25), transparent 60%), linear-gradient(180deg, var(--cream), var(--soft)); padding: 80px 0 96px; }
+  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.25fr 1fr; gap: 64px; align-items: center; }
+  .badge { display: inline-flex; align-items: center; gap: 10px; padding: 9px 18px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); color: var(--purple); font-size: 13px; font-weight: 600; box-shadow: 0 10px 24px -18px rgba(55, 20, 71, .5); }
+  .badge svg { color: var(--rosegold); }
+  @keyframes pulse { 50% { opacity: .35; } }
+  .hero h1 { font: 600 clamp(42px, 6vw, 76px)/1.02 var(--serif); margin: 26px 0 22px; letter-spacing: -.015em; color: var(--dark); }
+  .hero h1 em { display: block; font-style: italic; font-weight: 500; background: linear-gradient(100deg, var(--purple), #C77AA0 55%, var(--rose)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero .lead { color: var(--ink-soft); font-size: 18px; max-width: 560px; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+  .btn-grad { background: linear-gradient(100deg, var(--dark), var(--purple) 55%, #C77AA0); color: var(--white); text-transform: uppercase; letter-spacing: .1em; box-shadow: 0 18px 34px -18px rgba(55, 20, 71, .7); }
+  .btn-light { background: var(--white); border: 1px solid var(--line); color: var(--dark); text-transform: uppercase; letter-spacing: .1em; }
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .metrics div { padding: 0 14px; border-left: 1px solid var(--line); }
+  .metrics div:first-child { border-left: 0; padding-left: 0; }
+  .metrics b { display: block; font: 600 36px/1 var(--serif); color: var(--dark); }
+  .metrics span { display: block; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--purple); margin-top: 8px; line-height: 1.45; }
+  .hero-photo { position: relative; padding: 10px; border-radius: 36px; background: var(--white); box-shadow: 0 40px 70px -40px rgba(34, 12, 45, .55); }
+  .hero-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center top; border-radius: 28px; }
+  .hero-photo .card { position: absolute; left: 30px; right: 30px; bottom: 30px; display: flex; gap: 16px; align-items: center; padding: 18px 20px; border-radius: 22px; background: rgba(34, 12, 45, .9); border: 1px solid rgba(226, 167, 196, .3); color: var(--white); backdrop-filter: blur(8px); }
+  .hero-photo .card span:first-child { flex: 0 0 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: rgba(226, 167, 196, .16); color: var(--rose); }
+  .hero-photo .card b { display: block; font-size: 16px; }
+  .hero-photo .card small { display: block; font-size: 13px; color: rgba(250, 248, 245, .72); line-height: 1.4; }
+  .hero-news { margin-top: 26px; font-size: 14px; color: var(--ink-soft); }
+  .hero-news a { color: var(--purple); font-weight: 700; }
+  .ticks { list-style: none; display: grid; gap: 12px; font-size: 14.5px; color: rgba(250, 248, 245, .8); }
+  .ticks li { display: flex; gap: 12px; }
+  .ticks li::before { content: "✓"; flex: 0 0 22px; height: 22px; border-radius: 50%; background: rgba(226, 167, 196, .16); color: var(--rose); font-size: 12px; font-weight: 800; display: grid; place-items: center; margin-top: 1px; }
+  @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } .hero { padding: 56px 0 72px; } .hero-text { text-align: center; } .hero .lead { margin: 0 auto; } .hero-ctas { justify-content: center; } .hero-photo { max-width: 460px; margin: 0 auto; width: 100%; } }
+  @media (max-width: 620px) { .metrics { grid-template-columns: 1fr 1fr; row-gap: 22px; } .metrics div:nth-child(3) { border-left: 0; padding-left: 0; } .hero-ctas .btn { width: 100%; } .topbar { font-size: 10.5px; letter-spacing: .14em; } .hero-photo .card { left: 18px; right: 18px; bottom: 18px; } }
 
-  /* Rutas */
-  .routes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-  .route { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; transition: transform .15s, box-shadow .15s; }
-  .route:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-  .route .ico { width: 52px; height: 52px; border-radius: 16px; background: var(--rose-100); display: grid; place-items: center; color: var(--mauve); }
-  .route h3 { font-family: var(--serif); font-size: 22px; color: var(--plum); line-height: 1.2; }
-  .route p { color: var(--ink-soft); font-size: 15px; flex: 1; }
-  .route .from { font-weight: 800; color: var(--mauve); font-size: 15px; }
-  .route .new { align-self: flex-start; background: var(--gold-100); color: #7a5a1e; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
-  @media (max-width: 1000px) { .routes { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .routes { grid-template-columns: 1fr; } }
+  /* Evaluador */
+  #evaluador { background: var(--soft); border-bottom: 1px solid var(--line); }
+  .quiz { max-width: 860px; margin: 0 auto; background: var(--white); border: 1px solid var(--line); border-radius: 32px; box-shadow: var(--shadow); overflow: hidden; }
+  .quiz-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 22px 32px; background: linear-gradient(110deg, var(--purple), var(--dark)); color: var(--white); }
+  .quiz-top b { font: 600 22px var(--serif); }
+  .dots { display: flex; gap: 6px; }
+  .dots i { width: 26px; height: 4px; border-radius: 4px; background: rgba(226, 167, 196, .25); transition: background .3s; }
+  .dots i.on { background: var(--rose); }
+  .quiz-body { padding: 34px 32px 38px; }
+  .quiz-q { font: 600 30px/1.15 var(--serif); color: var(--dark); margin-bottom: 22px; }
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .opt { text-align: left; padding: 18px 20px; border-radius: 18px; border: 1px solid var(--line); background: var(--cream); font: 500 15px/1.4 var(--sans); color: var(--ink); cursor: pointer; transition: border-color .2s, background .2s, transform .2s; display: flex; gap: 14px; align-items: center; }
+  .opt:hover, .opt:focus-visible { border-color: var(--rose); background: var(--soft); transform: translateY(-2px); outline: none; }
+  .opt span { flex: 0 0 38px; height: 38px; border-radius: 12px; background: var(--white); border: 1px solid var(--line); display: grid; place-items: center; font-size: 18px; }
+  .quiz-back { margin-top: 20px; background: none; border: 0; color: var(--ink-soft); font: 600 14px var(--sans); cursor: pointer; }
+  .result { display: grid; gap: 16px; }
+  .result .tag { justify-self: start; font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--rosegold); background: var(--soft); border: 1px solid var(--line); padding: 6px 12px; border-radius: 999px; }
+  .result h3 { font: 600 36px/1.1 var(--serif); color: var(--dark); }
+  .result p { color: var(--ink-soft); }
+  .result .acts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+  .result small { color: var(--ink-soft); font-size: 12.5px; }
+  @media (max-width: 640px) { .opts { grid-template-columns: 1fr; } .quiz-body { padding: 26px 20px 30px; } .quiz-top { padding: 18px 20px; } .quiz-q { font-size: 26px; } }
 
-  /* Pasos */
-  .steps-bg { background: var(--white); border-block: 1px solid var(--line); }
-  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; counter-reset: s; }
-  .step { position: relative; padding-top: 58px; }
-  .step::before { counter-increment: s; content: counter(s, decimal-leading-zero); position: absolute; top: 0; left: 0; font-family: var(--serif); font-size: 40px; color: var(--rose); font-weight: 700; }
-  .step h3 { font-size: 19px; color: var(--plum); margin-bottom: 8px; }
-  .step p { color: var(--ink-soft); font-size: 15px; }
-  @media (max-width: 900px) { .steps { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+  /* Servicios */
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .svc { position: relative; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px 26px; display: flex; flex-direction: column; gap: 12px; transition: transform .25s, box-shadow .25s, border-color .25s; }
+  .svc:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--rose); }
+  .svc .ico { width: 54px; height: 54px; border-radius: 18px; display: grid; place-items: center; background: linear-gradient(140deg, var(--soft), #F6E3EC); color: var(--purple); border: 1px solid var(--line); }
+  .svc h3 { font: 600 27px/1.1 var(--serif); color: var(--dark); margin-top: 6px; }
+  .svc p { color: var(--ink-soft); font-size: 15px; flex: 1; }
+  .svc .price { font-size: 13px; font-weight: 700; color: var(--purple); letter-spacing: .02em; }
+  .svc .price small { color: var(--ink-soft); font-weight: 500; }
+  .svc .new { position: absolute; top: 22px; right: 22px; font-size: 10.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--white); background: var(--rosegold); padding: 5px 10px; border-radius: 999px; }
+  .svc .more { margin-top: 6px; align-self: flex-start; background: none; border: 0; padding: 0; font: 700 13px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--rosegold); cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+  .svc .more:hover { color: var(--purple); }
+  .svc-note { margin-top: 28px; color: var(--ink-soft); font-size: 14px; text-align: center; }
+  @media (max-width: 1000px) { .services { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .services { grid-template-columns: 1fr; } }
 
-  /* Precios */
-  .pricing { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items: start; }
-  .price-main { background: var(--plum); color: var(--cream); border-radius: 28px; padding: 36px; box-shadow: var(--shadow); }
-  .price-main .amount { font-family: var(--serif); font-size: 64px; line-height: 1; margin: 14px 0 6px; color: var(--white); }
-  .price-main .amount small { font-size: 18px; font-family: var(--sans); color: var(--rose); font-weight: 600; }
-  .price-main ul { list-style: none; margin: 22px 0 28px; display: grid; gap: 10px; }
-  .price-main li { padding-left: 28px; position: relative; color: var(--rose); }
-  .price-main li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 800; }
-  .price-main .btn { background: var(--gold); color: var(--plum); width: 100%; }
-  .price-list { background: var(--white); border: 1px solid var(--line); border-radius: 28px; overflow: hidden; }
-  .price-row { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 22px 28px; border-bottom: 1px solid var(--line); }
-  .price-row:last-of-type { border-bottom: 0; }
-  .price-row h3 { font-size: 17px; color: var(--plum); }
-  .price-row p { font-size: 14px; color: var(--ink-soft); }
-  .price-row .p { font-family: var(--serif); font-size: 26px; color: var(--mauve); white-space: nowrap; align-self: center; }
-  .price-row .p small { font-family: var(--sans); font-size: 13px; color: var(--ink-soft); display: block; text-align: right; }
-  .price-note { padding: 18px 28px; background: var(--rose-100); font-size: 14px; color: var(--ink-soft); }
-  @media (max-width: 900px) { .pricing { grid-template-columns: 1fr; } }
+  /* Modal */
+  dialog { margin: auto; border: 0; padding: 0; border-radius: 30px; width: min(680px, calc(100vw - 32px)); max-height: calc(100vh - 48px); background: var(--white); color: var(--ink); box-shadow: 0 40px 80px -30px rgba(34, 12, 45, .6); }
+  dialog::backdrop { background: rgba(34, 12, 45, .62); backdrop-filter: blur(4px); }
+  .m-head { position: sticky; top: 0; z-index: 1; background: linear-gradient(110deg, var(--purple), var(--dark)); color: var(--white); padding: 26px 30px 24px; }
+  .m-head small { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--rose); }
+  .m-head h3 { font: 600 34px/1.1 var(--serif); margin-top: 6px; padding-right: 40px; }
+  .m-close { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(226, 167, 196, .4); background: transparent; color: var(--white); font-size: 22px; cursor: pointer; }
+  .m-body { padding: 26px 30px 30px; display: grid; gap: 18px; }
+  .m-body h4 { font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--rosegold); margin-bottom: 8px; }
+  .m-body ul { list-style: none; display: grid; gap: 9px; }
+  .m-body li { position: relative; padding-left: 22px; font-size: 15px; }
+  .m-body li::before { content: ""; position: absolute; left: 2px; top: 10px; width: 7px; height: 7px; border-radius: 50%; background: var(--rose); }
+  .m-body .m-price { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; padding: 16px 18px; border-radius: 18px; background: var(--soft); border: 1px solid var(--line); }
+  .m-body .m-price b { font: 600 28px var(--serif); color: var(--purple); }
+  .m-body .m-src { font-size: 12.5px; color: var(--ink-soft); }
+  .m-acts { display: flex; gap: 10px; flex-wrap: wrap; }
 
-  /* Quién soy */
-  .about { display: grid; grid-template-columns: 320px 1fr; gap: 48px; align-items: center; }
-  .about-photo { aspect-ratio: 4 / 5; border-radius: 28px; overflow: hidden; background: var(--rose-100); box-shadow: var(--shadow); }
-  .about-photo img { width: 100%; height: 100%; object-fit: cover; }
-  .about h2 { font-size: clamp(30px, 4vw, 42px); color: var(--plum); margin: 10px 0 18px; }
-  .about p { color: var(--ink-soft); margin-bottom: 14px; font-size: 17px; }
-  .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-  .pill-row span { background: var(--white); border: 1px solid var(--line); padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 700; color: var(--plum); }
-  @media (max-width: 800px) { .about { grid-template-columns: 1fr; } .about-photo { max-width: 320px; } }
+  /* Roadmap */
+  #proceso { background: var(--dark); color: var(--white); position: relative; overflow: hidden; }
+  #proceso h2.serif { color: var(--white); }
+  #proceso h2.serif em { color: var(--rose); }
+  #proceso .section-head p { color: rgba(250, 248, 245, .68); }
+  .road { display: grid; grid-template-columns: 340px 1fr; gap: 40px; align-items: start; }
+  .road-steps { list-style: none; display: grid; gap: 10px; position: relative; }
+  .road-steps button { width: 100%; display: flex; gap: 16px; align-items: center; text-align: left; padding: 16px 18px; border-radius: 18px; background: transparent; border: 1px solid rgba(226, 167, 196, .16); color: rgba(250, 248, 245, .72); font: 600 15px var(--sans); cursor: pointer; transition: background .25s, border-color .25s, color .25s; }
+  .road-steps button span { flex: 0 0 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(226, 167, 196, .4); font: 600 19px var(--serif); color: var(--rose); }
+  .road-steps button[aria-selected="true"] { background: rgba(226, 167, 196, .12); border-color: var(--rose); color: var(--white); }
+  .road-steps button[aria-selected="true"] span { background: var(--rose); color: var(--dark); }
+  .road-panel { min-height: 330px; border-radius: 30px; padding: 40px; background: linear-gradient(150deg, rgba(74, 29, 94, .8), rgba(55, 20, 71, .5)); border: 1px solid rgba(226, 167, 196, .2); }
+  .road-panel small { font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--rose); }
+  .road-panel h3 { font: 600 40px/1.1 var(--serif); margin: 10px 0 16px; }
+  .road-panel p { color: rgba(250, 248, 245, .76); max-width: 560px; }
+  .road-panel ul { margin-top: 22px; }
+  .road-nav { display: flex; gap: 10px; margin-top: 28px; }
+  .road-nav .btn { padding: 11px 20px; }
+  @media (max-width: 900px) { .road { grid-template-columns: 1fr; } .road-steps { grid-template-columns: repeat(5, 1fr); gap: 6px; } .road-steps button { justify-content: center; padding: 10px 4px; } .road-steps button em { display: none; } .road-panel { padding: 28px 24px; min-height: 0; } .road-panel h3 { font-size: 32px; } }
+
+  /* Sobre */
+  .about { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+  .about-photo { position: relative; }
+  .about-photo img { border-radius: 200px 200px 30px 30px; aspect-ratio: 4/5; object-fit: cover; object-position: center top; width: 100%; box-shadow: var(--shadow); }
+  .about-photo::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; border-radius: 200px 200px 30px 30px; border: 1px solid var(--rose); z-index: -1; }
+  .about-photo .seal { position: absolute; left: -14px; bottom: 34px; background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 14px 18px; box-shadow: var(--shadow); max-width: 250px; }
+  .about-photo .seal b { display: block; font: 600 20px/1.15 var(--serif); color: var(--dark); }
+  .about-photo .seal small { color: var(--ink-soft); font-size: 12.5px; }
+  .about p { color: var(--ink-soft); margin-top: 16px; }
+  .about p strong { color: var(--ink); }
+  .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+  .pillars div { padding: 18px; border-radius: 18px; background: var(--white); border: 1px solid var(--line); }
+  .pillars b { display: block; font: 600 21px var(--serif); color: var(--purple); }
+  .pillars span { font-size: 14px; color: var(--ink-soft); }
+  @media (max-width: 900px) { .about { grid-template-columns: 1fr; gap: 48px; } .about-photo { max-width: 420px; margin: 0 auto; } }
+  @media (max-width: 520px) { .pillars { grid-template-columns: 1fr; } .about-photo .seal { left: 8px; } .about-photo::before { inset: 12px -8px -12px 12px; } }
 
   /* Reseñas */
-  #resenas[hidden] { display: none; }
-  .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .review-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
-  .review-stars { color: var(--gold); letter-spacing: 2px; margin-bottom: 10px; }
-  .review-text { color: var(--ink); margin-bottom: 14px; }
-  .review-name { color: var(--mauve); }
-  @media (max-width: 900px) { .reviews { grid-template-columns: 1fr; } }
-  details.leave { margin-top: 28px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 24px; }
-  details.leave summary { cursor: pointer; font-weight: 800; color: var(--plum); }
+  #resenas { background: var(--soft); }
+  .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+  .review-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+  .review-stars { color: var(--rosegold); letter-spacing: 3px; }
+  .review-text { font: 500 italic 21px/1.4 var(--serif); color: var(--dark); margin: 12px 0 16px; }
+  .review-name { font-size: 14px; color: var(--purple); }
 
   /* FAQ */
-  .faq { max-width: 820px; }
-  .faq-item { border-bottom: 1px solid var(--line); }
-  .faq-q { width: 100%; text-align: left; background: none; border: 0; padding: 22px 40px 22px 0; font: 700 18px var(--sans); color: var(--plum); cursor: pointer; position: relative; }
-  .faq-q::after { content: "+"; position: absolute; right: 6px; top: 18px; font-size: 26px; color: var(--mauve); transition: transform .2s; }
-  .faq-item[data-open="true"] .faq-q::after { transform: rotate(45deg); }
-  .faq-a { display: none; padding: 0 0 22px; color: var(--ink-soft); }
+  #preguntas { background: var(--soft); }
+  .faq { max-width: 860px; margin: 0 auto; display: grid; gap: 12px; }
+  .faq-item { background: var(--white); border: 1px solid var(--line); border-radius: 20px; transition: border-color .2s; }
+  .faq-item[data-open="true"] { border-color: var(--rose); }
+  .faq-q { width: 100%; text-align: left; background: none; border: 0; padding: 22px 64px 22px 26px; font: 600 16.5px/1.4 var(--sans); color: var(--dark); cursor: pointer; position: relative; }
+  .faq-q::after { content: "+"; position: absolute; right: 22px; top: 50%; translate: 0 -50%; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--soft); color: var(--rosegold); font-size: 20px; font-weight: 500; transition: rotate .25s; }
+  .faq-item[data-open="true"] .faq-q::after { rotate: 45deg; }
+  .faq-a { display: none; padding: 0 26px 24px; color: var(--ink-soft); }
+  .faq-a small { display: block; margin-top: 10px; font-size: 12.5px; color: var(--rosegold); }
   .faq-item[data-open="true"] .faq-a { display: block; }
-  .faq-a small { display: block; margin-top: 8px; font-size: 13px; }
 
   /* Contacto */
-  .contact-bg { background: var(--plum); color: var(--cream); }
-  .contact { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; }
-  .contact h2 { font-size: clamp(30px, 4vw, 44px); margin: 10px 0 16px; color: var(--white); }
-  .contact .kicker { color: var(--gold); }
-  .contact p { color: var(--rose); }
-  .contact-ways { display: grid; gap: 14px; margin-top: 28px; }
-  .contact-ways a { display: flex; gap: 14px; align-items: center; padding: 16px 18px; border-radius: 16px; background: rgba(255, 255, 255, .07); text-decoration: none; }
-  .contact > * { min-width: 0; }
-  .contact-ways b { display: block; color: var(--white); overflow-wrap: anywhere; }
-  .contact-ways small { color: var(--rose); }
-  form { background: var(--white); color: var(--ink); border-radius: 28px; padding: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  #contacto { background: radial-gradient(70% 70% at 100% 0%, rgba(74, 29, 94, .9), transparent 60%), var(--dark); color: var(--white); }
+  .contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
+  #contacto h2.serif { color: var(--white); }
+  #contacto h2.serif em { color: var(--rose); }
+  .contact > div > p { color: rgba(250, 248, 245, .72); margin-top: 16px; }
+  .how { list-style: none; display: grid; gap: 12px; margin-top: 26px; counter-reset: h; }
+  .how li { counter-increment: h; display: flex; gap: 14px; align-items: flex-start; color: rgba(250, 248, 245, .82); font-size: 15px; }
+  .how li::before { content: counter(h); flex: 0 0 30px; height: 30px; border-radius: 50%; border: 1px solid var(--rose); color: var(--rose); display: grid; place-items: center; font: 600 17px var(--serif); }
+  .contact-ways { display: grid; gap: 12px; margin-top: 30px; }
+  .contact-ways a { display: flex; gap: 14px; align-items: center; padding: 16px 18px; border-radius: 18px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(226, 167, 196, .14); text-decoration: none; transition: background .2s; }
+  .contact-ways a:hover { background: rgba(226, 167, 196, .12); }
+  .contact-ways b { display: block; color: var(--white); font-size: 15px; overflow-wrap: anywhere; }
+  .contact-ways small { color: var(--rose); font-size: 13px; }
+  .vip { position: relative; padding: 2px; border-radius: 34px; background: var(--gold-grad); box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .7); }
+  form { background: var(--white); color: var(--ink); border-radius: 32px; padding: 34px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   form .full { grid-column: 1 / -1; }
-  label { display: grid; gap: 6px; font-size: 14px; font-weight: 700; color: var(--plum); }
-  input, select, textarea { font: 500 16px var(--sans); padding: 13px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--cream); color: var(--ink); width: 100%; }
-  input:focus, select:focus, textarea:focus { outline: 2px solid var(--mauve-soft); border-color: transparent; }
-  .consent { display: flex; gap: 10px; align-items: flex-start; font-weight: 500; color: var(--ink-soft); font-size: 13px; }
-  .consent input { width: auto; margin-top: 3px; }
-  .form-submit { grid-column: 1 / -1; }
-  .agenda { background: var(--rose-100); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px; font-size: 14px; color: var(--ink-soft); }
-  .agenda b { color: var(--plum); font-size: 16px; }
+  .form-title { grid-column: 1 / -1; }
+  .form-title b { display: block; font: 600 30px/1.1 var(--serif); color: var(--dark); }
+  .form-title span { font-size: 14px; color: var(--ink-soft); }
+  .form-title a { color: var(--purple); font-weight: 700; }
+  label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: var(--ink); }
+  input, select, textarea { font: 400 15px var(--sans); color: var(--ink); background: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 13px 14px; width: 100%; min-width: 0; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--rose); outline-offset: 1px; border-color: var(--rose); }
+  .consent { flex-direction: row; align-items: flex-start; gap: 10px; font-weight: 400; color: var(--ink-soft); font-size: 13px; }
+  .consent input { width: 18px; height: 18px; flex: 0 0 18px; margin-top: 2px; accent-color: var(--purple); }
+  .form-submit { grid-column: 1 / -1; padding: 17px; font-size: 14px; text-transform: uppercase; letter-spacing: .12em; }
   .form-ok { display: none; grid-column: 1 / -1; text-align: center; padding: 30px 10px; }
+  .form-ok h3 { font: 600 32px var(--serif); color: var(--dark); }
+  .form-ok p { color: var(--ink-soft); }
   form[data-sent="true"] > *:not(.form-ok) { display: none; }
   form[data-sent="true"] .form-ok { display: block; }
-  @media (max-width: 900px) { .contact { grid-template-columns: 1fr; } form { grid-template-columns: 1fr; padding: 24px; } }
+  @media (max-width: 960px) { .contact { grid-template-columns: 1fr; } }
+  @media (max-width: 620px) { form { grid-template-columns: 1fr; padding: 24px 20px; } }
 
-  footer { background: #2a1520; color: var(--rose); padding: 40px 0; font-size: 14px; }
-  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
-  footer p { max-width: 640px; }
+  .leave-wrap { padding: 48px 0; }
+  details.leave { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 26px; }
+  details.leave summary { cursor: pointer; font-weight: 700; color: var(--purple); }
+  details.leave form { padding: 20px 0 0; border-radius: 0; }
+
+  /* Footer */
+  footer { background: #170820; color: rgba(250, 248, 245, .7); padding: 64px 0 34px; font-size: 14px; }
+  .foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+  footer h4 { font-size: 11.5px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--rose); margin-bottom: 14px; }
+  footer ul { list-style: none; display: grid; gap: 8px; }
+  footer a { color: rgba(250, 248, 245, .8); text-decoration: none; }
+  footer a:hover { color: var(--rose); }
+  footer .brand { margin-bottom: 16px; }
+  .legal { margin-top: 44px; padding-top: 24px; border-top: 1px solid rgba(226, 167, 196, .14); font-size: 12.5px; color: rgba(250, 248, 245, .5); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  @media (max-width: 860px) { .foot { grid-template-columns: 1fr; gap: 30px; } }
 
   .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; box-shadow: 0 12px 24px -8px rgba(0, 0, 0, .4); }
 
-  .reveal { transition: opacity .6s ease, transform .6s ease; }
-  .reveal[data-hidden="true"] { opacity: 0; transform: translateY(22px); }
-  @media (prefers-reduced-motion: reduce) { .reveal { transition: none; } .reveal[data-hidden="true"] { opacity: 1; transform: none; } }
+  .reveal { transition: opacity .7s ease, transform .7s ease; }
+  .reveal[data-hidden="true"] { opacity: 0; transform: translateY(24px); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal, .btn, .svc, .opt { transition: none; } .reveal[data-hidden="true"] { opacity: 1; transform: none; } .badge i { animation: none; } }
+  @media (max-width: 620px) { section { padding: 76px 0; } .wrap { padding: 0 16px; } }
 </style>
 </head>
 <body>
 
+<div class="topbar"><i></i>Asesoría de extranjería y movilidad internacional en España</div>
 <header>
   <div class="wrap nav">
     <a class="brand" href="#">
       <img src="assets/logo-mark.jpg" alt="">
       <span><b>ACERO PULIDO</b><small>Extranjería &amp; movilidad internacional</small></span>
     </a>
-    <nav class="nav-links">
-      <a href="#tramites">Trámites</a>
-      <a href="#precios">Precios</a>
-      <a href="#quien-soy">Quién soy</a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#servicios">Servicios</a>
+      <a href="#evaluador">Test de visado</a>
+      <a href="#proceso">Cómo trabajo</a>
+      <a href="#nosotros">Quién soy</a>
       <a href="#preguntas">Preguntas</a>
     </nav>
-    <a class="btn btn-main" href="#contacto">Agendar consulta</a>
+    <div class="nav-cta">
+      <a class="nav-wa" href="https://wa.me/34672953197?text=Hola%20Viviana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#1fa855" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg></a>
+      <a class="btn btn-grad book" href="#contacto">Cita VIP</a>
+    </div>
   </div>
 </header>
 
 <main>
   <section class="hero">
     <div class="wrap hero-grid">
-      <div>
-        <span class="kicker">Para estudiantes e investigadores latinoamericanos</span>
-        <h1 class="serif">Estudia en España con los papeles en regla. <em>Y quédate cuando termines.</em></h1>
-        <p class="lead">Te acompaño desde la carta de admisión hasta la nacionalidad: estancia por estudios, doctorado, paso a residencia y nacionalidad española. Con precio cerrado y por videollamada, estés donde estés.</p>
+      <div class="hero-text">
+        <span class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 8 4 10h12l4-10-6 4-4-7-4 7-6-4Z"/></svg>Rigor y seguridad jurídica en tu trámite</span>
+        <h1>Tu residencia en España, <em>tratada como una obra de arte</em></h1>
+        <p class="lead">Asesoría de extranjería personal para estudiantes, investigadores, nómadas digitales, profesionales y familias. Convierto la complejidad de la normativa en un camino claro, ordenado y acompañado de principio a fin.</p>
         <div class="hero-ctas">
-          <a class="btn btn-main" href="#contacto">Agendar consulta · 45 €</a>
-          <a class="btn btn-wa" href="https://wa.me/34672953197?text=Hola%20Viviana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          <a class="btn btn-grad book" href="#contacto">Agendar consulta VIP <span aria-hidden="true">→</span></a>
+          <a class="btn btn-light" href="#evaluador">Descubre tu visado</a>
         </div>
-        <div class="facts">
-          <div><b>&lt; 24 h</b>para responder tu primera consulta</div>
-          <div><b>Abogada en Colombia</b>y tu representante en España con poder notarial</div>
-          <div><b>100 % online</b>desde Colombia, Perú, México…</div>
+        <div class="metrics">
+          <div><b>&lt; 24 h</b><span>Primera respuesta</span></div>
+          <div><b>1:1</b><span>Trato directo conmigo</span></div>
+          <div><b>100 %</b><span>Online y confidencial</span></div>
+          <div><b>45 €</b><span>Consulta, se descuenta</span></div>
         </div>
+        <p class="hero-news">Novedad 2026: el doctorado ya es residencia para investigación, con resolución en 20 días. <a href="#preguntas" data-open-faq="doctorado">Qué significa →</a></p>
       </div>
-      <aside class="hero-card reveal" data-hidden="true">
-        <span class="tag">Novedad · agosto 2026</span>
-        <h3>El doctorado ya no se tramita como estancia por estudios</h3>
-        <p>Desde el 7 de agosto de 2026 los doctorandos extranjeros piden una residencia para investigación: resolución en 20 días, hasta 3 años y con tu familia.</p>
-        <a href="#preguntas" data-open-faq="doctorado">Qué significa para ti →</a>
-      </aside>
+      <figure class="hero-photo reveal" data-hidden="true">
+        <img src="assets/viviana.jpg" alt="Viviana Acero Pulido, asesora de extranjería">
+        <figcaption class="card"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 8 5-3 5 3-1.5-8"/></svg></span><span><b>Viviana Acero Pulido</b><small>Abogada en Colombia, egresada de la Universidad Militar Nueva Granada</small></span></figcaption>
+      </figure>
     </div>
   </section>
 
-  <section id="tramites">
+  <section id="evaluador">
+    <div class="wrap">
+      <div class="section-head center reveal" data-hidden="true">
+        <span class="kicker">Herramienta inteligente · Test de visado</span>
+        <h2 class="serif">¿Qué camino es <em>el tuyo</em>?</h2>
+        <p>Dos preguntas y te digo qué autorización encaja contigo. Es orientativo: en la consulta lo confirmamos con tu caso real.</p>
+      </div>
+      <div class="quiz reveal" data-hidden="true">
+        <div class="quiz-top"><b>Evaluador rápido</b><div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div></div>
+        <div class="quiz-body" id="quiz" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
     <div class="wrap">
       <div class="section-head reveal" data-hidden="true">
-        <span class="kicker">¿En qué punto estás?</span>
-        <h2 class="serif">Elige tu situación y te digo el camino</h2>
-        <p>Cada etapa tiene sus plazos y sus trampas. Empieza por donde estás hoy.</p>
+        <span class="kicker">Servicios</span>
+        <h2 class="serif">Trámites que llevo <em>personalmente</em></h2>
+        <p>Pulsa «Ver requisitos» para saber qué se pide en cada uno. Precios con IVA incluido; tasas oficiales, traducciones, apostillas y notaría aparte.</p>
       </div>
-      <div class="routes">
-        <a class="route reveal" data-hidden="true" href="#contacto" data-service="Estancia por estudios">
-          <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
-          <h3>Quiero venir a estudiar</h3>
-          <p>Grado, máster, FP o idiomas. Dossier para el consulado y llegada a España.</p>
-          <span class="from">370 € IVA incluido</span>
-        </a>
-        <a class="route reveal" data-hidden="true" href="#contacto" data-service="Doctorado / residencia para investigación">
-          <span class="new">Nuevo 2026</span>
-          <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 0 0 1.3 2h11.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/></svg></span>
-          <h3>Voy a hacer un doctorado</h3>
-          <p>Residencia para investigación ante la UGE, también si ya estás en España.</p>
-          <span class="from">370 € IVA incluido</span>
-        </a>
-        <a class="route reveal" data-hidden="true" href="#contacto" data-service="Modificación a residencia">
-          <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>
-          <h3>Termino y quiero quedarme</h3>
-          <p>De estancia por estudios a trabajo, emprendimiento o búsqueda de empleo.</p>
-          <span class="from">370 € IVA incluido</span>
-        </a>
-        <a class="route reveal" data-hidden="true" href="#contacto" data-service="Nacionalidad española">
-          <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4M4 4h13l-2 4 2 4H4"/></svg></span>
-          <h3>Quiero la nacionalidad</h3>
-          <p>Dos años de residencia legal si eres iberoamericano. Calculamos cuándo puedes pedirla.</p>
-          <span class="from">290 € IVA incluido</span>
-        </a>
-      </div>
+      <div class="services" id="services"></div>
+      <p class="svc-note">¿Tu caso no aparece aquí? <a href="#contacto" class="book">Reserva una consulta</a> y lo estudiamos.</p>
     </div>
   </section>
 
-  <section class="steps-bg">
+  <section id="proceso">
     <div class="wrap">
       <div class="section-head reveal" data-hidden="true">
-        <span class="kicker">Cómo trabajo</span>
-        <h2 class="serif">Cuatro pasos, una sola persona de principio a fin</h2>
+        <span class="kicker" style="color:var(--rose)">Cómo trabajo</span>
+        <h2 class="serif">El camino hacia <em>tu libertad</em></h2>
+        <p>Cinco pasos, una sola persona. Pulsa cada uno para ver qué pasa y qué haces tú.</p>
       </div>
-      <div class="steps">
-        <div class="step reveal" data-hidden="true"><h3>Consulta de valoración</h3><p>45 minutos por videollamada. Revisamos tu caso y te dejo por escrito qué te falta y para qué fecha.</p></div>
-        <div class="step reveal" data-hidden="true"><h3>Preparamos tu expediente</h3><p>Checklist personalizado y revisión de cada documento antes de presentarlo, para evitar requerimientos.</p></div>
-        <div class="step reveal" data-hidden="true"><h3>Presentación</h3><p>Si el trámite se hace en España, lo presento en tu nombre con poder notarial. Si es en el consulado, te preparo el dossier y la cita.</p></div>
-        <div class="step reveal" data-hidden="true"><h3>Seguimiento hasta la resolución</h3><p>Respondo a los requerimientos y te aviso de cada paso. Después, NIE o TIE y lo que venga.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="precios">
-    <div class="wrap">
-      <div class="section-head reveal" data-hidden="true">
-        <span class="kicker">Precios claros</span>
-        <h2 class="serif">Sabes lo que pagas antes de empezar</h2>
-        <p>Empieza con la consulta. Si después contratas el trámite, te la descuento.</p>
-      </div>
-      <div class="pricing">
-        <div class="price-main reveal" data-hidden="true">
-          <span class="kicker" style="color:var(--gold)">Consulta de valoración</span>
-          <div class="amount">45 €<small> · IVA incluido · se descuenta si contratas</small></div>
-          <ul>
-            <li>Videollamada de 45 minutos en tu horario</li>
-            <li>Análisis de tu situación y de los riesgos de tu caso</li>
-            <li>Plan por escrito: documentos, orden y fechas límite</li>
-            <li>Si tu caso no es viable, te lo digo con claridad</li>
-          </ul>
-          <a class="btn" href="#contacto" data-service="Consulta de valoración">Agendar mi consulta</a>
-        </div>
-        <div class="price-list reveal" data-hidden="true">
-          <div class="price-row"><div><h3>Estancia por estudios</h3><p>Checklist, revisión documental, dossier consular, guía de la cita y llegada (NIE/TIE).</p></div><div class="p">370 €<small>IVA incluido</small></div></div>
-          <div class="price-row"><div><h3>Doctorado: residencia para investigación</h3><p>Expediente ante la UGE, también como cambio desde estancia por estudios. Familiares aparte.</p></div><div class="p">370 €<small>IVA incluido</small></div></div>
-          <div class="price-row"><div><h3>De estudiante a residente</h3><p>Trabajo por cuenta ajena o propia, o búsqueda de empleo al terminar tus estudios.</p></div><div class="p">370 €<small>IVA incluido</small></div></div>
-          <div class="price-row"><div><h3>Nacionalidad española</h3><p>Cálculo de plazos, revisión de requisitos, expediente y seguimiento.</p></div><div class="p">290 €<small>IVA incluido</small></div></div>
-          <div class="price-row"><div><h3>Canje de licencia de conducir</h3><p>Reviso que tu país tenga convenio con España y presento tu canje ante la DGT. Psicotécnico aparte.</p></div><div class="p">119 €<small>tasa DGT incluida</small></div></div>
-          <div class="price-note">Precios con IVA incluido. Tasas oficiales, traducciones juradas, apostillas y notaría aparte.</div>
-        </div>
+      <div class="road reveal" data-hidden="true">
+        <ol class="road-steps" role="tablist" id="road-steps"></ol>
+        <div class="road-panel" role="tabpanel" id="road-panel"></div>
       </div>
     </div>
   </section>
 
-  <section id="quien-soy" class="steps-bg">
+  <section id="nosotros">
     <div class="wrap about">
       <div class="about-photo reveal" data-hidden="true">
-        <img src="assets/viviana.jpg" alt="Viviana Acero Pulido, asesora de extranjería" style="object-position:center top" loading="lazy">
+        <img src="assets/viviana.jpg" alt="Viviana Acero Pulido, asesora de extranjería" loading="lazy">
+        <div class="seal"><b>Abogada en Colombia</b><small>Egresada de la Universidad Militar Nueva Granada</small></div>
       </div>
       <div class="reveal" data-hidden="true">
-        <span class="kicker">Quién soy</span>
-        <h2 class="serif">Soy Viviana Acero Pulido</h2>
-        <p>Acompaño a estudiantes, doctorandos y familias latinoamericanas en sus trámites de extranjería en España. Llevo personalmente cada expediente: hablas siempre conmigo, no con un equipo que cambia.</p>
-        <p>Soy abogada titulada en Colombia, egresada de la Universidad Militar Nueva Granada. En España trabajo sola como asesora de extranjería y te represento ante la Administración mediante poder notarial. Si tu caso necesita un recurso ante los tribunales españoles, te derivo a un abogado colegiado en España.</p>
-        <div class="pill-row">
-          <span>Abogada en Colombia</span><span>Universidad Militar Nueva Granada</span><span>Estancia por estudios</span><span>Doctorado</span><span>Paso a residencia</span><span>Nacionalidad</span>
+        <span class="kicker">Sobre Acero Pulido</span>
+        <h2 class="serif">Rigor jurídico con <em>calidez femenina</em></h2>
+        <p>Soy Viviana Acero Pulido. Acompaño a estudiantes, doctorandos, profesionales y familias latinoamericanas en su llegada y su vida en España. Llevo cada expediente yo misma, con la exigencia de mi formación jurídica y la paciencia de quien también llegó a España desde fuera.</p>
+        <p><strong>Soy abogada titulada en Colombia, egresada de la Universidad Militar Nueva Granada.</strong> En España trabajo como asesora de extranjería y te represento ante la Administración mediante poder notarial. Si tu caso necesita un recurso ante los tribunales españoles, te derivo a un abogado colegiado en España.</p>
+        <div class="pillars">
+          <div><b>Solidez</b><span>Normativa al día: reglamento de 2025 y criterios de 2026.</span></div>
+          <div><b>Cercanía</b><span>Respuesta en menos de 24 horas, por WhatsApp o email.</span></div>
+          <div><b>Claridad</b><span>Precio cerrado antes de empezar y, si tu caso no es viable, te lo digo.</span></div>
+          <div><b>Discreción</b><span>Tus documentos y tu historia, tratados con total confidencialidad.</span></div>
         </div>
       </div>
     </div>
@@ -340,174 +399,387 @@
 
   <section id="resenas" hidden>
     <div class="wrap">
-      <div class="section-head reveal" data-hidden="true">
+      <div class="section-head center reveal" data-hidden="true">
         <span class="kicker">Testimonios</span>
-        <h2 class="serif">Lo que dicen quienes ya lo hicieron</h2>
+        <h2 class="serif">Lo que dicen quienes <em>ya lo hicieron</em></h2>
         <p>Reseñas reales de personas a las que acompañé. Se publican tras revisarlas.</p>
       </div>
       <div class="reviews" id="reviews-list"></div>
-      <p id="reviews-empty" style="display:none"></p>
     </div>
   </section>
 
   <section id="preguntas">
     <div class="wrap">
-      <div class="section-head reveal" data-hidden="true">
+      <div class="section-head center reveal" data-hidden="true">
         <span class="kicker">Preguntas frecuentes</span>
-        <h2 class="serif">Lo que más me preguntan</h2>
+        <h2 class="serif">Lo que más <em>me preguntan</em></h2>
       </div>
       <div class="faq">
-        <div class="faq-item" data-faq="doctorado"><button class="faq-q">Voy a hacer un doctorado. ¿Qué cambió en 2026?</button><div class="faq-a">Desde el 7 de agosto de 2026, el doctorado se tramita como autorización de residencia para investigación ante la Unidad de Grandes Empresas y Colectivos Estratégicos, y no como estancia por estudios. La puedes pedir tú o tu universidad, el plazo de resolución es de 20 días y puede concederse hasta 3 años. Si ya estás en España con estancia por estudios, puedes pedir el cambio sin salir del país.<small>Criterio de Gestión 2/2026 y Ley 14/2013, art. 72.</small></div></div>
-        <div class="faq-item"><button class="faq-q">¿Con cuánta antelación tengo que pedir la estancia por estudios?</button><div class="faq-a">Con al menos dos meses de antelación al inicio del curso. Si empiezas en enero o febrero, el momento de prepararlo es ahora.<small>Real Decreto 1155/2024, en vigor desde el 20 de mayo de 2025.</small></div></div>
-        <div class="faq-item"><button class="faq-q">¿Puedo trabajar mientras estudio?</button><div class="faq-a">Si cursas estudios superiores, puedes trabajar hasta 30 horas a la semana. En otros tipos de estudios hay que pedir la autorización de trabajo aparte.</div></div>
-        <div class="faq-item"><button class="faq-q">¿Sirve un máster online?</button><div class="faq-a">Un programa 100 % online no sirve. Los estudios deben ser al menos un 50 % presenciales.</div></div>
-        <div class="faq-item"><button class="faq-q">Termino mis estudios. ¿Puedo quedarme en España?</button><div class="faq-a">Sí, si cumples los requisitos: con una oferta de trabajo firme, con un plan de negocio viable o con la autorización para buscar empleo si terminaste un grado universitario o superior. Desde la Instrucción SEM 3/2025 no hace falta volver a tu país a pedir visado para este cambio. Los plazos dependen de la caducidad de tu estancia, así que conviene prepararlo antes.</div></div>
-        <div class="faq-item"><button class="faq-q">¿El tiempo como estudiante cuenta para la nacionalidad?</button><div class="faq-a">No. La estancia por estudios no es residencia legal, y la nacionalidad la exige. Si eres de un país iberoamericano necesitas dos años de residencia legal, continuada e inmediatamente anterior a la solicitud. El reloj empieza cuando pasas a una autorización de residencia.</div></div>
-        <div class="faq-item"><button class="faq-q">¿Necesito el DELE para la nacionalidad?</button><div class="faq-a">Si tu país tiene el español como idioma oficial, no. Sí tienes que aprobar el examen CCSE de conocimientos constitucionales y socioculturales.</div></div>
-        <div class="faq-item"><button class="faq-q">¿Me ayudas a canjear mi licencia de conducir?</button><div class="faq-a">Sí. Si vives en España con NIE o TIE y tu país tiene convenio de canje con España (como Colombia, Perú o Ecuador), me encargo del trámite completo ante la DGT por 119 €, con la tasa de la DGT incluida. Si tienes certificado electrónico, lo hacemos online. Solo pagas aparte el psicotécnico, en un centro autorizado.</div></div>
-        <div class="faq-item"><button class="faq-q">¿Eres abogada?</button><div class="faq-a">Soy abogada titulada en Colombia, egresada de la Universidad Militar Nueva Granada. En España no ejerzo como abogada: trabajo como asesora de extranjería y te represento ante la Administración mediante poder notarial, como permite la Ley 39/2015. Si tu caso necesita un recurso ante los tribunales españoles, te derivo a un abogado colegiado en España.</div></div>
-        <div class="faq-item"><button class="faq-q">¿Cómo se paga?</button><div class="faq-a">La consulta se paga al reservarla y la asesoría, al contratarla. Reservas el día y la hora en mi calendario y, al recibir tu solicitud, te escribo por WhatsApp con los datos de pago (Bizum en España o transferencia). La cita queda confirmada cuando recibo el pago. Si contratas la asesoría, te descuento los 45 € de la consulta. Te envío factura.</div></div>
+        <div class="faq-item" data-faq="doctorado"><button class="faq-q" type="button">Voy a hacer un doctorado. ¿Qué cambió en 2026?</button><div class="faq-a">Desde el 7 de agosto de 2026, el doctorado se tramita como autorización de residencia para investigación ante la Unidad de Grandes Empresas y Colectivos Estratégicos, y no como estancia por estudios. La puedes pedir tú o tu universidad, el plazo de resolución es de 20 días y puede concederse hasta 3 años. Si ya estás en España con estancia por estudios, puedes pedir el cambio sin salir del país.<small>Criterio de Gestión 2/2026 y Ley 14/2013, art. 72.</small></div></div>
+        <div class="faq-item"><button class="faq-q" type="button">¿Con cuánta antelación tengo que pedir la estancia por estudios?</button><div class="faq-a">Con al menos dos meses de antelación al inicio del curso. Si empiezas en enero o febrero, el momento de prepararlo es ahora.<small>Real Decreto 1155/2024, en vigor desde el 20 de mayo de 2025.</small></div></div>
+        <div class="faq-item"><button class="faq-q" type="button">¿Puedo trabajar mientras estudio?</button><div class="faq-a">Si cursas estudios superiores, puedes trabajar hasta 30 horas a la semana. En otros tipos de estudios hay que pedir la autorización de trabajo aparte.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button">¿Sirve un máster online?</button><div class="faq-a">Un programa 100 % online no sirve. Los estudios deben ser al menos un 50 % presenciales.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button">Termino mis estudios. ¿Puedo quedarme en España?</button><div class="faq-a">Sí, si cumples los requisitos: con una oferta de trabajo firme, con un plan de negocio viable o con la autorización para buscar empleo si terminaste un grado universitario o superior. Desde la Instrucción SEM 3/2025 no hace falta volver a tu país a pedir visado para este cambio. Los plazos dependen de la caducidad de tu estancia, así que conviene prepararlo antes.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button">¿Todavía existe la Golden Visa?</button><div class="faq-a">No. España eliminó la residencia por inversión (Golden Visa) el 3 de abril de 2025. Si quieres vivir en España con tus propios recursos, la vía habitual es la residencia no lucrativa; si trabajas en remoto para empresas de fuera, el visado de nómada digital.<small>Ley Orgánica 1/2025.</small></div></div>
+        <div class="faq-item"><button class="faq-q" type="button">¿El tiempo como estudiante cuenta para la nacionalidad?</button><div class="faq-a">No. La estancia por estudios no es residencia legal, y la nacionalidad la exige. Si eres de un país iberoamericano necesitas dos años de residencia legal, continuada e inmediatamente anterior a la solicitud. El reloj empieza cuando pasas a una autorización de residencia.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button">¿Necesito el DELE para la nacionalidad?</button><div class="faq-a">Si tu país tiene el español como idioma oficial, no. Sí tienes que aprobar el examen CCSE de conocimientos constitucionales y socioculturales.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button">¿Me ayudas a canjear mi licencia de conducir?</button><div class="faq-a">Sí. Si vives en España con NIE o TIE y tu país tiene convenio de canje con España (como Colombia, Perú o Ecuador), me encargo del trámite completo ante la DGT por 119 €, con la tasa de la DGT incluida. Si tienes certificado electrónico, lo hacemos online. Solo pagas aparte el psicotécnico, en un centro autorizado.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button">¿Eres abogada?</button><div class="faq-a">Soy abogada titulada en Colombia, egresada de la Universidad Militar Nueva Granada. En España no ejerzo como abogada: trabajo como asesora de extranjería y te represento ante la Administración mediante poder notarial, como permite la Ley 39/2015. Si tu caso necesita un recurso ante los tribunales españoles, te derivo a un abogado colegiado en España.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button">¿Cómo se paga?</button><div class="faq-a">La consulta se paga al reservarla y la asesoría, al contratarla. Reservas el día y la hora en mi calendario y, al recibir tu solicitud, te escribo por WhatsApp con los datos de pago (Bizum en España o transferencia). La cita queda confirmada cuando recibo el pago. Si contratas la asesoría, te descuento los 45 € de la consulta. Te envío factura.</div></div>
       </div>
     </div>
   </section>
 
-  <section id="contacto" class="contact-bg">
+  <section id="contacto">
     <div class="wrap contact">
-      <div>
-        <span class="kicker">Hablemos de tu caso</span>
-        <h2 class="serif">Cuéntame dónde estás y te digo el siguiente paso</h2>
-        <p>Reserva tu consulta en 3 pasos: 1) elige día y hora en mi calendario, 2) te escribo por WhatsApp con los datos de pago, 3) al recibirlo, tu cita queda confirmada con el enlace de la videollamada. Si prefieres, escríbeme ya por WhatsApp.</p>
+      <div class="reveal" data-hidden="true">
+        <span class="kicker" style="color:var(--rose)">Cita VIP</span>
+        <h2 class="serif">Hablemos de <em>tu caso</em></h2>
+        <p>Una consulta de valoración de 45 minutos por videollamada, en tu horario. Te dejo por escrito qué necesitas, en qué orden y para qué fecha.</p>
+        <ol class="how">
+          <li>Elige día y hora en mi calendario o envíame el formulario.</li>
+          <li>Te escribo por WhatsApp con los datos de pago (Bizum o transferencia).</li>
+          <li>Al recibirlo, tu cita queda confirmada con el enlace de la videollamada.</li>
+        </ol>
         <div class="contact-ways">
-          <a href="https://cal.com/viviana-andrea-acero-pulido-p7ku9b/acero-pulido-movilidad-y-asesoria-extranjera" target="_blank" rel="noopener"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e9c4d0" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span><b>Reserva tu consulta · elige día y hora</b><small>Confirmación al recibir el pago</small></span></a>
-          <a href="https://wa.me/34672953197?text=Hola%20Viviana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener"><svg width="28" height="28" viewBox="0 0 24 24"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg><span><b>WhatsApp · +34 672 953 197</b><small>La vía más rápida</small></span></a>
-          <a href="mailto:acero.vivianapulido@gmail.com"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e9c4d0" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><b>acero.vivianapulido@gmail.com</b><small>Respuesta en menos de 24 h</small></span></a>
+          <a class="cal" href="https://cal.com/viviana-andrea-acero-pulido-p7ku9b/acero-pulido-movilidad-y-asesoria-extranjera" target="_blank" rel="noopener"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E2A7C4" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span><b>Reserva tu consulta · elige día y hora</b><small>Confirmación al recibir el pago</small></span></a>
+          <a href="https://wa.me/34672953197?text=Hola%20Viviana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener"><svg width="26" height="26" viewBox="0 0 24 24"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg><span><b>WhatsApp · +34 672 953 197</b><small>La vía más rápida</small></span></a>
+          <a href="mailto:acero.vivianapulido@gmail.com"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E2A7C4" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><b>acero.vivianapulido@gmail.com</b><small>Respuesta en menos de 24 h</small></span></a>
         </div>
       </div>
-      <form id="lead-form" novalidate>
-        <div class="full agenda">
-          <b>Agenda tu consulta</b>
-          <span>Dime qué día te viene bien y te confirmo la hora por WhatsApp o email. ¿Prefieres elegir tú la hora? <a href="https://cal.com/viviana-andrea-acero-pulido-p7ku9b/acero-pulido-movilidad-y-asesoria-extranjera" target="_blank" rel="noopener" style="color:var(--plum);font-weight:700;text-decoration:underline">Reserva directamente aquí</a>.</span>
-        </div>
-        <label>Día que te viene bien<input id="f-day" type="date"></label>
-        <label>Franja horaria (hora de España)
-          <select id="f-slot">
-            <option value="">Cualquiera</option>
-            <option>Mañana</option>
-            <option>Tarde</option>
-            <option>Noche</option>
-          </select>
-        </label>
-        <label class="full">¿Cómo prefieres la consulta?
-          <select id="f-medium">
-            <option>Videollamada</option>
-            <option>Llamada de WhatsApp</option>
-            <option>Llamada telefónica</option>
-          </select>
-        </label>
-        <label class="full">¿Qué necesitas?
-          <select id="f-service" required>
-            <option value="">Elige una opción</option>
-            <option>Consulta de valoración</option>
-            <option>Estancia por estudios</option>
-            <option>Doctorado / residencia para investigación</option>
-            <option>Modificación a residencia</option>
-            <option>Nacionalidad española</option>
-            <option>Canje de licencia de conducir</option>
-            <option>Otro trámite</option>
-          </select>
-        </label>
-        <label>Nombre completo<input id="f-name" required autocomplete="name"></label>
-        <label>Nacionalidad<input id="f-nat" placeholder="Ej.: colombiana"></label>
-        <label>Email<input id="f-email" type="email" required autocomplete="email"></label>
-        <label>Teléfono (con prefijo)<input id="f-phone" type="tel" autocomplete="tel" placeholder="+57 …"></label>
-        <label>¿Tienes carta de admisión?
-          <select id="f-admission">
-            <option value="">No aplica / no lo sé</option>
-            <option>Sí, ya la tengo</option>
-            <option>Estoy en proceso de admisión</option>
-            <option>Todavía no he aplicado</option>
-          </select>
-        </label>
-        <label>Ciudad de destino o residencia
-          <select id="f-city">
-            <option value="">Elige</option>
-            <option>León</option><option>Madrid</option><option>Barcelona</option><option>Valencia</option><option>Salamanca</option><option>Sevilla</option><option>Otra ciudad</option>
-          </select>
-        </label>
-        <label class="full">¿Cuándo empieza tu curso o cuándo caduca tu autorización?<input id="f-start" type="month"></label>
-        <label class="full">Cuéntame tu caso (opcional)<textarea id="f-message" rows="3"></textarea></label>
-        <label class="consent full"><input type="checkbox" required><span>Acepto que Acero Pulido use estos datos para responder a mi solicitud. Más información en la <a href="privacidad.html">política de privacidad</a>.</span></label>
-        <button class="btn btn-main form-submit" type="submit">Enviar mi solicitud</button>
-        <div class="form-ok"><h3 class="serif" style="font-size:28px;color:var(--plum)">Solicitud recibida</h3><p style="color:var(--ink-soft)">Gracias. En menos de 24 horas te escribo por WhatsApp o email para confirmar tu cita.</p></div>
-      </form>
+      <div class="vip reveal" data-hidden="true">
+        <form id="lead-form" novalidate>
+          <div class="form-title"><b>Solicita tu cita</b><span>Dime qué día te viene bien y te confirmo la hora. ¿Prefieres elegirla tú? <a class="cal" href="https://cal.com/viviana-andrea-acero-pulido-p7ku9b/acero-pulido-movilidad-y-asesoria-extranjera" target="_blank" rel="noopener">Reserva directamente aquí</a>.</span></div>
+          <label>Día que te viene bien<input id="f-day" type="date"></label>
+          <label>Franja horaria (hora de España)
+            <select id="f-slot">
+              <option value="">Cualquiera</option>
+              <option>Tarde (desde las 15:30)</option>
+              <option>Noche</option>
+            </select>
+          </label>
+          <label class="full">¿Qué necesitas?
+            <select id="f-service" required>
+              <option value="">Elige una opción</option>
+              <option>Consulta de valoración</option>
+              <option>Estancia por estudios</option>
+              <option>Doctorado / residencia para investigación</option>
+              <option>Modificación a residencia</option>
+              <option>Nacionalidad española</option>
+              <option>Visado de nómada digital</option>
+              <option>Residencia no lucrativa</option>
+              <option>Pareja o familiar de español o europeo</option>
+              <option>Arraigo</option>
+              <option>Canje de licencia de conducir</option>
+              <option>Otro trámite</option>
+            </select>
+          </label>
+          <label>Nombre completo<input id="f-name" required autocomplete="name"></label>
+          <label>Nacionalidad<input id="f-nat" placeholder="Ej.: colombiana"></label>
+          <label>Email<input id="f-email" type="email" required autocomplete="email"></label>
+          <label>Teléfono (con prefijo)<input id="f-phone" type="tel" autocomplete="tel" placeholder="+57 …"></label>
+          <label>¿Cómo prefieres la consulta?
+            <select id="f-medium">
+              <option>Videollamada</option>
+              <option>Llamada de WhatsApp</option>
+              <option>Llamada telefónica</option>
+            </select>
+          </label>
+          <label>Ciudad de destino o residencia
+            <select id="f-city">
+              <option value="">Elige</option>
+              <option>León</option><option>Madrid</option><option>Barcelona</option><option>Valencia</option><option>Salamanca</option><option>Sevilla</option><option>Otra ciudad</option><option>Aún fuera de España</option>
+            </select>
+          </label>
+          <label class="full">Cuéntame tu caso (opcional)<textarea id="f-message" rows="3"></textarea></label>
+          <label class="consent full"><input type="checkbox" required><span>Acepto que Acero Pulido use estos datos para responder a mi solicitud. Más información en la <a href="privacidad.html">política de privacidad</a>.</span></label>
+          <button class="btn btn-dark form-submit" type="submit">Enviar mi solicitud</button>
+          <div class="form-ok"><h3>Solicitud recibida</h3><p>Gracias. En menos de 24 horas te escribo por WhatsApp o email para confirmar tu cita.</p></div>
+        </form>
+      </div>
     </div>
   </section>
 
-  <section style="padding:48px 0">
+  <div class="leave-wrap">
     <div class="wrap">
       <details class="leave">
         <summary>¿Ya hiciste tu trámite conmigo? Deja tu reseña</summary>
-        <form id="review-form" style="padding:20px 0 0;grid-template-columns:1fr 1fr">
+        <form id="review-form">
           <label>Tu nombre<input id="r-name" required></label>
           <label>Valoración
             <select id="r-rating"><option value="5">★★★★★ Excelente</option><option value="4">★★★★☆ Muy bueno</option><option value="3">★★★☆☆ Bueno</option><option value="2">★★☆☆☆ Regular</option><option value="1">★☆☆☆☆ Malo</option></select>
           </label>
           <label class="full">Tu experiencia<textarea id="r-text" rows="3" required></textarea></label>
           <label class="consent full"><input type="checkbox" required><span>Acepto que mi reseña aparezca en la web con mi nombre.</span></label>
-          <button class="btn btn-main review-submit full" type="submit">Publicar mi reseña</button>
+          <button class="btn btn-dark review-submit form-submit" type="submit">Publicar mi reseña</button>
           <div class="form-ok"><p>¡Gracias! La reviso y la publico en breve.</p></div>
         </form>
       </details>
     </div>
-  </section>
+  </div>
 </main>
+
+<dialog id="modal" aria-labelledby="m-title">
+  <div class="m-head"><small id="m-kick">Requisitos</small><h3 id="m-title"></h3><button class="m-close" type="button" aria-label="Cerrar">×</button></div>
+  <div class="m-body" id="m-body"></div>
+</dialog>
 
 <footer>
   <div class="wrap">
-    <p><b style="color:#fff">ACERO PULIDO</b> · Asesoría de extranjería y movilidad internacional a cargo de Viviana Acero Pulido, abogada titulada en Colombia (Universidad Militar Nueva Granada). En España actúa como asesora, no como abogada colegiada; la representación ante la Administración se realiza mediante poder notarial. La información de esta web es general y no sustituye el estudio de tu caso. Actualizada en octubre de 2026.</p>
-    <p><a href="privacidad.html">Privacidad</a> · <a href="privacidad.html#cookies">Cookies</a></p>
+    <div class="foot">
+      <div>
+        <a class="brand" href="#"><img src="assets/logo-mark.jpg" alt=""><span><b>ACERO PULIDO</b><small>Extranjería &amp; movilidad internacional</small></span></a>
+        <p>Asesoría de extranjería y movilidad internacional a cargo de Viviana Acero Pulido, abogada titulada en Colombia (Universidad Militar Nueva Granada). En España actúa como asesora, no como abogada colegiada; la representación ante la Administración se realiza mediante poder notarial.</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul id="foot-services"></ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/34672953197" target="_blank" rel="noopener">WhatsApp +34 672 953 197</a></li>
+          <li><a href="mailto:acero.vivianapulido@gmail.com">acero.vivianapulido@gmail.com</a></li>
+          <li><a class="cal" href="https://cal.com/viviana-andrea-acero-pulido-p7ku9b/acero-pulido-movilidad-y-asesoria-extranjera" target="_blank" rel="noopener">Reservar consulta</a></li>
+          <li>León, España · atención 100 % online</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>La información de esta web es general y no sustituye el estudio de tu caso. Actualizada en octubre de 2026.</span>
+      <span><a href="privacidad.html">Privacidad</a> · <a href="privacidad.html#cookies">Cookies</a></span>
+    </div>
   </div>
 </footer>
 
 <a class="wa-float" href="https://wa.me/34672953197?text=Hola%20Viviana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24"><path fill="#fff" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg></a>
 
 <script>
+  var BOOKING_URL = 'https://cal.com/viviana-andrea-acero-pulido-p7ku9b/acero-pulido-movilidad-y-asesoria-extranjera';
+  var WA = 'https://wa.me/34672953197?text=';
+  var API_URL = 'https://go2spain-backend.onrender.com';
+  var esc = function (s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); };
+
+  // Catálogo: cada trámite con su tarjeta y sus requisitos (modal "Ver requisitos").
+  var ICONS = {
+    cap: '<path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/>',
+    lab: '<path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 0 0 1.3 2h11.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/>',
+    case: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
+    flag: '<path d="M4 21V4M4 4h13l-2 4 2 4H4"/>',
+    laptop: '<rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    heart: '<path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6.3 5.3 5.3 0 0 1 21.3 12C19 16.6 12 21 12 21Z"/>',
+    home: '<path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+    car: '<path d="M5 17h14M6 17v2M18 17v2M4 13l2-6h12l2 6v4H4v-4Z"/><circle cx="8" cy="14" r="1"/><circle cx="16" cy="14" r="1"/>'
+  };
+  var SERVICES = [
+    { id: 'estudios', ico: 'cap', name: 'Estancia por estudios', form: 'Estancia por estudios',
+      short: 'Grado, máster, FP o idiomas. Dossier para el consulado y llegada a España. Con estudios superiores puedes trabajar hasta 30 h a la semana.',
+      price: '370 €', priceNote: 'IVA incluido',
+      req: ['Admisión en un centro autorizado, con estudios al menos 50 % presenciales', 'Pasaporte en vigor', 'Medios económicos para tu estancia (y los de tu familia, si viene contigo)', 'Seguro médico sin copagos ni carencias', 'Antecedentes penales y certificado médico si el curso dura más de 6 meses', 'Pedirla con al menos dos meses de antelación al inicio del curso'],
+      inc: ['Checklist personalizado y revisión de cada documento', 'Dossier para el consulado y guía de la cita', 'Llegada a España: NIE o TIE'],
+      src: 'Real Decreto 1155/2024.' },
+    { id: 'doctorado', ico: 'lab', name: 'Doctorado: residencia para investigación', form: 'Doctorado / residencia para investigación', isNew: true,
+      short: 'Desde agosto de 2026 el doctorado es residencia, no estancia. Resolución en 20 días, hasta 3 años y con tu familia.',
+      price: '370 €', priceNote: 'IVA incluido · familiares aparte',
+      req: ['Admisión en un programa de doctorado en España', 'Pasaporte en vigor', 'Medios económicos o contrato o beca de investigación', 'Seguro médico', 'Antecedentes penales', 'Si ya estás en España con estancia por estudios, puedes pedir el cambio sin salir'],
+      inc: ['Expediente completo ante la Unidad de Grandes Empresas y Colectivos Estratégicos', 'Solicitud de tus familiares junto a la tuya (aparte)', 'Seguimiento hasta la resolución'],
+      src: 'Criterio de Gestión 2/2026 y Ley 14/2013, art. 72.' },
+    { id: 'modificacion', ico: 'case', name: 'De estudiante a residente', form: 'Modificación a residencia',
+      short: 'Terminas tus estudios y quieres quedarte: trabajo por cuenta ajena o propia, o búsqueda de empleo.',
+      price: '370 €', priceNote: 'IVA incluido',
+      req: ['Estar en España con estancia por estudios en vigor', 'Oferta de trabajo firme, plan de negocio viable o haber terminado un grado universitario o superior (búsqueda de empleo)', 'Haber superado los estudios', 'Pedirlo antes de que caduque tu estancia'],
+      inc: ['Estudio de la vía que más te conviene', 'Expediente y presentación con poder notarial', 'Respuesta a requerimientos'],
+      src: 'Real Decreto 1155/2024 e Instrucción SEM 3/2025.' },
+    { id: 'nomada', ico: 'laptop', name: 'Visado de nómada digital', form: 'Visado de nómada digital',
+      short: 'Vive en España trabajando en remoto para empresas o clientes de fuera.',
+      price: 'Precio en la consulta', priceNote: '',
+      req: ['Trabajo en remoto para empresas o clientes de fuera de España (como autónomo, hasta un 20 % de tu actividad puede ser con clientes españoles)', 'Relación laboral o profesional de al menos 3 meses, con una empresa que lleve al menos 1 año activa', 'Título universitario o 3 años de experiencia en tu sector', 'Ingresos de al menos el 200 % del salario mínimo español, más un extra por cada familiar', 'Seguro médico y antecedentes penales'],
+      inc: ['Revisión de tu contrato y de tus ingresos', 'Expediente para el consulado o ante la Unidad de Grandes Empresas si ya estás en España', 'Solicitud de tu familia'],
+      src: 'Ley 14/2013, arts. 74 bis y 74 ter.' },
+    { id: 'nolucrativa', ico: 'sun', name: 'Residencia no lucrativa', form: 'Residencia no lucrativa',
+      short: 'Vivir en España con tus ahorros, pensión o rentas, sin trabajar aquí.',
+      price: 'Precio en la consulta', priceNote: '',
+      req: ['Medios económicos de al menos el 400 % del IPREM al mes, más un 100 % por cada familiar', 'Seguro médico privado sin copagos', 'Certificado médico y antecedentes penales', 'No puedes trabajar en España con esta autorización'],
+      inc: ['Cálculo de los medios que necesitas', 'Dossier para el consulado y guía de la cita', 'Llegada a España: TIE'],
+      src: 'Real Decreto 1155/2024.' },
+    { id: 'familia', ico: 'heart', name: 'Pareja y familiares de españoles o europeos', form: 'Pareja o familiar de español o europeo',
+      short: 'Pareja de hecho, cónyuge, hijos o padres de un ciudadano español o de la Unión Europea.',
+      price: 'Precio en la consulta', priceNote: '',
+      req: ['Prueba del vínculo: matrimonio, pareja de hecho registrada o relación estable acreditada', 'Documentación del familiar español o europeo', 'Pasaporte en vigor', 'Según el caso: medios económicos, seguro médico y empadronamiento'],
+      inc: ['Estudio de qué régimen te corresponde', 'Expediente completo y presentación', 'Tarjeta de familiar o TIE'],
+      src: 'Real Decreto 240/2007 y Real Decreto 1155/2024.' },
+    { id: 'arraigo', ico: 'home', name: 'Arraigos', form: 'Arraigo',
+      short: 'Social, sociolaboral, socioformativo, familiar o de segunda oportunidad, para quien ya vive en España.',
+      price: 'Precio en la consulta', priceNote: '',
+      req: ['En la mayoría, dos años de permanencia continuada en España', 'Carecer de antecedentes penales', 'Según el tipo: contrato de trabajo, formación, vínculos familiares o haber tenido autorización antes', 'Empadronamiento y pruebas de tu estancia'],
+      inc: ['Estudio de qué arraigo encaja contigo', 'Expediente y presentación con poder notarial', 'Seguimiento hasta la resolución'],
+      src: 'Real Decreto 1155/2024, en vigor desde el 20 de mayo de 2025.' },
+    { id: 'nacionalidad', ico: 'flag', name: 'Nacionalidad española', form: 'Nacionalidad española',
+      short: 'Dos años de residencia legal si eres iberoamericano. Calculamos cuándo puedes pedirla.',
+      price: '290 €', priceNote: 'IVA incluido',
+      req: ['Dos años de residencia legal, continuada e inmediatamente anterior (países iberoamericanos)', 'Examen CCSE aprobado (el DELE no, si tu idioma oficial es el español)', 'Certificado de nacimiento y antecedentes penales de tu país', 'Buena conducta cívica'],
+      inc: ['Cálculo exacto de tus plazos', 'Revisión de requisitos y expediente', 'Seguimiento hasta la jura'],
+      src: 'Código Civil, art. 22.' },
+    { id: 'canje', ico: 'car', name: 'Canje de licencia de conducir', form: 'Canje de licencia de conducir',
+      short: 'Cambia tu licencia por el permiso español si tu país tiene convenio con España.',
+      price: '119 €', priceNote: 'tasa DGT incluida · psicotécnico aparte',
+      req: ['Residencia legal en España con NIE o TIE', 'Licencia en vigor de un país con convenio de canje (Colombia, Perú, Ecuador…)', 'Informe de aptitud psicofísica (psicotécnico)', 'Certificado electrónico para hacerlo online, si lo tienes'],
+      inc: ['Comprobación del convenio de tu país', 'Presentación del canje ante la DGT', 'Seguimiento hasta tu permiso español'],
+      src: 'Dirección General de Tráfico.' }
+  ];
+  var byId = {}; SERVICES.forEach(function (s) { byId[s.id] = s; });
+  var svg = function (k, size) { return '<svg width="' + (size || 26) + '" height="' + (size || 26) + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + ICONS[k] + '</svg>'; };
+
+  document.getElementById('services').innerHTML = SERVICES.map(function (s) {
+    return '<article class="svc reveal" data-hidden="true">' + (s.isNew ? '<span class="new">Nuevo 2026</span>' : '') +
+      '<span class="ico">' + svg(s.ico) + '</span><h3>' + esc(s.name) + '</h3><p>' + esc(s.short) + '</p>' +
+      '<span class="price">' + esc(s.price) + (s.priceNote ? ' <small>· ' + esc(s.priceNote) + '</small>' : '') + '</span>' +
+      '<button class="more" type="button" data-req="' + s.id + '">Ver requisitos <span aria-hidden="true">→</span></button></article>';
+  }).join('');
+  document.getElementById('foot-services').innerHTML = SERVICES.map(function (s) {
+    return '<li><a href="#servicios" data-req="' + s.id + '">' + esc(s.name) + '</a></li>';
+  }).join('');
+
+  // Modal de requisitos
+  var modal = document.getElementById('modal');
+  function openReq(id) {
+    var s = byId[id]; if (!s) return;
+    document.getElementById('m-title').textContent = s.name;
+    document.getElementById('m-body').innerHTML =
+      '<div><h4>Qué se pide</h4><ul>' + s.req.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ul></div>' +
+      '<div><h4>Qué hago yo</h4><ul>' + s.inc.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ul></div>' +
+      '<div class="m-price"><span>Mi asesoría</span><b>' + esc(s.price) + '</b>' + (s.priceNote ? '<span class="m-src">' + esc(s.priceNote) + '</span>' : '') + '</div>' +
+      '<p class="m-src">' + esc(s.src) + ' Orientativo: los requisitos exactos dependen de tu caso y de tu consulado.</p>' +
+      '<div class="m-acts"><a class="btn btn-dark" href="' + BOOKING_URL + '" target="_blank" rel="noopener">Reservar consulta · 45 €</a>' +
+      '<a class="btn btn-wa" href="' + WA + encodeURIComponent('Hola Viviana, quiero información sobre: ' + s.name + '.') + '" target="_blank" rel="noopener">Preguntar por WhatsApp</a></div>';
+    if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
+  }
+  function closeModal() { if (typeof modal.close === 'function') modal.close(); else modal.removeAttribute('open'); }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-req]');
+    if (b) { e.preventDefault(); openReq(b.getAttribute('data-req')); }
+  });
+  modal.querySelector('.m-close').addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+
+  // Evaluador rápido de elegibilidad
+  var QUIZ = {
+    q1: { q: '¿Dónde estás ahora?', opts: [['🌎', 'Fuera de España', 'fuera'], ['🇪🇸', 'Ya vivo en España', 'dentro']] },
+    fuera: { q: '¿Qué quieres hacer en España?', opts: [
+      ['🎓', 'Estudiar un grado, máster, FP o idiomas', 'estudios'], ['🔬', 'Hacer un doctorado', 'doctorado'],
+      ['💻', 'Trabajar en remoto para empresas de fuera', 'nomada'], ['🌿', 'Vivir de mis ahorros o mi pensión, sin trabajar', 'nolucrativa'],
+      ['💍', 'Reunirme con mi pareja o familiar español o europeo', 'familia'], ['❓', 'Otra cosa', 'otro']] },
+    dentro: { q: '¿Cuál es tu situación?', opts: [
+      ['🎓', 'Soy estudiante y quiero quedarme al terminar', 'modificacion'], ['🔬', 'Empiezo o hago un doctorado', 'doctorado'],
+      ['🏠', 'Llevo tiempo en España sin papeles', 'arraigo'], ['🇪🇸', 'Tengo residencia legal y quiero la nacionalidad', 'nacionalidad'],
+      ['💍', 'Mi pareja es española o europea', 'familia'], ['🚗', 'Quiero canjear mi licencia de conducir', 'canje']] }
+  };
+  var WHY = {
+    estudios: 'Necesitas una estancia por estudios. Si tus estudios son superiores, podrás trabajar hasta 30 horas a la semana, y tu familia puede venir contigo.',
+    doctorado: 'Desde agosto de 2026 tu camino es la residencia para investigación: hasta 3 años, resolución en 20 días y con tu familia.',
+    nomada: 'Encajas en el visado de nómada digital si tu empresa o tus clientes están fuera de España y cumples el mínimo de ingresos.',
+    nolucrativa: 'La residencia no lucrativa es para vivir en España con tus propios medios, sin trabajar aquí.',
+    familia: 'Te corresponde una autorización como familiar. El régimen exacto depende de si tu pareja es española o de otro país europeo.',
+    modificacion: 'Puedes pasar de estudiante a residente sin salir de España, con trabajo, emprendimiento o búsqueda de empleo.',
+    arraigo: 'El arraigo es tu vía. Hay cinco tipos y en la mayoría se piden dos años en España: vemos cuál encaja contigo.',
+    nacionalidad: 'Si eres iberoamericano, puedes pedirla con dos años de residencia legal. Calculamos tu fecha exacta.',
+    canje: 'Si tu país tiene convenio con España, cambias tu licencia por el permiso español sin examen de conducir.'
+  };
+  var quiz = document.getElementById('quiz'), dots = document.querySelectorAll('.dots i'), hist = [];
+  function setDots(n) { dots.forEach(function (d, i) { d.classList.toggle('on', i < n); }); }
+  function showQ(key) {
+    var s = QUIZ[key];
+    setDots(key === 'q1' ? 1 : 2);
+    quiz.innerHTML = '<p class="quiz-q">' + esc(s.q) + '</p><div class="opts">' + s.opts.map(function (o) {
+      return '<button class="opt" type="button" data-go="' + o[2] + '"><span aria-hidden="true">' + o[0] + '</span>' + esc(o[1]) + '</button>';
+    }).join('') + '</div>' + (hist.length ? '<button class="quiz-back" type="button">← Atrás</button>' : '');
+  }
+  function showResult(id) {
+    setDots(3);
+    if (id === 'otro') {
+      quiz.innerHTML = '<div class="result"><span class="tag">Tu caso</span><h3>Lo vemos en la consulta</h3><p>Hay más caminos de los que caben en un test. Cuéntame tu situación y te digo cuál es el tuyo.</p><div class="acts"><a class="btn btn-dark" href="' + BOOKING_URL + '" target="_blank" rel="noopener">Reservar consulta · 45 €</a><a class="btn btn-wa" href="' + WA + encodeURIComponent('Hola Viviana, hice el test de la web y quiero contarte mi caso.') + '" target="_blank" rel="noopener">Escribir por WhatsApp</a></div><button class="quiz-back" type="button">← Atrás</button></div>';
+      return;
+    }
+    var s = byId[id];
+    quiz.innerHTML = '<div class="result"><span class="tag">Tu camino probable</span><h3>' + esc(s.name) + '</h3><p>' + esc(WHY[id]) + '</p>' +
+      '<div class="acts"><button class="btn btn-line" type="button" data-req="' + id + '">Ver requisitos</button>' +
+      '<a class="btn btn-dark" href="' + BOOKING_URL + '" target="_blank" rel="noopener">Reservar consulta · 45 €</a>' +
+      '<a class="btn btn-wa" href="' + WA + encodeURIComponent('Hola Viviana, hice el test de la web y me sale: ' + s.name + '. ¿Me ayudas?') + '" target="_blank" rel="noopener">WhatsApp</a></div>' +
+      '<small>Resultado orientativo. En la consulta confirmamos si cumples cada requisito.</small><button class="quiz-back" type="button">← Atrás</button></div>';
+  }
+  quiz.addEventListener('click', function (e) {
+    var go = e.target.closest('[data-go]');
+    if (go) {
+      var k = go.getAttribute('data-go');
+      hist.push(k);
+      if (QUIZ[k]) showQ(k); else showResult(k);
+      return;
+    }
+    if (e.target.closest('.quiz-back')) {
+      hist.pop();
+      var prev = hist[hist.length - 1];
+      showQ(prev && QUIZ[prev] ? prev : 'q1');
+    }
+  });
+  showQ('q1');
+
+  // Roadmap
+  var ROAD = [
+    ['Consulta de valoración', 'Paso 1 · Tú decides', '45 minutos por videollamada. Revisamos tu situación y te dejo por escrito qué necesitas, en qué orden y para qué fecha. Si tu caso no es viable, te lo digo con claridad.', ['Pagas 45 €, que te descuento si contratas', 'Recibes tu plan por escrito']],
+    ['Tu expediente a medida', 'Paso 2 · Preparamos', 'Te envío un checklist personalizado y reviso cada documento antes de presentarlo: traducciones, apostillas, seguros y medios económicos.', ['Revisión documento a documento', 'Menos requerimientos, menos esperas']],
+    ['Presentación', 'Paso 3 · Presento', 'Si el trámite se hace en España, lo presento yo en tu nombre con poder notarial. Si es en el consulado, te preparo el dossier y te guío en la cita.', ['Presentación telemática', 'Dossier consular listo para entregar']],
+    ['Seguimiento', 'Paso 4 · Te acompaño', 'Vigilo tu expediente, respondo a los requerimientos y te aviso de cada movimiento. Siempre sabes en qué punto está.', ['Avisos por WhatsApp', 'Respuesta a requerimientos incluida']],
+    ['Tu nueva vida', 'Paso 5 · Libertad', 'Resolución favorable, cita de huellas y tu TIE. Y después, lo que venga: renovación, cambio a residencia o nacionalidad.', ['Huellas y TIE', 'Te digo cuándo te toca el siguiente paso']]
+  ];
+  var roadSteps = document.getElementById('road-steps'), roadPanel = document.getElementById('road-panel'), roadI = 0;
+  roadSteps.innerHTML = ROAD.map(function (r, i) {
+    return '<li><button type="button" role="tab" id="rs-' + i + '" aria-controls="road-panel" data-step="' + i + '"><span>' + (i + 1) + '</span><em style="font-style:normal">' + esc(r[0]) + '</em></button></li>';
+  }).join('');
+  function showStep(i) {
+    roadI = i;
+    roadSteps.querySelectorAll('button').forEach(function (b, j) { b.setAttribute('aria-selected', j === i ? 'true' : 'false'); b.tabIndex = j === i ? 0 : -1; });
+    var r = ROAD[i];
+    roadPanel.setAttribute('aria-labelledby', 'rs-' + i);
+    roadPanel.innerHTML = '<small>' + esc(r[1]) + '</small><h3>' + esc(r[0]) + '</h3><p>' + esc(r[2]) + '</p><ul class="ticks">' + r[3].map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="road-nav">' + (i > 0 ? '<button class="btn btn-ghost" type="button" data-step="' + (i - 1) + '">← Anterior</button>' : '') +
+      (i < ROAD.length - 1 ? '<button class="btn btn-rose" type="button" data-step="' + (i + 1) + '">Siguiente →</button>' : '<a class="btn btn-rose" href="' + BOOKING_URL + '" target="_blank" rel="noopener">Empezar por la consulta</a>') + '</div>';
+  }
+  document.getElementById('proceso').addEventListener('click', function (e) { var b = e.target.closest('[data-step]'); if (b) showStep(+b.getAttribute('data-step')); });
+  roadSteps.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft' && e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    e.preventDefault();
+    var n = (roadI + (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : ROAD.length - 1)) % ROAD.length;
+    showStep(n); document.getElementById('rs-' + n).focus();
+  });
+  showStep(0);
+
+  // FAQ en acordeón
   document.querySelectorAll('.faq-item').forEach(function (item) {
-    item.querySelector('.faq-q').addEventListener('click', function () {
+    var q = item.querySelector('.faq-q');
+    q.setAttribute('aria-expanded', 'false');
+    q.addEventListener('click', function () {
       var isOpen = item.getAttribute('data-open') === 'true';
-      document.querySelectorAll('.faq-item').forEach(function (i) { i.setAttribute('data-open', 'false'); });
+      document.querySelectorAll('.faq-item').forEach(function (i) { i.setAttribute('data-open', 'false'); i.querySelector('.faq-q').setAttribute('aria-expanded', 'false'); });
       item.setAttribute('data-open', isOpen ? 'false' : 'true');
+      q.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
     });
   });
   document.querySelectorAll('[data-open-faq]').forEach(function (a) {
     a.addEventListener('click', function () {
       var item = document.querySelector('[data-faq="' + a.getAttribute('data-open-faq') + '"]');
-      if (item) item.setAttribute('data-open', 'true');
+      if (item) { item.setAttribute('data-open', 'true'); item.querySelector('.faq-q').setAttribute('aria-expanded', 'true'); }
     });
   });
-  // Los botones de cada trámite preseleccionan el servicio en el formulario
-  document.querySelectorAll('[data-service]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      var sel = document.getElementById('f-service');
-      if (sel) sel.value = a.getAttribute('data-service');
-    });
+
+  // Los botones "Cita VIP" y de consulta abren el calendario de Cal.com
+  document.querySelectorAll('a.book').forEach(function (a) {
+    a.setAttribute('href', BOOKING_URL); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
   });
 
   var dayInput = document.getElementById('f-day');
   var tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate() + 1);
   dayInput.min = tomorrow.toISOString().slice(0, 10);
-
-  // Pega aquí el enlace de Cal.com (consulta de 45 € con pago) y los botones "Agendar" lo abrirán.
-  var BOOKING_URL = 'https://cal.com/viviana-andrea-acero-pulido-p7ku9b/acero-pulido-movilidad-y-asesoria-extranjera';
-  if (BOOKING_URL) {
-    document.querySelectorAll('a.btn-main[href="#contacto"], a[data-service="Consulta de valoración"]').forEach(function (a) {
-      a.setAttribute('href', BOOKING_URL);
-      a.setAttribute('target', '_blank');
-      a.setAttribute('rel', 'noopener');
-    });
-  }
-
-  var API_URL = 'https://go2spain-backend.onrender.com';
 
   var form = document.getElementById('lead-form');
   form.addEventListener('submit', function (e) {
@@ -523,9 +795,9 @@
       email: document.getElementById('f-email').value,
       phone: document.getElementById('f-phone').value || null,
       nationality: document.getElementById('f-nat').value || null,
-      admission: document.getElementById('f-admission').value || null,
+      admission: null,
       city: document.getElementById('f-city').value || null,
-      start_date: document.getElementById('f-start').value || null,
+      start_date: null,
       message: 'Trámite: ' + service + '\nCita preferida: ' + (document.getElementById('f-day').value || 'sin fecha') + ' · ' + (document.getElementById('f-slot').value || 'cualquier franja') + ' · ' + document.getElementById('f-medium').value + (message ? '\n' + message : '')
     };
     fetch(API_URL + '/study-leads', {
@@ -574,11 +846,10 @@
     .then(function (response) { return response.json(); })
     .then(function (reviews) {
       if (!reviews || reviews.length === 0) return;
-      var esc = function (s) { return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
       document.getElementById('reviews-list').innerHTML = reviews.map(function (r) {
         var stars = r.rating ? '★★★★★'.slice(0, r.rating) + '☆☆☆☆☆'.slice(0, 5 - r.rating) : '';
         return '<div class="review-card">' + (stars ? '<div class="review-stars">' + stars + '</div>' : '') +
-          '<p class="review-text">' + esc(r.text) + '</p><strong class="review-name">' + esc(r.name) + '</strong></div>';
+          '<p class="review-text">“' + esc(r.text) + '”</p><strong class="review-name">' + esc(r.name) + '</strong></div>';
       }).join('');
       document.getElementById('resenas').hidden = false;
     })
